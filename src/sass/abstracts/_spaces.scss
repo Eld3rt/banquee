@@ -1,0 +1,36 @@
+@use "sass:math";
+@use 'functions' as *;
+
+$space-scale: (
+	s: (
+		sp: (
+			
+		),
+	),
+	m: (
+		sp: (
+
+		),
+	),
+	l: (
+		sp: (
+			
+		),
+	),
+);
+
+$margin-tops: (
+	mt: (
+		sp: (
+			margin-top: (),
+		),
+	),
+);
+
+$margin-bottoms: (
+	mb: (
+		sp: (
+			margin-bottom: (),
+		),
+	),
+);

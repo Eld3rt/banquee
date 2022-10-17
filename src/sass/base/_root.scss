@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+:root {
+@include adaptVarGenerator($color-palette);
+@include adaptVarGenerator($type-scale);
+@include adaptVarGenerator($space-scale);
+}

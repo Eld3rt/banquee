@@ -1,0 +1,7 @@
+@use "sass:math";
+
+@function ratio($numerator, $denominator) {
+	$result: math.div($numerator, $denominator)*100;
+
+	@return $result;
+}

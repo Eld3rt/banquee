@@ -1,0 +1,4 @@
+@use '../abstracts' as *;
+
+@include varUtilityGenerator($font-size);
+@include adaptUtilityGenerator($text-aligns);

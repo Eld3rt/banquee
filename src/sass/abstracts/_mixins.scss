@@ -1,0 +1,141 @@
+@use 'breakpoints' as *;
+
+@mixin mq($key) {
+
+	$size: map-get($breakpoints, $key);
+
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin pseudo(
+		$loc: before, 
+	) {
+	position: relative;
+
+	&::#{$loc} {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		@content;
+	}
+}
+
+@mixin hover-lift($transition: transform 350ms ease-in-out) {
+	transition: $transition;
+
+	@include pseudo($loc: before) {
+		box-shadow: 0 0 1.25em 0 rgba(black, .4);
+		transition: $transition;
+		opacity: 0;
+	}
+
+	&:hover,
+	&:focus-visible {
+
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+@mixin UtilityGenerator($utility) {
+	@each $class, $property in $utility {
+		@each $prop, $value in $property {
+			.#{$class} {
+				#{$prop}: #{$value}
+			}
+		}
+	}
+}
+
+@mixin mqUtilityGenerator($utility) {
+	@each $class, $property in $utility {
+		@each $screen-size, $size in $breakpoints {
+			@each $prop, $value in $property {
+				.#{$screen-size}_#{$class} {
+					@include mq($screen-size) {
+						#{$prop}: #{$value}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin adaptUtilityGenerator($utility) {
+	@each $class, $property in $utility {
+		@each $prop, $value in $property {
+			.#{$class} {
+				#{$prop}: #{$value}
+			}
+		}
+		@each $screen-size, $size in $breakpoints {
+			@each $prop, $value in $property {
+				.#{$screen-size}_#{$class} {
+					@include mq($screen-size) {
+						#{$prop}: #{$value}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin varUtilityGenerator ($utility) {
+	@each $class, $keys in $utility {
+		@each $key, $property in $keys {
+			@each $prop, $values in $property {
+				@each $value in $values {
+					.#{$class}-#{$value} {
+						#{$prop}: var(--#{$key}-#{$value});
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin varGenerator ($var) {
+	@each $key, $property in $var {
+		@each $prop, $value in $property {
+			--#{$key}-#{$prop}: #{$value};
+		}
+	}
+}
+
+@mixin mqVarGenerator ($var) {
+	@each $screen-size, $keys in $var {
+		@include mq($screen-size) {
+			@each $key, $property in $keys {
+				@each $prop, $value in $property {
+					--#{$key}-#{$prop}: #{$value};
+				}
+			}
+		}
+	}
+}
+
+@mixin adaptVarGenerator ($var) {
+	@each $screen-size, $keys in $var {
+		@if $screen-size == s {
+			@each $key, $property in $keys {
+				@each $prop, $value in $property {
+				--#{$key}-#{$prop}: #{$value};
+				}
+			}
+		} @else {
+			@include mq($screen-size) {
+				@each $key, $property in $keys {
+					@each $prop, $value in $property {
+						--#{$key}-#{$prop}: #{$value};
+					}
+				}
+			}
+		}
+	}
+}
