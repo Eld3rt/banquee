@@ -4,7 +4,8 @@
 $space-scale: (
 	s: (
 		sp: (
-			
+			0: 0,
+			p: 1em,
 		),
 	),
 	m: (
@@ -14,7 +15,7 @@ $space-scale: (
 	),
 	l: (
 		sp: (
-			
+			section: 10rem,
 		),
 	),
 );
@@ -22,7 +23,7 @@ $space-scale: (
 $margin-tops: (
 	mt: (
 		sp: (
-			margin-top: (),
+			margin-top: (0),
 		),
 	),
 );

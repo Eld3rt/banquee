@@ -1,5 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import SpriteSVG from '../components/SpriteSVG.astro';
 
 const { title } = Astro.props;
 const { scriptsrc } = Astro.props;
@@ -11,6 +13,8 @@ const { scriptsrc } = Astro.props;
 		<BaseHead title={title} scriptsrc={scriptsrc}></BaseHead>
 	</head>
 	<body>
+		<SpriteSVG></SpriteSVG>
+		<Header></Header>
 		<slot></slot>
 	</body>
 </html>
