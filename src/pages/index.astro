@@ -8,11 +8,11 @@ const scriptsrc = "https://identity.netlify.com/v1/netlify-identity-widget.js";
 <BaseLayout title={title} scriptsrc={scriptsrc}>
 	<main class="main">
 		<section class="intro mt-0">
-			<div class="intro__inner">
+			<div class="intro__inner container even-columns">
 				<div class="intro__text">
 					<h1 class="intro__title">Banking starts here.</h1>
 					<p class="intro__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-					<ul role="list" aria-label="feature list" class="intro__features">
+					<ul role="list" aria-label="intro feature list" class="intro__features even-columns">
 						<li class="intro__feature">Instant Transfer</li>
 						<li class="intro__feature">Payments worldwide</li>
 						<li class="intro__feature">Saving accounts</li>
@@ -24,7 +24,61 @@ const scriptsrc = "https://identity.netlify.com/v1/netlify-identity-widget.js";
 					</div>
 				</div>
 				<div class="intro__image">
-					<img src="assets/images/intro-cards.svg" alt="Intro Image" class="intro__picture">
+					<img src="assets/images/intro-cards.png" alt="Intro Image" class="intro__picture">
+				</div>
+			</div>
+		</section>
+		<section class="app">
+			<div class="app__inner container even-columns">
+				<div class="app__text">
+					<h2 class="app__title">One app. One banking.</h2>
+					<ul role="list" aria-label="app feature list" class="app__features even-columns">
+						<li class="app__feature">
+							<svg width="50" height="51" viewBox="0 0 50 51" class="app__feature-icon">
+								<use href="#app-feature-1"></use>
+							</svg>
+							<h3 class="app__feature-title h3--small">Instant transactions</h3>
+							<p class="app__feature-description">Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis.</p>
+						</li>
+						<li class="app__feature">
+							<svg width="50" height="51" viewBox="0 0 50 51" class="app__feature-icon">
+								<use href="#app-feature-2"></use>
+							</svg>
+							<h3 class="app__feature-title h3--small">Saving accounts</h3>
+							<p class="app__feature-description">Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis.</p>
+						</li>
+						<li class="app__feature">
+							<svg width="50" height="51" viewBox="0 0 50 51" class="app__feature-icon">
+								<use href="#app-feature-3"></use>
+							</svg>
+							<h3 class="app__feature-title h3--small">Mobile banking</h3>
+							<p class="app__feature-description">Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis.</p>
+						</li>
+						<li class="app__feature">
+							<svg width="50" height="51" viewBox="0 0 50 51" class="app__feature-icon">
+								<use href="#app-feature-4"></use>
+							</svg>
+							<h3 class="app__feature-title h3--small">Advanced statistics</h3>
+							<p class="app__feature-description">Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis.</p>
+						</li>
+						<li class="app__feature">
+							<svg width="50" height="51" viewBox="0 0 50 51" class="app__feature-icon">
+								<use href="#app-feature-5"></use>
+							</svg>
+							<h3 class="app__feature-title h3--small">Virtual cards</h3>
+							<p class="app__feature-description">Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis.</p>
+						</li>
+						<li class="app__feature">
+							<svg width="50" height="51" viewBox="0 0 50 51" class="app__feature-icon">
+								<use href="#app-feature-6"></use>
+							</svg>
+							<h3 class="app__feature-title h3--small">Contactless payments</h3>
+							<p class="app__feature-description">Odio euismod lacinia at quis. Amet purus gravida quis blandit turpis.</p>
+						</li>
+					</ul>
+					<div class="app__screen">
+						<img src="assets/images/app-screen.png" alt="App Screen" class="app__picture">
+					</div>
 				</div>
 			</div>
 		</section>

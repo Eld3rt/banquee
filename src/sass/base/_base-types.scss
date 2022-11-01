@@ -57,13 +57,17 @@ body {
 	line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
 	font-family: 'DM Sans';
 	letter-spacing: -0.03em;
 }
 
 h1, h2, h3 {
 	line-height: 1.1;
+}
+
+h4, h5 {
+	line-height: 1.2;
 }
 
 h1 {
@@ -80,5 +84,8 @@ h3 {
 
 h4 {
 	font-size: var(--fs-700);
-	line-height: 1.2;
+}
+
+h5 {
+	font-size: var(--fs-500);
 }
