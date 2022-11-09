@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+# layout: ../../layouts/BlogPostLayout.astro
 title: How To Start Using Banko For Your Startup
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi.
 author: Eld3rt
 date: 2021-09-01
-image: /assets/images/prv-how-to-start.png
+image: /assets/images/prv-img-how-to-start.png
 tags:
   - App
   - Technology

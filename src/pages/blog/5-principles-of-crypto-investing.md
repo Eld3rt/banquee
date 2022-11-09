@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+# layout: ../../layouts/BlogPostLayout.astro
 title: 5 Principles Of Crypto Investing
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. maxime, magnam placeat. Reprehenderit, distinctio aliquam?
 author: Eld3rt

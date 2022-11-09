@@ -2,9 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AppBanner from '../components/AppBanner.astro';
 import Help from '../components/Help.astro';
+import BlogPost from '../components/BlogPost.astro';
 
 const title = "Homepage";
 const scriptsrc = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+const allPosts = await Astro.glob('../pages/blog/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const freshPosts = sortedPosts.slice(0, 3);
 ---
 
 <BaseLayout title={title} scriptsrc={scriptsrc}>
@@ -290,6 +294,19 @@ const scriptsrc = "https://identity.netlify.com/v1/netlify-identity-widget.js";
 		</section>
 		<AppBanner></AppBanner>
 		<Help></Help>
+		<section class="blog">
+			<div class="blog__inner container">
+				<div class="blog__head">
+					<h2 class="blog__title h2--small">Blog</h2>
+					<a href="/blog" class="blog__link link-primary--arrow">All articles</a>
+				</div>
+				<ul role="list" aria-label="posts list" class="blog__posts">
+					{freshPosts.map(post => (
+						<BlogPost post={post}></BlogPost>
+					))}
+				</ul>
+			</div>
+		</section>
 	</main>
 </BaseLayout>
 
