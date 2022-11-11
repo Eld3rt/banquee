@@ -1,13 +1,15 @@
 <header class="header">
 	<div class="header__inner container container--wide">
-		<a aria-label="home" href="/" class="header__logo">
-			<svg width="139" height="32" viewBox="0 0 139 32" class="header__logo-icon">
-				<use href="#logo"></use>
-			</svg>
-		</a>
-		<nav class="header__nav">
+		<div class="header__logo">
+			<a aria-label="home" href="/" class="header__logo-link">
+				<svg width="139" height="32" viewBox="0 0 139 32" class="header__logo-icon">
+					<use href="#logo"></use>
+				</svg>
+			</a>
+		</div>
+		<nav class="header__nav" aria-label="Primary">
 			<div class="header__nav-center">
-				<ul role="list" aria-label="primary" class="header__list">
+				<ul role="list" aria-label="link list" class="header__list">
 					<li class="header__list-item">
 						<a href="/features" class="header__nav-link">Features</a>
 					</li>
