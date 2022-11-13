@@ -9,10 +9,10 @@ const tagData = generateTagData(postTags);
 <li class="post">
 	<div class="post__image">
 		<a href={post.url} class="post__image-link">
-			<img src={post.frontmatter.image} class="post__image-pic">
+			<img src={post.frontmatter.image} class="post__image-picture">
 		</a>
 	</div>
-	<h3 class="post__title h3--small">{post.frontmatter.title}</h3>
+	<h4 class="post__title">{post.frontmatter.title}</h4>
 	<p class="post__description">{post.frontmatter.description}</p>
 	<ul role="list" aria-label="tags list" class="post__tags">
 		{tagData.map(tag => (
