@@ -1,0 +1,21 @@
+---
+import BlogPost from '../BlogPost.astro';
+
+const allPosts = await Astro.glob('../../pages/blog/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const freshPosts = sortedPosts.slice(0, 3);
+---
+
+<section class="blog">
+	<div class="blog__inner container">
+		<div class="blog__head">
+			<h2 class="blog__title h3">Blog</h2>
+			<a href="/blog" class="blog__link link-primary--arrow">All articles</a>
+		</div>
+		<ul role="list" aria-label="posts list" class="blog__posts">
+			{freshPosts.map(post => (
+				<BlogPost post={post}></BlogPost>
+			))}
+		</ul>
+	</div>
+</section>

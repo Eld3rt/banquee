@@ -16,7 +16,9 @@ const { scriptsrc } = Astro.props;
 	<body>
 		<SpriteSVG></SpriteSVG>
 		<Header></Header>
-		<slot></slot>
+		<main class="main">
+			<slot></slot>
+		</main>
 		<Footer></Footer>
 	</body>
 </html>
