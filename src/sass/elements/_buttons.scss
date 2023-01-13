@@ -1,1 +1,25 @@
+@use "sass:math";
 @use '../abstracts' as *;
+
+.button {
+	display: inline-flex;
+	padding: .75em 1em;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.button-primary {
+	font-family: 'DM Sans';
+	background-color: var(--clr-primary-400);
+	color: var(--clr-neutral-0);
+
+	&--narrow {
+		padding: var(--sp-b--narrow);
+	}
+}
+
+.button-menu {
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+}

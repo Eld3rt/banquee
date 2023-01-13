@@ -1,4 +1,8 @@
 @use '../abstracts' as *;
 
-@include varUtilityGenerator($margin-tops);
-@include varUtilityGenerator($margin-bottoms);
+// @include varUtilityGenerator($margin-tops);
+// @include varUtilityGenerator($margin-bottoms);
+
+.mt-0 {
+	margin-top: 0;
+}

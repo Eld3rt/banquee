@@ -1,12 +1,9 @@
 ---
 
-const { post } = Astro.props;
 const allPosts = await Astro.glob('../pages/blog/*.md');
 const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 const freshPosts = sortedPosts.slice(0, 4);
 const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
-
-const example = 'Lorem ipsum dolor';
 ---
 
 <header class="header">
@@ -19,38 +16,38 @@ const example = 'Lorem ipsum dolor';
 			</a>
 		</div>
 		<nav class="header__nav" aria-label="Primary">
-			<div class="header__nav-center">
+			<div class="header__nav-pages">
 				<ul role="list" aria-label="link list" class="header__list">
 					<li class="header__list-item">
-						<a href="/features" class="header__nav-link">Features</a>
+						<a href="/features" class="header__nav-link header__nav-link--page">Features</a>
 					</li>
 					<li class="header__list-item">
-						<a href="/compare" class="header__nav-link">Compare</a>
+						<a href="/compare" class="header__nav-link header__nav-link--page link-dropdown link-dropdown--desktop">Compare</a>
 					</li>
 					<li class="header__list-item">
-						<a href="/support" class="header__nav-link">Support</a>
+						<a href="/support" class="header__nav-link header__nav-link--page">Support</a>
 					</li>
 					<li class="header__list-item">
-						<a href="/blog" class="header__nav-link">Blog</a>
+						<a href="/blog" class="header__nav-link header__nav-link--page link-dropdown link-dropdown--desktop">Blog</a>
 					</li>
 				</ul>
-				<button class="header__mobile-menu" aria-controls="primary-navigation" aria-expanded="false">
-					<svg class="header__hamburger" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-						<use href="#hamburger"></use>
-					</svg>
-					<svg class="header__close" width="28" height="28" viewBox="0 0 14 13" aria-hidden="true">
-						<use href="#close"></use>
-					</svg>
-					<span class="visually-hidden">Menu</span>
-				</button>
 			</div>
-			<div class="header__nav-left">
-				<a href="#" class="header__nav-link link-primary">Login</a>
-				<a href="#" class="header__nav-link button-primary">Open Account</a>
+			<div class="header__nav-auth">
+				<a href="#" class="header__nav-link header__nav-link--sign-in link-primary">Login</a>
+				<a href="#" class="header__nav-link header__nav-link--join button button-primary button-primary--narrow ls-0">Open Account</a>
 			</div>
 		</nav>
+		<button class="header__mobile-menu button-menu" aria-controls="primary-navigation" aria-expanded="false">
+			<svg class="header__hamburger db" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+				<use href="#hamburger"></use>
+			</svg>
+			<svg class="header__x" width="28" height="28" viewBox="0 0 14 13" aria-hidden="true">
+				<use href="#close"></use>
+			</svg>
+			<span class="visually-hidden">Menu</span>
+		</button>
 	</div>
-	<div class="header__dropdown">
+	<div class="header__dropdown dn">
 		<ul role="list" aria-label="compare list" class="header__compare">
 			<li class="header__compare-card">
 				<h4 class="card__title h5 popular">Basic</h4>

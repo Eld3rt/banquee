@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.link-primary {
+	font-family: 'DM Sans';
+	color: var(--clr-primary-400);
+}
+
+.link-dropdown {
+	padding-right: 2em;
+	background: url(./assets/images/dropdown-arrow.svg) no-repeat right .75em center;
+
+	&--desktop {
+		@media (max-width: 45em) {
+			padding: .75em;
+			background: none;
+		}
+	}
+}

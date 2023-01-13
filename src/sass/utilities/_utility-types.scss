@@ -1,4 +1,20 @@
 @use '../abstracts' as *;
 
-@include varUtilityGenerator($font-size);
-@include adaptUtilityGenerator($text-aligns);
+// @include varUtilityGenerator($font-size);
+// @include adaptUtilityGenerator($text-aligns);
+
+.fs-250 {
+	font-size: var(--fs-250);
+}
+
+.tac {
+	text-align: center;
+}
+
+.tal {
+	text-align: left;
+}
+
+.ls-0 {
+ letter-spacing: 0;
+}

@@ -9,9 +9,7 @@
 	}
 }
 
-@mixin pseudo(
-		$loc: before, 
-	) {
+@mixin pseudo($loc: before) {
 	position: relative;
 
 	&::#{$loc} {
@@ -43,62 +41,62 @@
 	}
 }
 
-@mixin UtilityGenerator($utility) {
-	@each $class, $property in $utility {
-		@each $prop, $value in $property {
-			.#{$class} {
-				#{$prop}: #{$value}
-			}
-		}
-	}
-}
+// @mixin UtilityGenerator($utility) {
+// 	@each $class, $property in $utility {
+// 		@each $prop, $value in $property {
+// 			.#{$class} {
+// 				#{$prop}: #{$value}
+// 			}
+// 		}
+// 	}
+// }
 
-@mixin mqUtilityGenerator($utility) {
-	@each $class, $property in $utility {
-		@each $screen-size, $size in $breakpoints {
-			@each $prop, $value in $property {
-				.#{$screen-size}_#{$class} {
-					@include mq($screen-size) {
-						#{$prop}: #{$value}
-					}
-				}
-			}
-		}
-	}
-}
+// @mixin mqUtilityGenerator($utility) {
+// 	@each $class, $property in $utility {
+// 		@each $screen-size, $size in $breakpoints {
+// 			@each $prop, $value in $property {
+// 				.#{$screen-size}_#{$class} {
+// 					@include mq($screen-size) {
+// 						#{$prop}: #{$value}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
-@mixin adaptUtilityGenerator($utility) {
-	@each $class, $property in $utility {
-		@each $prop, $value in $property {
-			.#{$class} {
-				#{$prop}: #{$value}
-			}
-		}
-		@each $screen-size, $size in $breakpoints {
-			@each $prop, $value in $property {
-				.#{$screen-size}_#{$class} {
-					@include mq($screen-size) {
-						#{$prop}: #{$value}
-					}
-				}
-			}
-		}
-	}
-}
+// @mixin adaptUtilityGenerator($utility) {
+// 	@each $class, $property in $utility {
+// 		@each $prop, $value in $property {
+// 			.#{$class} {
+// 				#{$prop}: #{$value}
+// 			}
+// 		}
+// 		@each $screen-size, $size in $breakpoints {
+// 			@each $prop, $value in $property {
+// 				.#{$screen-size}_#{$class} {
+// 					@include mq($screen-size) {
+// 						#{$prop}: #{$value}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
-@mixin varUtilityGenerator ($utility) {
-	@each $class, $keys in $utility {
-		@each $key, $property in $keys {
-			@each $prop, $values in $property {
-				@each $value in $values {
-					.#{$class}-#{$value} {
-						#{$prop}: var(--#{$key}-#{$value});
-					}
-				}
-			}
-		}
-	}
-}
+// @mixin varUtilityGenerator ($utility) {
+// 	@each $class, $keys in $utility {
+// 		@each $key, $property in $keys {
+// 			@each $prop, $values in $property {
+// 				@each $value in $values {
+// 					.#{$class}-#{$value} {
+// 						#{$prop}: var(--#{$key}-#{$value});
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 @mixin varGenerator ($var) {
 	@each $key, $property in $var {

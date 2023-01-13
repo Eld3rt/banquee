@@ -1,15 +1,28 @@
 $type-scale: (
 	s: (
 		fs: (
-
+			100: .6875rem,
+			200: .75rem,
+			250: .875rem,
+			300: .9375rem,
+			400: 1rem, //a
+			500: 1.125rem, //h5
+			600: 1.25rem,
+			650: 1.4375rem,
+			700: 1.5rem, //h4
+			800: 1.75rem,
+			900: 2.5rem, //h3
+			1000: 4rem, //h2
+			1100: 5rem, //h1
 		),
 	),
 	m: (
 		fs: (
 			100: .75rem,
 			200: .875rem,
+			250: .9375rem,
 			300: 1rem,
-			400: 1.125rem,
+			400: 1.125rem, //a
 			500: 1.25rem, //h5
 			600: 1.5rem,
 			700: 1.75rem, //h4
@@ -26,15 +39,15 @@ $type-scale: (
 	),
 );
 
-$font-size: (
-	fs: (
-		fs: (
-			font-size: (100, 200, 300, 400, 500, 600),
-		),
-	),
-);
+// $font-size: (
+// 	fs: (
+// 		fs: (
+// 			font-size: (100, 200, 300, 400, 500, 600),
+// 		),
+// 	),
+// );
 
-$text-aligns: (
-	tac: (text-align: center),
-	tal: (text-align: left),
-)
+// $text-aligns: (
+// 	tac: (text-align: center),
+// 	tal: (text-align: left),
+// );
