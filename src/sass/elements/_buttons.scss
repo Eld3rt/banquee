@@ -14,7 +14,11 @@
 	color: var(--clr-neutral-0);
 
 	&--narrow {
-		padding: var(--sp-b--narrow);
+		padding: .8em math.div(12em, 14);
+
+		@include minw-mq(55em) {
+			padding: .8em math.div(16em, 15);
+		}
 	}
 }
 

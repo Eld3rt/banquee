@@ -10,7 +10,7 @@
 	background: url(./assets/images/dropdown-arrow.svg) no-repeat right .75em center;
 
 	&--desktop {
-		@media (max-width: 45em) {
+		@include maxw-mq(45em) {
 			padding: .75em;
 			background: none;
 		}

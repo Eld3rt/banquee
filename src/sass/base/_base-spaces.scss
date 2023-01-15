@@ -1,11 +1,13 @@
-header {
-	padding-block: 1.5rem;
-}
+@use '../abstracts' as *;
 
 section {
-	margin-top: var(--sp-section);
+	margin-top: 5rem;
+
+	@include minw-mq(65em) {
+		margin-top: 10rem;
+	}
 }
 
 p + p {
-	margin-top: var(--sp-p);
+	margin-top: 1em;
 }

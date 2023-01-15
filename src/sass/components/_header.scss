@@ -1,6 +1,11 @@
 @use "sass:math";
 @use "../abstracts" as *;
 
+.header {
+	position: relative;
+	padding-block: 1.5rem;
+}
+
 .header__inner {
 	display: flex;
 	justify-content: space-between;
@@ -13,10 +18,8 @@
 	align-items: center;
 
 	&-pages {
-		margin-left: auto;
-
-		@media (max-width: 45em) {
-			margin: 0;
+		@media (min-width: 45em) {
+			margin-left: auto;
 		}
 	}
 
@@ -60,10 +63,10 @@
 }
 
 .header__list {
-	column-gap: .75rem;
+	column-gap: 0;
 
-	@media (max-width: 50em) {
-		column-gap: 0;
+	@include minw-mq(55em) {
+		column-gap: .75rem;
 	}
 
 	@media (max-width: 45em) {
@@ -78,14 +81,18 @@
 
 	&--page {
 		line-height: 1.7;
-		font-size: var(--fs-300);
+		font-size: .9375rem;
 
 		&:hover {
 			background-color: var(--clr-neutral-100);
 		}
 
-		@media (max-width: 45em) {
-			font-size: var(--fs-700);
+		@include minw-mq(55em) {
+			font-size: 1rem;
+		}
+
+		@include maxw-mq(45em) {
+			font-size: 1.5rem;
 		}
 	}
 
@@ -93,20 +100,24 @@
 		&:hover {
 			background-color: var(--clr-primary-100);
 		}
-		@media (max-width: 45em) {
-			font-size: var(--fs-800);
+		@include maxw-mq(45em) {
+			font-size: 1.75rem;
 		}
 	}
 
 	&--join {
-		font-size: var(--fs-250);
+		font-size: .875rem;
 
 		&:hover {
 			background-color: var(--clr-primary-500);
 		}
 
-		@media (max-width: 45em) {
-			font-size: var(--fs-650);
+		@include minw-mq(55em) {
+			font-size: .9375rem;
+		}
+
+		@include maxw-mq(45em) {
+			font-size: 1.4375rem;
 		}
 	}
 }
@@ -115,12 +126,34 @@
 	display: none;
 	z-index: 1;
 
-	@media (max-width: 45em) {
+	@include maxw-mq(45em) {
 		display: block;
 	}
 }
 
 .header__hamburger, .header__x {
+	display: none;
+}
+
+.header__dropdown {
+	position: absolute;
+	background-color: var(--clr-neutral-100);
+	width: 100%;
+	margin-top: 1.5rem;
+}
+
+.header__compare {
+	display: flex;
+	justify-content: center;
+	column-gap: 2rem;
+	padding-block: 2rem;
+}
+
+.header__compare-card {
+	text-align: center;
+}
+
+.header__blog {
 	display: none;
 }
 

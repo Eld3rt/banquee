@@ -1,42 +1,14 @@
 $color-palette: (
-	s: (
-		clr-primary: (
-			100: hsl(156, 28%, 93%),
-			400: hsl(167, 38%, 53%),
-			500: hsl(170, 40%, 43%)
-		),
-		clr-neutral: (
-			0: hsl(0, 0%, 100%),
-			100: hsl(0, 0%, 97%),
-			200: hsl(0, 0%, 91%),
-			900-muted: hsl(252, 9%, 11%, .5),
-			900: hsl(252, 9%, 11%)
-		),
-	),
-);
-
-$colors: (
 	clr-primary: (
-		clr-primary: (
-			color: (),
-		),
+		100: hsl(156, 28%, 93%),
+		400: hsl(167, 38%, 53%),
+		500: hsl(170, 40%, 43%)
 	),
 	clr-neutral: (
-		clr-neutral: (
-			color: (),
-		),
-	),
-);
-
-$fills: (
-	fill-primary: (
-		clr-primary: (
-			fill: (),
-		),
-	),
-	fill-neutral: (
-		clr-neutral: (
-			fill: (),
-		),
+		0: hsl(0, 0%, 100%),
+		100: hsl(0, 0%, 97%),
+		200: hsl(0, 0%, 91%),
+		900-muted: hsl(252, 9%, 11%, .5),
+		900: hsl(252, 9%, 11%)
 	),
 );

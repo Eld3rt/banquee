@@ -1,10 +1,11 @@
-@use 'breakpoints' as *;
+@mixin minw-mq($value) {
+	@media only screen and (min-width: $value) {
+		@content;
+	}
+}
 
-@mixin mq($key) {
-
-	$size: map-get($breakpoints, $key);
-
-	@media only screen and (min-width: $size) {
+@mixin maxw-mq($value) {
+	@media only screen and (max-width: $value) {
 		@content;
 	}
 }
@@ -41,8 +42,16 @@
 	}
 }
 
+@mixin varGenerator($var) {
+	@each $key, $properties in $var {
+		@each $property, $value in $properties {
+			--#{$key}-#{$property}: #{$value};
+		}
+	}
+}
+
 // @mixin UtilityGenerator($utility) {
-// 	@each $class, $property in $utility {
+	// 	@each $class, $property in $utility {
 // 		@each $prop, $value in $property {
 // 			.#{$class} {
 // 				#{$prop}: #{$value}
@@ -98,42 +107,57 @@
 // 	}
 // }
 
-@mixin varGenerator ($var) {
-	@each $key, $property in $var {
-		@each $prop, $value in $property {
-			--#{$key}-#{$prop}: #{$value};
-		}
-	}
-}
 
-@mixin mqVarGenerator ($var) {
-	@each $screen-size, $keys in $var {
-		@include mq($screen-size) {
-			@each $key, $property in $keys {
-				@each $prop, $value in $property {
-					--#{$key}-#{$prop}: #{$value};
-				}
-			}
-		}
-	}
-}
+// @mixin mqVarGenerator ($var) {
+// 	@each $screen-size, $keys in $var {
+// 		@include mq($screen-size) {
+// 			@each $key, $property in $keys {
+// 				@each $prop, $value in $property {
+// 					--#{$key}-#{$prop}: #{$value};
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
-@mixin adaptVarGenerator ($var) {
-	@each $screen-size, $keys in $var {
-		@if $screen-size == s {
-			@each $key, $property in $keys {
-				@each $prop, $value in $property {
-				--#{$key}-#{$prop}: #{$value};
-				}
-			}
-		} @else {
-			@include mq($screen-size) {
-				@each $key, $property in $keys {
-					@each $prop, $value in $property {
-						--#{$key}-#{$prop}: #{$value};
-					}
-				}
-			}
-		}
-	}
-}
+// @mixin adaptVarGenerator ($scale) {
+// 	@each $scale-type, $screen-sizes in $scale {
+// 		@if $scale-type == mobile-first {
+// 			@each $screen-size, $keys in $screen-sizes {
+// 				@if $screen-size == default {
+// 					@each $key, $properties in $keys {
+// 						@each $property, $value in $properties {
+// 							--#{$key}-#{$property}: #{$value};
+// 						}
+// 					}
+// 				} @else {
+// 					@include minw-mq($screen-size) {
+// 						@each $key, $properties in $keys {
+// 							@each $property, $value in $properties {
+// 								--#{$key}-#{$property}: #{$value};
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		} @else {
+// 			@each $screen-size, $keys in $screen-sizes {
+// 				@if $screen-size == default {
+// 					@each $key, $properties in $keys {
+// 						@each $property, $value in $properties {
+// 							--#{$key}-#{$property}: #{$value};
+// 						}
+// 					}
+// 				} @else {
+// 					@include maxw-mq($screen-size) {
+// 						@each $key, $properties in $keys {
+// 							@each $property, $value in $properties {
+// 								--#{$key}-#{$property}: #{$value};
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

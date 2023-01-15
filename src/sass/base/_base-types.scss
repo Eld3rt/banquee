@@ -71,29 +71,53 @@ h4, h5 {
 }
 
 h1 {
-	font-size: var(--fs-1100);
+	font-size: 5rem;
+
+	@include minw-mq(55em) {
+		font-size: 6.25rem;
+	}
 }
 
 h2 {
-	font-size: var(--fs-1000);
+	font-size: 4rem;
+
+	@include minw-mq(55em) {
+		font-size: 5rem;
+	}
 }
 
 h3 {
-	font-size: var(--fs-900);
+	font-size: 2.5rem;
+
+	@include minw-mq(55em) {
+		font-size: 4rem;
+	}
 }
 
 h4 {
-	font-size: var(--fs-700);
+	font-size: 1.5rem;
+
+	@include minw-mq(55em) {
+		font-size: 1.75rem;
+	}
 }
 
 h5 {
-	font-size: var(--fs-500);
+	font-size: 1.125rem;
+
+	@include minw-mq(55em) {
+		font-size: 1.25rem;
+	}
 }
 
 a {
 	text-decoration: none;
 	color: var(--clr-neutral-900);
-	font-size: var(--fs-400);
+	font-size: 1rem;
 	line-height: 1;
 	letter-spacing: -0.03em;
+
+	@include minw-mq(55em) {
+		font-size: 1.125rem;
+	}
 }
