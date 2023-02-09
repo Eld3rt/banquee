@@ -12,5 +12,6 @@ export default function toggleHeaderMenu(mobileMenuClassName, navigationClassNam
 		navigation.classList.toggle('df');
 		menuHamburger.classList.toggle('db');
 		menuX.classList.toggle('db');
+		document.body.classList.toggle('disable-scroll');
 	});
 }

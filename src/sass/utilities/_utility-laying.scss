@@ -37,6 +37,10 @@
 	border: 0 !important;
 }
 
+.disable-scroll {
+	overflow-y: hidden;
+}
+
 .dn {
 	display: none;
 }

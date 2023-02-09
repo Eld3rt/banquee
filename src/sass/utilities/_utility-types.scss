@@ -14,3 +14,11 @@
 .ls-0 {
  letter-spacing: 0;
 }
+
+.h5 {
+	font-size: 1.125rem;
+
+	@include minw-mq(55em) {
+		font-size: 1.25rem;
+	}
+}

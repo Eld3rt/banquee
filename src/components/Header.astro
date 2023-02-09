@@ -8,7 +8,7 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 
 <header class="header">
 	<div class="header__inner container container--wide">
-		<div class="header__logo">
+		<div class="header__logo header__logo--mobile">
 			<a aria-label="home" href="/" class="header__logo-link">
 				<svg width="139" height="32" viewBox="0 0 139 32" class="header__logo-icon">
 					<use href="#logo"></use>
@@ -16,6 +16,13 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 			</a>
 		</div>
 		<nav class="header__nav" aria-label="Primary">
+			<div class="header__logo header__logo--desktop">
+				<a aria-label="home" href="/" class="header__logo-link">
+					<svg width="139" height="32" viewBox="0 0 139 32" class="header__logo-icon">
+						<use href="#logo"></use>
+					</svg>
+				</a>
+			</div>
 			<div class="header__nav-pages">
 				<ul role="list" aria-label="link list" class="header__list">
 					<li class="header__list-item">
@@ -33,8 +40,8 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 				</ul>
 			</div>
 			<div class="header__nav-auth">
-				<a href="#" class="header__nav-link header__nav-link--sign-in link-primary">Login</a>
-				<a href="#" class="header__nav-link header__nav-link--join button button-primary button-primary--narrow ls-0">Open Account</a>
+					<a href="#" class="header__nav-link header__nav-link--sign-in link-primary">Login</a>
+					<a href="#" class="header__nav-link header__nav-link--join button button-primary button-primary--narrow ls-0">Open Account</a>
 			</div>
 		</nav>
 		<button class="header__mobile-menu button-menu" aria-controls="primary-navigation" aria-expanded="false">
