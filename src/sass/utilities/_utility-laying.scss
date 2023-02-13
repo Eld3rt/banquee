@@ -1,8 +1,6 @@
 @use "sass:math";
 @use '../abstracts' as *;
 
-// @include adaptUtilityGenerator($displays);
-
 .container {
 	--max-width: 1200px;
 	--container-padding: 1.5rem;
@@ -39,6 +37,25 @@
 
 .disable-scroll {
 	overflow-y: hidden;
+}
+
+.popular {
+	display: inline-flex;
+	align-items: center;
+
+	&::after {
+		content: 'Popular';
+		left: 100%;
+		font-family: 'Inter';
+		font-size: .75rem;
+		line-height: 1.8;
+		letter-spacing: 0;
+		color: var(--clr-primary-400);
+		background-color: var(--clr-primary-100);
+		border-radius: 4px;
+		margin-left: math.div(8em, 12);
+		padding-inline: .5em;
+	}
 }
 
 .dn {

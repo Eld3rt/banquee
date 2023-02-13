@@ -23,8 +23,10 @@ const { scriptsrc } = Astro.props;
 		<Footer></Footer>
 		<script>
 			import toggleHeaderMenu from '../utilities/toggleHeaderMenu.js';
+			import toggleHeaderDropdown from '../utilities/toggleHeaderDropdown.js';
 			
 			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
+			toggleHeaderDropdown();
 		</script>
 	</body>
 </html>

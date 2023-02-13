@@ -9,10 +9,8 @@
 	padding-right: 2em;
 	background: url(./assets/images/dropdown-arrow.svg) no-repeat right .75em center;
 
-	&--desktop {
-		@include maxw-mq(45em) {
+		@include maxw-mq(50em) {
 			padding: .75em;
 			background: none;
 		}
-	}
 }

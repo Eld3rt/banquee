@@ -10,20 +10,6 @@
 	}
 }
 
-@mixin pseudo($loc: before) {
-	position: relative;
-
-	&::#{$loc} {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		@content;
-	}
-}
-
 @mixin hover-lift($transition: transform 350ms ease-in-out) {
 	transition: $transition;
 

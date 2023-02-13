@@ -1,7 +1,8 @@
 @use '../abstracts' as *;
 
-// @include varUtilityGenerator($font-size);
-// @include adaptUtilityGenerator($text-aligns);
+.text-muted {
+	color: var(--clr-neutral-900-muted);
+}
 
 .tac {
 	text-align: center;
