@@ -23,3 +23,12 @@
 		font-size: 1.25rem;
 	}
 }
+
+.h6 {
+	font-size: 1rem;
+	line-height: 1.4;
+
+	@include minw-mq(55em) {
+		font-size: 1.125rem;
+	}
+}

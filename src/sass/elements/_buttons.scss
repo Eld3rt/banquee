@@ -12,6 +12,11 @@
 	font-family: 'DM Sans';
 	background-color: var(--clr-primary-400);
 	color: var(--clr-neutral-0);
+	transition: background 0.2s linear;
+
+	&:hover {
+		background-color: var(--clr-primary-500);
+	}
 
 	&--narrow {
 		padding: .8em math.div(12em, 14);

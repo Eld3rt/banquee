@@ -3,7 +3,7 @@
 title: Why We Love Banko (And You Should, Too!)
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi.
 author: Eld3rt
-date: 2021-10-01
+date: 2021-09-01
 image: /assets/images/prv-img-why-we-love.png
 tags:
   - Product

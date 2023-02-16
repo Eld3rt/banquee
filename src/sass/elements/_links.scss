@@ -1,8 +1,25 @@
+@use "sass:math";
 @use "../abstracts" as *;
 
 .link-primary {
 	font-family: 'DM Sans';
 	color: var(--clr-primary-400);
+	padding: .5em .75em;
+	border-radius: 6px;
+	transition: background 0.2s linear;
+
+	&:hover {
+		background-color: var(--clr-primary-100);
+	}
+
+	&--arrow {
+		padding: 0 math.div(33em, 18) 0 0;
+		background: url(./assets/images/arrow.svg) no-repeat right 5px center;
+
+		&:hover {
+			background: url(./assets/images/arrow.svg) transparent no-repeat right 0 center;
+		}
+	}
 }
 
 .link-dropdown {

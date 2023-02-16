@@ -3,7 +3,7 @@
 title: 5 Principles Of Crypto Investing
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. maxime, magnam placeat. Reprehenderit, distinctio aliquam?
 author: Eld3rt
-date: 2021-05-01
+date: 2021-08-01
 image: /assets/images/prv-img-5-principles.png
 tags:
   - App

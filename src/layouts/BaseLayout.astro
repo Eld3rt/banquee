@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SpriteSVG from '../components/SpriteSVG.astro';
 
-
 const { title } = Astro.props;
 const { scriptsrc } = Astro.props;
 ---
@@ -22,11 +21,19 @@ const { scriptsrc } = Astro.props;
 		</main>
 		<Footer></Footer>
 		<script>
+			import $ from 'jquery';
+			import 'jquery-match-height';
 			import toggleHeaderMenu from '../utilities/toggleHeaderMenu.js';
 			import toggleHeaderDropdown from '../utilities/toggleHeaderDropdown.js';
+
+			$(function() {
+				($('.header__article-link') as any).matchHeight();
+			});
 			
 			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
 			toggleHeaderDropdown();
+
+
 		</script>
 	</body>
 </html>

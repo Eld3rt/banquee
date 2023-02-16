@@ -3,7 +3,7 @@
 title: 7 Ways To Improve You Saving Habits
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi.
 author: Eld3rt
-date: 2021-07-01
+date: 2021-10-01
 image: /assets/images/prv-img-7-ways-to-improve.png
 tags:
   - Product

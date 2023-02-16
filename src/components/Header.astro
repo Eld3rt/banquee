@@ -30,29 +30,31 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 					</li>
 					<li class="header__list-item header__list-item--compare">
 						<a href="/compare" class="header__nav-link header__nav-link--page link-dropdown">Compare</a>
-						<ul role="list" aria-label="compare list" class="header__compare">
-							<li class="header__compare-card">
+						<div class="header__compare">
+							<ul role="list" aria-label="compare list" class="header__compare-inner container container--wide">
+								<li class="header__compare-card header__card">
+									<a href="#">
+										<h4 class="header__card-title h5 popular">Basic</h4>
+										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
+										<img src="assets/images/header-card-basic.png" alt="Basic Card" class="header__card-picture">
+									</a>
+								</li>
 								<a href="#">
-									<h4 class="card__title h5 popular">Basic</h4>
-									<p class="card__description text-muted">Lorem ipsum dolor</p>
-									<img src="assets/images/header-card-basic.png" alt="Basic Card" class="card__picture">
+									<li class="header__compare-card header__card">
+										<h4 class="header__card-title h5">Premium</h4>
+										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
+										<img src="assets/images/header-card-premium.png" alt="Premium Card" class="header__card-picture">
+									</li>
 								</a>
-							</li>
-							<a href="#">
-								<li class="header__compare-card">
-									<h4 class="card__title h5">Premium</h4>
-									<p class="card__description text-muted">Lorem ipsum dolor</p>
-									<img src="assets/images/header-card-premium.png" alt="Premium Card" class="card__picture">
-								</li>
-							</a>
-							<a href="#">
-								<li class="header__compare-card">
-									<h4 class="card__title h5">Gold</h4>
-									<p class="card__description text-muted">Lorem ipsum dolor</p>
-									<img src="assets/images/header-card-gold.png" alt="Gold Card" class="card__picture">
-								</li>
-							</a>
-						</ul>
+								<a href="#">
+									<li class="header__compare-card header__card">
+										<h4 class="header__card-title h5">Gold</h4>
+										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
+										<img src="assets/images/header-card-gold.png" alt="Gold Card" class="header__card-picture">
+									</li>
+								</a>
+							</ul>
+						</div>
 					</li>
 					<li class="header__list-item">
 						<a href="/support" class="header__nav-link header__nav-link--page">Support</a>
@@ -60,40 +62,42 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 					<li class="header__list-item header__list-item--blog">
 						<a href="/blog" class="header__nav-link header__nav-link--page link-dropdown">Blog</a>
 						<div class="header__blog">
-							<div class="header__blog-sidebar">
-								<ul role="list" aria-label="category list" class="header__blog-category-list">
-									<li class="header__blog-category-list-item">
-										<h5 class="header__blog-category-title h6">Categories</h5>
-									</li>
-									<li class="header__blog-category-list-item">
-										<a href="/blog/products" class="header__blog-category-link">Products</a>
-									</li>
-									<li class="header__blog-category-list-item">
-										<a href="/blog/technology" class="header__blog-category-link">Technology</a>
-									</li>
-									<li class="header__blog-category-list-item">
-										<a href="/blog/app" class="header__blog-category-link">App</a>
-									</li>
-								</ul>
-								<a href="/blog" class="header__blog-link link-primary--arrow">All Articles</a>
-							</div>
-							<div class="header__blog-articles">
-								<h4 class="header__blog-articles-title h5">Latest Articles</h4>
-								<ul role="list" aria-label="articles list" class="header__blog-articles-list even-columns">
-									{freshPosts.map(post => (
-										<li class="header__blog-articles-list-item even-columns">
-											<a href={post.url} class="header__blog-article-link">
-												<div class="header__blog-article-image">
-														<img src={post.frontmatter.image} class="header__blog-article-picture">
-												</div>
-												<div class="header__blog-article-text">
-													<h5 class="header__blog-article-title h6">{post.frontmatter.title}</h5>
-													<p class="header__blog-article-description text-muted">{truncateString(post.frontmatter.description, 39)}</p>
-												</div>
-											</a>
+							<div class="header__blog-inner container container--wide">
+								<div class="header__blog-sidebar header__sidebar">
+									<ul role="list" aria-label="category list" class="header__sidebar-category-list">
+										<li class="header__sidebar-category-list-item">
+											<h5 class="header__sidebar-category-title h6">Categories</h5>
 										</li>
-									))}
-								</ul>
+										<li class="header__sidebar-category-list-item">
+											<a href="/blog/products" class="header__sidebar-category-link text-muted">Products</a>
+										</li>
+										<li class="header__sidebar-category-list-item">
+											<a href="/blog/technology" class="header__sidebar-category-link text-muted">Technology</a>
+										</li>
+										<li class="header__sidebar-category-list-item">
+											<a href="/blog/app" class="header__sidebar-category-link text-muted">App</a>
+										</li>
+									</ul>
+									<a href="/blog" class="header__sidebar-link link-primary link-primary--arrow">All Articles</a>
+								</div>
+								<div class="header__blog-articles header__articles">
+									<h4 class="header__articles-title h5">Latest Articles</h4>
+									<ul role="list" aria-label="articles list" class="header__articles-list">
+										{freshPosts.map(post => (
+											<li class="header__articles-list-item header__article">
+												<a href={post.url} class="header__article-link">
+													<div class="header__article-image">
+															<img src={post.frontmatter.image} class="header__article-picture">
+													</div>
+													<div class="header__article-text">
+														<h5 class="header__article-title h6">{post.frontmatter.title}</h5>
+														<p class="header__article-description text-muted">{truncateString(post.frontmatter.description, 39)}</p>
+													</div>
+												</a>
+											</li>
+										))}
+									</ul>
+								</div>
 							</div>
 						</div>
 					</li>
