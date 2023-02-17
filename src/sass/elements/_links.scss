@@ -4,7 +4,7 @@
 .link-primary {
 	font-family: 'DM Sans';
 	color: var(--clr-primary-400);
-	padding: .5em .75em;
+	padding: .5rem .75rem;
 	border-radius: 6px;
 	transition: background 0.2s linear;
 
@@ -13,8 +13,8 @@
 	}
 
 	&--arrow {
-		padding: 0 math.div(33em, 18) 0 0;
-		background: url(./assets/images/arrow.svg) no-repeat right 5px center;
+		padding: 0 2rem 0 0;
+		background: url(./assets/images/arrow.svg) no-repeat right .25rem center;
 
 		&:hover {
 			background: url(./assets/images/arrow.svg) transparent no-repeat right 0 center;
@@ -24,10 +24,10 @@
 
 .link-dropdown {
 	padding-right: 2em;
-	background: url(./assets/images/dropdown-arrow.svg) no-repeat right .75em center;
+	background: url(./assets/images/dropdown-arrow.svg) no-repeat right .75rem center;
 
-		@include maxw-mq(50em) {
-			padding: .75em;
+		@include maxw-mq(55em) {
+			padding: .75rem;
 			background: none;
 		}
 }

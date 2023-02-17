@@ -3,9 +3,13 @@
 
 .button {
 	display: inline-flex;
-	padding: .75em 1em;
+	padding: .8rem .5rem;
 	border-radius: 6px;
 	cursor: pointer;
+
+	@include minw-mq(30em) {
+		padding: 1rem 1.5rem;
+	}
 }
 
 .button-primary {
@@ -19,11 +23,7 @@
 	}
 
 	&--narrow {
-		padding: .8em math.div(12em, 14);
-
-		@include minw-mq(55em) {
-			padding: .8em math.div(16em, 15);
-		}
+		padding: .75rem 1rem;
 	}
 }
 

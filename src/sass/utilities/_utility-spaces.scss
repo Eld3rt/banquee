@@ -3,3 +3,15 @@
 .mt-0 {
 	margin-top: 0;
 }
+
+.maxw55-pb-1 {
+	@include maxw-mq(55em) {
+		padding-block: 1rem;
+	}
+}
+
+.maxw55-pi-1_5 {
+	@include maxw-mq(55em) {
+		padding-inline: 1.5rem;
+	}
+}
