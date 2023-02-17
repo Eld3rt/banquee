@@ -4,7 +4,7 @@
 .intro__inner {
 	display: flex;
 	align-items: center;
-	padding-block: 4rem;
+	padding-block: 4rem 0;
 	column-gap: 5rem;
 	
 	
@@ -20,10 +20,6 @@
 	@include minw-mq(55em) {
 		max-width: ratio(600%, 1200);
 	}
-
-	// @include minw-mq(65em) {
-	// 	max-width: 37.5rem;
-	// }
 }
 
 .intro__image {

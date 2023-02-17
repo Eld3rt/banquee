@@ -1,0 +1,90 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.app__inner {
+	display: flex;
+	column-gap: 3.5rem;
+
+	@include minw-mq(75em) {
+		column-gap: 7.75rem;
+	}
+}
+
+.app__text {
+	max-width: 37.5rem;
+
+	@include minw-mq(55em) {
+		max-width: ratio(700%, 1200);
+	}
+
+	@include minw-mq(75em) {
+		max-width: ratio(600%, 1200);
+	}
+}
+
+.app__screen {
+	display: none;
+
+	@include minw-mq(55em) {
+		display: block;
+	}
+}
+
+.app__title {
+	margin-bottom: 2rem;
+
+	@include minw-mq(75em) {
+		margin-bottom: 4rem;
+	}
+}
+
+.app__features {
+	display: grid;
+	gap: 1rem;
+
+	@include minw-mq(30em) {
+		grid-template-columns: repeat(2, auto);
+	}
+
+	@include minw-mq(75rem) {
+		gap: 2rem;
+	}
+}
+
+.app__feature {
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+	border: 2px solid #E8E8E8;
+	border-radius: 16px;
+
+	@include minw-mq(30em) {
+		place-items: start;
+	}
+
+	@include minw-mq(75em) {
+		padding: 2rem;
+	}
+}
+
+.app__feature-icon {
+	margin-bottom: 1rem;
+}
+
+.app__feature-title {
+	margin-bottom: 1.1rem;
+	text-align: center;
+
+	@include minw-mq(30em) {
+		margin-bottom: .5rem;
+		text-align: left;
+	}
+}
+
+.app__feature-description {
+	text-align: center;
+
+	@include minw-mq(30em) {
+		text-align: left;
+	}
+}
