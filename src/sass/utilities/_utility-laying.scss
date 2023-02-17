@@ -39,31 +39,18 @@
 	overflow-y: hidden;
 }
 
-.popular {
-	display: inline-flex;
-	align-items: center;
-
-	&::after {
-		content: 'Popular';
-		left: 100%;
-		font-family: 'Inter';
-		font-size: .75rem;
-		line-height: 1.8;
-		letter-spacing: 0;
-		color: var(--clr-primary-400);
-		background-color: var(--clr-primary-100);
-		border-radius: 4px;
-		margin-left: .5rem;
-		padding-inline: .375rem;
-	}
-}
-
 .dn {
 	display: none;
 }
 
 .db {
 	display: block;
+}
+
+.minw55-db {
+	@include minw-mq(55em) {
+		display: block;
+	}
 }
 
 .df {

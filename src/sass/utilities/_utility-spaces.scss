@@ -15,3 +15,9 @@
 		padding-inline: 1.5rem;
 	}
 }
+
+.minw30-gtc-2-auto {
+	@include minw-mq(30em) {
+		grid-template-columns: repeat(2, auto);
+	}
+}

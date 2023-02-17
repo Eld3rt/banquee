@@ -11,3 +11,7 @@ section {
 p + p {
 	margin-top: 1.125rem;
 }
+
+h1 + p, h2 + p {
+	margin-top: 1rem;
+}

@@ -23,52 +23,18 @@
 }
 
 .intro__image {
-	display: none;
 	max-width: ratio(400%, 1200);
-
-	@include minw-mq(55em) {
-		display: block;
-	}
-}
-
-.intro__title {
-	margin-bottom: 1rem;
-}
-
-.intro__description {
-	margin-bottom: 2rem;
-
-	@include minw-mq(55em) {
-		font-size: 1.25rem;
-	}
-
-	@include minw-mq(65em) {
-		font-size: 1.5rem;
-	}
 }
 
 .intro__features {
 	display: inline-grid;
-	align-items: center;
 	margin-bottom: 2rem;
-	gap: 1rem 2.5rem;
-
-	@include minw-mq(30em) {
-		grid-template-columns: repeat(2, auto);
-	}
+	column-gap: 2.5rem;
 
 	@include minw-mq(75em) {
 		margin-bottom: 4rem;
+		column-gap: 5rem;
 	}
-
-	@include minw-mq(75em) {
-		gap: 1rem 5rem;
-	}
-}
-
-.intro__feature {
-	padding-left: 2.625rem;
-	background: url("./assets/images/list-check.svg") no-repeat center left;
 }
 
 .intro__buttons {

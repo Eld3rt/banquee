@@ -16,6 +16,18 @@
  letter-spacing: 0;
 }
 
+.h3 {
+	font-size: 2.5rem;
+
+	@include minw-mq(55em) {
+		font-size: 3.5rem;
+	}
+
+	@include minw-mq(75em) {
+		font-size: 4rem;
+	}
+}
+
 .h5 {
 	font-size: 1.125rem;
 
@@ -31,4 +43,8 @@
 	@include minw-mq(55em) {
 		font-size: 1.125rem;
 	}
+}
+
+.p {
+	font-size: 1rem;
 }

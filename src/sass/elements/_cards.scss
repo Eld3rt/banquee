@@ -1,0 +1,12 @@
+@use "sass:math";
+@use "../abstracts" as *;
+
+.border__card {
+	padding: 1rem;
+	border: 2px solid #E8E8E8;
+	border-radius: 16px;
+
+	@include minw-mq(75em) {
+		padding: 2rem;
+	}
+}
