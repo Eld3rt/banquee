@@ -4,6 +4,24 @@
 	margin-top: 0;
 }
 
+.mt-0_5 {
+	margin-top: .5rem;
+}
+
+.mt-1 {
+	margin-top: 1rem;
+}
+
+.pr-2 {
+	padding-right: 2rem;
+}
+
+.maxw55-p-0_75 {
+	@include maxw-mq(55em) {
+		padding: .75rem;
+	}
+}
+
 .maxw55-pb-1 {
 	@include maxw-mq(55em) {
 		padding-block: 1rem;
@@ -13,11 +31,5 @@
 .maxw55-pi-1_5 {
 	@include maxw-mq(55em) {
 		padding-inline: 1.5rem;
-	}
-}
-
-.minw30-gtc-2-auto {
-	@include minw-mq(30em) {
-		grid-template-columns: repeat(2, auto);
 	}
 }

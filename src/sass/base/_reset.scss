@@ -66,3 +66,8 @@ select {
 		scroll-behavior: auto !important;
 	}
 }
+
+.resize-animation-stopper *, .resize-animation-stopper {
+	animation: none !important;
+	transition: none !important;
+}

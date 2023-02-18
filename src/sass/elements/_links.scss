@@ -23,11 +23,9 @@
 }
 
 .link-dropdown {
-	padding-right: 2em;
 	background: url(./assets/images/dropdown-arrow.svg) no-repeat right .75rem center;
 
-		@include maxw-mq(55em) {
-			padding: .75rem;
-			background: none;
-		}
+	@include maxw-mq(55em) {
+		background: none;
+	}
 }

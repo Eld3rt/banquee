@@ -24,7 +24,7 @@ const { scriptsrc } = Astro.props;
 			import $ from 'jquery';
 			import 'jquery-match-height';
 			import toggleHeaderMenu from '../utilities/toggleHeaderMenu.js';
-			import toggleHeaderDropdown from '../utilities/toggleHeaderDropdown.js';
+			import resizeAnimationStopper from '../utilities/resizeAnimationStopper.js';
 
 			$(function() {
 				($('.header__article-link') as any).matchHeight();
@@ -32,7 +32,7 @@ const { scriptsrc } = Astro.props;
 			});
 			
 			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
-			toggleHeaderDropdown();
+			resizeAnimationStopper('.link-primary', 'resize-animation-stopper');
 
 
 		</script>

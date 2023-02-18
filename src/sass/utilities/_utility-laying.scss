@@ -56,3 +56,17 @@
 .df {
 	display: flex;
 }
+
+.ai-start {
+	align-items: start;
+}
+
+.gtc-2-1fr {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.minw30-gtc-2-auto {
+	@include minw-mq(30em) {
+		grid-template-columns: repeat(2, auto);
+	}
+}

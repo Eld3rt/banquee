@@ -22,14 +22,6 @@
 	}
 }
 
-.app__screen {
-	display: none;
-
-	@include minw-mq(55em) {
-		display: block;
-	}
-}
-
 .app__title {
 	margin-bottom: 2rem;
 
