@@ -22,20 +22,6 @@
 	}
 }
 
-.section__feature {
-	padding-left: 2.625rem;
-	background: url("./assets/images/list-check.svg") no-repeat center left;
-
-	&--big {
-		padding-left: 3.5rem;
-		background: url("./assets/images/list-check-big.svg") no-repeat center left;
-	}
-
-	&--primary {
-		background: url("./assets/images/list-check-primary.svg") no-repeat center left;
-	}
-}
-
 .section__tag {
 	font-size: 1rem;
 	line-height: 1.2;
