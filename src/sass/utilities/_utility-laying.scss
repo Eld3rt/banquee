@@ -53,6 +53,12 @@
 	}
 }
 
+.minw55-dg {
+	@include minw-mq(55em) {
+		display: grid;
+	}
+}
+
 .df {
 	display: flex;
 }
