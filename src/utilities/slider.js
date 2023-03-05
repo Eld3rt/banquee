@@ -35,7 +35,9 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 		slide.addEventListener('mousedown', touchStart(index))
 		slide.addEventListener('mouseup', touchEnd)
 		slide.addEventListener('mousemove', touchMove)
-		sliderWrapper.addEventListener('mouseleave', () => {if(isDragging == true) {touchEnd()}});
+		sliderWrapper.addEventListener('mouseleave', () => {
+			if(isDragging == true) touchEnd()
+		});
 	
 		}
 	});
@@ -87,7 +89,6 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			if (movedBy > 100 && currentIndex > 0) currentIndex -= 1
 
 			setPositionByIndex(currentIndex);
-			console.log(currentIndex);
 
 			setSelector(currentIndex);
 			
@@ -137,7 +138,6 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			setPositionByIndex(0);
 			setSelector(0);
 			sliderInit();
-			console.log(deviationValue);
 		});
 	}
 	
