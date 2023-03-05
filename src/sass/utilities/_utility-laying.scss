@@ -59,6 +59,18 @@
 	}
 }
 
+.maxw65-db {
+	@include maxw-mq(65em) {
+		display: block;
+	}
+}
+
+.maxw40-db {
+	@include maxw-mq(40em) {
+		display: block;
+	}
+}
+
 .df {
 	display: flex;
 }
