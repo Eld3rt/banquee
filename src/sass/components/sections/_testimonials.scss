@@ -48,7 +48,7 @@
 	@include maxw-mq(65em) {
 		position: static !important;
 		padding-right: var(--sp-slider-gap);
-		min-width: calc(50% + math.div(var(--sp-slider-gap), 2));
+		min-width: calc(50% + calc(var(--sp-slider-gap) / 2));
 		width: auto;
 		margin: 0;
 	}

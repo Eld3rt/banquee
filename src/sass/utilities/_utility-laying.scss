@@ -16,7 +16,7 @@
 .even-columns {
 	display: grid;
 
-	@include minw-mq(55em) {
+	@include minw-mq(75em) {
 		grid-auto-flow: column;
 		grid-auto-columns: 1fr;
 	}

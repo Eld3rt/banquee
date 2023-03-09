@@ -34,25 +34,25 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 							<ul role="list" aria-label="compare list" class="header__compare-inner container container--wide">
 								<li class="header__compare-card header__card">
 									<a href="#">
-										<h4 class="header__card-title h5 popular">Basic</h4>
+										<h4 class="header__card-title h5 popular-pseudo">Basic</h4>
 										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
 										<img src="assets/images/header-card-basic.png" alt="Basic Card" class="header__card-picture">
 									</a>
 								</li>
-								<a href="#">
-									<li class="header__compare-card header__card">
+								<li class="header__compare-card header__card">
+									<a href="#">
 										<h4 class="header__card-title h5">Premium</h4>
 										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
 										<img src="assets/images/header-card-premium.png" alt="Premium Card" class="header__card-picture">
-									</li>
-								</a>
-								<a href="#">
-									<li class="header__compare-card header__card">
+									</a>
+								</li>
+								<li class="header__compare-card header__card">
+									<a href="#">
 										<h4 class="header__card-title h5">Gold</h4>
 										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
 										<img src="assets/images/header-card-gold.png" alt="Gold Card" class="header__card-picture">
-									</li>
-								</a>
+									</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -61,7 +61,7 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 					</li>
 					<li class="header__list-item header__list-item--blog">
 						<a href="/blog" class="header__nav-link header__nav-link--page link-dropdown pr-2 maxw55-p-0_75">Blog</a>
-						<div class="header__blog">
+						<div class="header__blog dn">
 							<div class="header__blog-inner container container--wide">
 								<div class="header__blog-sidebar header__sidebar">
 									<ul role="list" aria-label="category list" class="header__sidebar-category-list">

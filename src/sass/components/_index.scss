@@ -1,5 +1,6 @@
 @forward 'header';
 @forward 'footer';
+@forward 'post';
 @forward './sections/intro';
 @forward './sections/app';
 @forward './sections/moneytransfering';
@@ -10,3 +11,4 @@
 @forward './sections/testimonials';
 @forward './sections/appbanner';
 @forward './sections/help';
+@forward './sections/blog';

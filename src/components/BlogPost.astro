@@ -12,13 +12,15 @@ const tagData = generateTagData(postTags);
 			<img src={post.frontmatter.image} class="post__image-picture">
 		</a>
 	</div>
-	<h4 class="post__title">{post.frontmatter.title}</h4>
-	<p class="post__description">{post.frontmatter.description}</p>
-	<ul role="list" aria-label="tags list" class="post__tags">
-		{tagData.map(tag => (
-			<li class="post__tag">
-				<a href={`/blog/${tag.slug}`} class="post__tag-link">{tag.name}</a>
-			</li>
-		))}
-	</ul>
+	<div class="post__text">
+		<h4 class="post__title">{post.frontmatter.title}</h4>
+		<p class="post__description">{post.frontmatter.description}</p>
+		<ul role="list" aria-label="tags list" class="post__tags">
+			{tagData.map(tag => (
+				<li class="post__tag">
+					<a href={`/blog/${tag.slug}`} class="post__tag-link tag">{tag.name}</a>
+				</li>
+			))}
+		</ul>
+	</div>
 </li>

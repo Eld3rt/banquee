@@ -1,6 +1,15 @@
 @use "sass:math";
 @use "../../abstracts" as *;
 
+.help {
+	border-bottom: 1px solid var(--clr-neutral-200);
+	padding-bottom: 3rem;
+
+	@include minw-mq(75em) {
+		padding-bottom: 8rem;
+	}
+}
+
 .help__inner {
 	align-items: start;
 	gap: 2rem 0;

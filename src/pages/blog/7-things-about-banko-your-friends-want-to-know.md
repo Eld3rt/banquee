@@ -1,7 +1,7 @@
 ---
 # layout: ../../layouts/BlogPostLayout.astro
 title: 7 Things About Banko Your Friends Want To Know
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. 
 author: Eld3rt
 date: 2021-06-01
 image: /assets/images/prv-img-7-things-about.png

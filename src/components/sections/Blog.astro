@@ -10,9 +10,9 @@ const freshPosts = sortedPosts.slice(0, 3);
 	<div class="blog__inner container">
 		<div class="blog__head">
 			<h2 class="blog__title h3">Blog</h2>
-			<a href="/blog" class="blog__link link-primary--arrow">All articles</a>
+			<a href="/blog" class="blog__link link-primary link-primary--arrow">All articles</a>
 		</div>
-		<ul role="list" aria-label="posts list" class="blog__posts">
+		<ul role="list" aria-label="posts list" class="blog__posts even-columns">
 			{freshPosts.map(post => (
 				<BlogPost post={post}></BlogPost>
 			))}
