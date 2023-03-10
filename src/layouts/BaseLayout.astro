@@ -38,6 +38,8 @@ const { scriptsrc } = Astro.props;
 			var grid = document.querySelector('.testimonials__list');
 			var msnry = new Masonry( grid, {
 				itemSelector: '.testimonials__list-item',
+				columnWidth: '.grid-sizer',
+				percentPosition: true
 			});
 
 			imagesLoaded( grid ).on( 'progress', function() {
