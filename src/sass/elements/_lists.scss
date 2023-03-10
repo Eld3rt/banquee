@@ -20,12 +20,12 @@
 .section__feature {
 	min-height: 26px;
 	padding-left: 2.625rem;
-	background: url("./assets/images/list-check.svg") no-repeat center left;
+	background: url("/assets/images/list-check.svg") no-repeat center left;
 
 	&--big {
 		@include minw-mq(55em) {
 			padding-left: 3.5rem;
-			background: url("./assets/images/list-check-big.svg") no-repeat center left;
+			background: url("/assets/images/list-check-big.svg") no-repeat center left;
 		}
 	}
 
@@ -36,10 +36,10 @@
 	}
 
 	&--primary {
-		background: url("./assets/images/list-check-primary.svg") no-repeat center left;
+		background: url("/assets/images/list-check-primary.svg") no-repeat center left;
 	}
 
 	&--banner {
-		background: url("./assets/images/list-check-banner.svg") no-repeat center left;
+		background: url("/assets/images/list-check-banner.svg") no-repeat center left;
 	}
 }
