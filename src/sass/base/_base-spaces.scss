@@ -6,6 +6,14 @@ section {
 	@include minw-mq(65em) {
 		margin-top: 10rem;
 	}
+
+	&:last-child {
+		margin-bottom: 5rem;
+
+		@include minw-mq(65em) {
+			margin-bottom: 10rem;
+		}
+	}
 }
 
 p + p {

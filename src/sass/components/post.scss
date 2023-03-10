@@ -15,10 +15,11 @@
 }
 
 .post__image {
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 
 	@include minw-mq(35em) {
 		width: 40%;
+		margin-bottom: 0;
 	}
 
 	@include minw-mq(75em) {
@@ -29,7 +30,6 @@
 
 .post__image-picture {
 	border-radius: 16px;
-	// max-height: 350px;
 }
 
 .post__text {
@@ -41,7 +41,6 @@
 
 	@include minw-mq(75em) {
 		width: 100%;
-		margin-bottom: 1.5rem;
 	}
 }
 
