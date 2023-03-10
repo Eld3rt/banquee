@@ -14,16 +14,16 @@
 
 	&--arrow {
 		padding: 0 2rem 0 0;
-		background: url(./assets/images/arrow.svg) no-repeat right .25rem center;
+		background: url(./images/arrow.svg) no-repeat right .25rem center;
 
 		&:hover {
-			background: url(./assets/images/arrow.svg) transparent no-repeat right 0 center;
+			background: url(./images/arrow.svg) transparent no-repeat right 0 center;
 		}
 	}
 }
 
 .link-dropdown {
-	background: url(./assets/images/dropdown-arrow.svg) no-repeat right .75rem center;
+	background: url(./images/dropdown-arrow.svg) no-repeat right .75rem center;
 
 	@include maxw-mq(55em) {
 		background: none;
