@@ -23,7 +23,8 @@ const { scriptsrc } = Astro.props;
 		<script>
 			import $ from 'jquery';
 			import 'jquery-match-height';
-			import 'masonry-layout';
+			import Masonry from 'masonry-layout';
+			import imagesLoaded from 'imagesloaded';
 			import toggleHeaderMenu from '../utilities/toggleHeaderMenu.js';
 			import resizeAnimationStopper from '../utilities/resizeAnimationStopper.js';
 			import slider from '../utilities/slider.js';
@@ -34,11 +35,20 @@ const { scriptsrc } = Astro.props;
 				($('.app__feature') as any).matchHeight();
 			});
 
+			var grid = document.querySelector('.testimonials__list');
+			var msnry;
+
+			imagesLoaded(grid, function() {
+				// init Isotope after all images have loaded
+				msnry = new Masonry(grid, {
+					itemSelector: '.testimonials__list-item',
+				});
+			});
+
 			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
 			resizeAnimationStopper('.link-primary', 'resize-animation-stopper');
 			slider('.testimonials__wrapper', '.testimonials__list', '.testimonials__list-item', '.testimonials__dot', '.testimonials__inner', 'testimonials__dot--active');
 			toggleAnswer('.help__faq-question-block','.help__question-button', '.help__question-answer', '.help__question-button-plus', '.help__question-button-x', 'help__question-answer--active');
-
 		</script>
 	</body>
 </html>
