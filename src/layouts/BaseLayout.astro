@@ -35,6 +35,11 @@ const { scriptsrc } = Astro.props;
 				($('.app__feature') as any).matchHeight();
 			});
 
+			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
+			resizeAnimationStopper('.link-primary', 'resize-animation-stopper');
+			slider('.testimonials__wrapper', '.testimonials__list', '.testimonials__list-item', '.testimonials__dot', '.testimonials__inner', 'testimonials__dot--active');
+			toggleAnswer('.help__faq-question-block','.help__question-button', '.help__question-answer', '.help__question-button-plus', '.help__question-button-x', 'help__question-answer--active');
+			
 			var grid = document.querySelector('.testimonials__list');
 			var msnry = new Masonry( grid, {
 				itemSelector: '.testimonials__list-item',
@@ -46,11 +51,6 @@ const { scriptsrc } = Astro.props;
 				// layout Masonry after each image loads
 				msnry.layout();
 			});
-
-			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
-			resizeAnimationStopper('.link-primary', 'resize-animation-stopper');
-			slider('.testimonials__wrapper', '.testimonials__list', '.testimonials__list-item', '.testimonials__dot', '.testimonials__inner', 'testimonials__dot--active');
-			toggleAnswer('.help__faq-question-block','.help__question-button', '.help__question-answer', '.help__question-button-plus', '.help__question-button-x', 'help__question-answer--active');
 		</script>
 	</body>
 </html>
