@@ -36,13 +36,13 @@ const { scriptsrc } = Astro.props;
 			});
 
 			var grid = document.querySelector('.testimonials__list');
-			var msnry;
+			var msnry = new Masonry( grid, {
+				itemSelector: '.testimonials__list-item',
+			});
 
-			imagesLoaded(grid, function() {
-				// init Isotope after all images have loaded
-				msnry = new Masonry(grid, {
-					itemSelector: '.testimonials__list-item',
-				});
+			imagesLoaded( grid ).on( 'progress', function() {
+				// layout Masonry after each image loads
+				msnry.layout();
 			});
 
 			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
