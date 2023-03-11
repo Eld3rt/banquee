@@ -27,8 +27,6 @@
 }
 
 .testimonials__list {
-	// display: grid;
-	
 	@include maxw-mq(65em) {
 		display: flex;
 		cursor: grab;
@@ -38,10 +36,7 @@
 }
 
 .testimonials__list-item {
-	// display: flex;
-	// position: absolute !important;
 	width: calc(33.333% - 2rem);
-	// will-change: transform;
 	margin: 0 2rem 2rem 0;
 	
 	@include maxw-mq(65em) {
