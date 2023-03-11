@@ -27,30 +27,31 @@
 }
 
 .testimonials__list {
-	display: grid;
-	transition: transform 700ms ease;
+	// display: grid;
 	
 	@include maxw-mq(65em) {
 		display: flex;
 		cursor: grab;
 		height: auto !important;
+		transition: transform 700ms ease;
 	}
 }
 
 .testimonials__list-item {
-	display: flex;
-	position: absolute !important;
-	width: calc(math.div(100%, 3) - var(--sp-slider-gap));
-	user-select: none;
+	// display: flex;
+	// position: absolute !important;
+	width: calc(33.333% - 2rem);
 	// will-change: transform;
 	margin: 0 2rem 2rem 0;
 	
 	@include maxw-mq(65em) {
+		display: flex;
 		position: static !important;
 		padding-right: var(--sp-slider-gap);
 		min-width: calc(50% + calc(var(--sp-slider-gap) / 2));
 		width: auto;
 		margin: 0;
+		user-select: none;
 	}
 	
 	@include maxw-mq(40em) {
@@ -60,7 +61,7 @@
 }
 
 .grid-sizer {
-	width: math.div(100%, 3);
+	width: 33.333%;
 
 	@include maxw-mq(65em) {
 		display: none;
