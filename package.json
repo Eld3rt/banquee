@@ -21,6 +21,7 @@
     "imagesloaded": "^5.0.0",
     "jquery": "^3.6.3",
     "jquery-match-height": "^0.7.2",
+    "magic-grid": "^3.2.4",
     "masonry-layout": "^4.2.2",
     "netlify-cms-app": "^2.15.72",
     "netlify-cms-editor-component-figure": "^0.0.1"
