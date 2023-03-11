@@ -42,7 +42,7 @@
 	position: absolute !important;
 	width: calc(math.div(100%, 3) - var(--sp-slider-gap));
 	user-select: none;
-	will-change: transform;
+	// will-change: transform;
 	margin: 0 2rem 2rem 0;
 	
 	@include maxw-mq(65em) {
