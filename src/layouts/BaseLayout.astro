@@ -41,24 +41,25 @@ const { scriptsrc } = Astro.props;
 			slider('.testimonials__wrapper', '.testimonials__list', '.testimonials__list-item', '.testimonials__dot', '.testimonials__inner', 'testimonials__dot--active');
 			toggleAnswer('.help__faq-question-block','.help__question-button', '.help__question-answer', '.help__question-button-plus', '.help__question-button-x', 'help__question-answer--active');
 			
-			// var grid = document.querySelector('.testimonials__list');
-			// var msnry = new Masonry( grid, {
-			// 	itemSelector: '.testimonials__list-item',
-			// 	columnWidth: '.grid-sizer',
-			// 	percentPosition: true,
-			// 	horizontalOrder: true
-			// });
-
-			// imagesLoaded( grid ).on( 'progress', function() {
-			// 	// layout Masonry after each image loads
-			// 	msnry.layout();
-			// });
-
-			let magicGrid = new MagicGrid({
-				container: ".testimonials__list",
-				static: true
+			var grid = document.querySelector('.testimonials__list');
+			var msnry = new Masonry( grid, {
+				itemSelector: '.testimonials__list-item',
+				columnWidth: '.grid-sizer',
+				percentPosition: true,
+				horizontalOrder: true,
+				gutter: 31
 			});
-			magicGrid.listen();
+
+			imagesLoaded( grid ).on( 'progress', function() {
+				// layout Masonry after each image loads
+				msnry.layout();
+			});	
+
+			// let magicGrid = new MagicGrid({
+			// 	container: ".testimonials__list",
+			// 	static: true
+			// });
+			// magicGrid.listen();
 		</script>
 	</body>
 </html>
