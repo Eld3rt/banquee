@@ -11,9 +11,9 @@
  * v2.0.1
  * MIT license
  */
-
+import imagesLoaded from 'imagesloaded';
 /* jshint browser: true, strict: true, undef: true, unused: true */
-
+export default function masonry() {
 ( function( window, factory ) {
   // universal module definition
   /*jshint strict: false */ /* globals define, module, require */
@@ -2301,7 +2301,7 @@ return Outlayer;
 // -------------------------- masonryDefinition -------------------------- //
 
   // create an Outlayer layout class
-  var Masonry = Outlayer.create('masonry');
+var Masonry = Outlayer.create('masonry');
   // isFitWidth -> fitWidth
   Masonry.compatOptions.fitWidth = 'isFitWidth';
 
@@ -2502,3 +2502,17 @@ return Outlayer;
 
 }));
 
+var grid = document.querySelector('.testimonials__list');
+var msnry = new Masonry( grid, {
+itemSelector: '.testimonials__list-item',
+columnWidth: '.grid-sizer',
+percentPosition: true,
+horizontalOrder: true,
+gutter: 31
+});
+
+imagesLoaded( grid ).on( 'progress', function() {
+	// layout Masonry after each image loads
+	msnry.layout();
+});
+}
