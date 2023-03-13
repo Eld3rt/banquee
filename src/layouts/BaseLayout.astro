@@ -20,18 +20,16 @@ const { scriptsrc } = Astro.props;
 			<slot></slot>
 		</main>
 		<Footer></Footer>
-		<script src="../utilities/masonry.pkgd.js">
-		</script>
 		<script>
 			import $ from 'jquery';
 			import 'jquery-match-height';
-			// import Masonry from 'masonry-layout';
-			// import MagicGrid from 'magic-grid';
+			import Masonry from 'masonry-layout';
+			import MagicGrid from 'magic-grid';
+			import imagesLoaded from 'imagesloaded';
 			import toggleHeaderMenu from '../utilities/toggleHeaderMenu.js';
 			import resizeAnimationStopper from '../utilities/resizeAnimationStopper.js';
 			import slider from '../utilities/slider.js';
 			import toggleAnswer from '../utilities/toggleAnswer.js';
-			import masonry from '../utilities/masonry.pkgd.js';
 			
 			$(function() {
 				($('.header__article-link') as any).matchHeight();
@@ -42,7 +40,22 @@ const { scriptsrc } = Astro.props;
 			resizeAnimationStopper('.link-primary', 'resize-animation-stopper');
 			slider('.testimonials__wrapper', '.testimonials__list', '.testimonials__list-item', '.testimonials__dot', '.testimonials__inner', 'testimonials__dot--active');
 			toggleAnswer('.help__faq-question-block','.help__question-button', '.help__question-answer', '.help__question-button-plus', '.help__question-button-x', 'help__question-answer--active');
-			masonry();
+			
+			window.onload = function() {
+				var grid = document.querySelector('.testimonials__list');
+				var msnry = new Masonry( grid, {
+					itemSelector: '.testimonials__list-item',
+					columnWidth: '.grid-sizer',
+					percentPosition: true,
+					horizontalOrder: true,
+					gutter: 31
+				});
+
+				imagesLoaded( grid ).on( 'progress', function() {
+					// layout Masonry after each image loads
+					msnry.layout();
+				});
+		};
 
 			// let magicGrid = new MagicGrid({
 			// 	container: ".testimonials__list",
