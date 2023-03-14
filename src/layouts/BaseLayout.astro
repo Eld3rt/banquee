@@ -24,7 +24,6 @@ const { scriptsrc } = Astro.props;
 			import $ from 'jquery';
 			import 'jquery-match-height';
 			import Masonry from 'masonry-layout';
-			import MagicGrid from 'magic-grid';
 			import imagesLoaded from 'imagesloaded';
 			import toggleHeaderMenu from '../utilities/toggleHeaderMenu.js';
 			import resizeAnimationStopper from '../utilities/resizeAnimationStopper.js';
@@ -52,16 +51,9 @@ const { scriptsrc } = Astro.props;
 				});
 
 				imagesLoaded( grid ).on( 'progress', function() {
-					// layout Masonry after each image loads
 					msnry.layout();
 				});
 		};
-
-			// let magicGrid = new MagicGrid({
-			// 	container: ".testimonials__list",
-			// 	static: true
-			// });
-			// magicGrid.listen();
 		</script>
 	</body>
 </html>

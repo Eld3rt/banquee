@@ -10,21 +10,25 @@
 	justify-content: space-between;
 	align-items: end;
 	margin-bottom: 4rem;
+	column-gap: 1rem;
 
-	@include maxw-mq(75em) {
+	@include maxw-mq(40em) {
 		display: block;
 		margin-bottom: 2rem;
 	}
 }
 
 .testimonials__title-block {
-	width: 50%;
+	width: 55%;
+
+	@include maxw-mq(40em) {
+		width: 100%;
+	}
 }
 
 .testimonials__rating {
 	display: flex;
 	align-items: center;
-	// width: 50%;
 	min-height: 40px;
 	margin-top: 1rem;
 	padding-left: 3.5rem;
@@ -46,7 +50,6 @@
 
 .testimonials__list-item {
 	width: calc(33.333% - 21px);
-	// margin: 0 2rem 2rem 0;
 	
 	@include maxw-mq(65em) {
 		display: flex;
@@ -54,12 +57,19 @@
 		padding-right: var(--sp-slider-gap);
 		min-width: calc(50% + calc(var(--sp-slider-gap) / 2));
 		width: auto;
-		margin: 0;
 		user-select: none;
 	}
 	
 	@include maxw-mq(40em) {
 		min-width: calc(100% + var(--sp-slider-gap));
+	}
+
+	&:nth-child(-n+4) {
+		margin-bottom: 2rem;
+
+		@include maxw-mq(65em) {
+			margin: 0;
+		}
 	}
 	
 }
