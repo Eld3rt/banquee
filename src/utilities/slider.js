@@ -38,7 +38,9 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 		sliderWrapper.addEventListener('mouseleave', () => {
 			if(isDragging == true) touchEnd()
 		});
-	
+		
+		slider.style.cursor = "grab";
+		
 		}
 	});
 	}
@@ -137,6 +139,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 		window.addEventListener("resize", () => {
 			setPositionByIndex(0);
 			setSelector(0);
+			slider.style.cursor = "auto";
 			sliderInit();
 		});
 	}

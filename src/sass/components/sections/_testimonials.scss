@@ -42,7 +42,6 @@
 .testimonials__list {
 	@include maxw-mq(65em) {
 		display: flex;
-		cursor: grab;
 		height: auto !important;
 		transition: transform 700ms ease;
 	}
@@ -50,6 +49,7 @@
 
 .testimonials__list-item {
 	width: calc(33.333% - 21px);
+	touch-action: none;
 	
 	@include maxw-mq(65em) {
 		display: flex;
