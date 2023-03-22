@@ -8,8 +8,6 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	const container = document.querySelector(sectionContainer);
 
 	let isDragging = false,
-		// isMovedByX = false,
-		// isMovedByY = false,
 		prevent = false,
 		startPosX = 0,
 		startPosY = 0,
@@ -43,13 +41,8 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			slide.addEventListener('mousedown', touchStart(index))
 			slide.addEventListener('mouseup', touchEnd)
 			slide.addEventListener('mousemove', touchMove)
-			// sliderWrapper.addEventListener('mouseleave', () => {
-			// 	if(isDragging == true) touchEnd()
-			// });
 			
 			slider.style.cursor = "grab";
-			// slide.style.touchAction = "none"
-			
 			}
 		});
 	}
@@ -82,17 +75,12 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			
 			let currentPositionX = getPositionX(event)
 			currentTranslateX = prevTranslateX + currentPositionX - startPosX
+			
 			let currentPositionY = getPositionY(event)
 			currentTranslateY = prevTranslateY + currentPositionY - startPosY
 			
 			movedByX = currentTranslateX - prevTranslateX
 			movedByY = currentTranslateY - prevTranslateY
-
-			// if (Math.abs(movedByY) > Math.abs(movedByX)) isMovedByY = true
-			// if (Math.abs(movedByX) > Math.abs(movedByY)) isMovedByX = true
-
-			// if (!isMovedByX) isDragging = false; console.log('disable swipe')
-			// if (!isMovedByY) document.body.classList.add('disable-scroll');
 
 				if (!prevent) {
 					if (Math.abs(movedByX) > Math.abs(movedByY)) {
@@ -104,11 +92,6 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 				if (prevent) {
 					event.preventDefault();
 				} else isDragging = false;
-			// console.log (movedByX)
-			// if (!isMovedByX) console.log('swipe blocked')
-			// if (!isMovedByY) console.log('scroll blocked')
-
-			// if (movedBy !== 0) slide.style.touchAction = "none"
 		}
 	}
 
@@ -131,7 +114,6 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			setSelector(currentIndex);
 			
 			slider.style.cursor = "grab";
-			// slide.style.touchAction = "auto"
 	}
 	
 	function getPositionX(event) {

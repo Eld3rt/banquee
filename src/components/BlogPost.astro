@@ -13,8 +13,10 @@ const tagData = generateTagData(postTags);
 		</a>
 	</div>
 	<div class="post__text">
-		<h4 class="post__title">{post.frontmatter.title}</h4>
-		<p class="post__description">{post.frontmatter.description}</p>
+		<a href={post.url} class="post__text-link">
+			<h4 class="post__title">{post.frontmatter.title}</h4>
+			<p class="post__description">{post.frontmatter.description}</p>
+		</a>
 		<ul role="list" aria-label="tags list" class="post__tags">
 			{tagData.map(tag => (
 				<li class="post__tag">

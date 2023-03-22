@@ -49,7 +49,6 @@
 
 .testimonials__list-item {
 	width: calc(33.333% - 21px);
-	// touch-action: none;
 	
 	@include maxw-mq(65em) {
 		display: flex;
