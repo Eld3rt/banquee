@@ -117,14 +117,14 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			cancelAnimationFrame(animationID)
 
 			if (isMobile()) {
-				if (movedByX < -100 && currentIndex < slides.length - 1) currentIndex += 1
+				if (movedByX < -25 && currentIndex < slides.length - 1) currentIndex += 1
 			}
 
 			if (isTablet()) {
-				if (movedByX < -100 && currentIndex < slides.length - 2) currentIndex = Math.floor((currentIndex + 2) / 2); 
+				if (movedByX < -25 && currentIndex < slides.length - 2) currentIndex = Math.floor((currentIndex + 2) / 2); 
 				else currentIndex = Math.floor(currentIndex / 2)
 		}
-			if (movedByX > 100 && currentIndex > 0) currentIndex -= 1
+			if (movedByX > 25 && currentIndex > 0) currentIndex -= 1
 
 			setPositionByIndex(currentIndex);
 
