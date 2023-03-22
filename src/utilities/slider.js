@@ -177,11 +177,16 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	}
 
 	function resizeSliderReset() {
+		let windowWidth = document.documentElement.clientWidth;
+
 		window.addEventListener("resize", () => {
-			setPositionByIndex(0);
-			setSelector(0);
-			slider.style.cursor = "auto";
-			sliderInit();
+			if (document.documentElement.clientWidth != windowWidth) {
+				setPositionByIndex(0);
+				setSelector(0);
+				slider.style.cursor = "auto";
+				sliderInit();
+				windowWidth = document.documentElement.clientWidth;
+			}
 		});
 	}
 	
