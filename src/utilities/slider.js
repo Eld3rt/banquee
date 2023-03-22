@@ -8,9 +8,17 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	const container = document.querySelector(sectionContainer);
 
 	let isDragging = false,
-		startPos = 0,
-		currentTranslate = 0,
-		prevTranslate = 0,
+		// isMovedByX = false,
+		// isMovedByY = false,
+		prevent = false,
+		startPosX = 0,
+		startPosY = 0,
+		currentTranslateX = 0,
+		currentTranslateY = 0,
+		prevTranslateX = 0,
+		prevTranslateY = 0,
+		movedByX = 0,
+		movedByY = 0,
 		animationID = 0,
 		currentIndex = 0,
 		marginsOfContainer = 0,
@@ -27,9 +35,9 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	
 		if (isNotDesktop()) {
 		// Touch events
-		slide.addEventListener('touchstart', touchStart(index))
+		slide.addEventListener('touchstart', touchStart(index), {passive: true})
 		slide.addEventListener('touchend', touchEnd)
-		slide.addEventListener('touchmove', touchMove)
+		slide.addEventListener('touchmove', touchMove, {passive: false})
 	
 		// Mouse events
 		slide.addEventListener('mousedown', touchStart(index))
@@ -40,6 +48,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 		});
 		
 		slider.style.cursor = "grab";
+		// slide.style.touchAction = "none"
 		
 		}
 	});
@@ -59,8 +68,10 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			return function(event) {
 				if (isNotDesktop()) {
 					currentIndex = index
-					startPos = getPositionX(event)
+					startPosX = getPositionX(event)
+					startPosY = getPositionY(event)
 					isDragging = true
+					prevent = false
 					animationID = requestAnimationFrame(animation)
 					slider.style.cursor = "grabbing";
 				}
@@ -69,36 +80,64 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	
 	function touchMove(event) {
 		if (isDragging) {
-			const currentPosition = getPositionX(event)
-			currentTranslate = prevTranslate + currentPosition - startPos
+			let currentPositionX = getPositionX(event)
+			currentTranslateX = prevTranslateX + currentPositionX - startPosX
+			let currentPositionY = getPositionY(event)
+			currentTranslateY = prevTranslateY + currentPositionY - startPosY
+			
+			movedByX = currentTranslateX - prevTranslateX
+			movedByY = currentTranslateY - prevTranslateY
+
+			// if (Math.abs(movedByY) > Math.abs(movedByX)) isMovedByY = true
+			// if (Math.abs(movedByX) > Math.abs(movedByY)) isMovedByX = true
+
+			// if (!isMovedByX) isDragging = false; console.log('disable swipe')
+			// if (!isMovedByY) document.body.classList.add('disable-scroll');
+
+			if ((movedByX || movedByY)) {
+				if (Math.abs(movedByX) > Math.abs(movedByY)) {
+					prevent = true;
+				}
+			if (prevent) {
+				event.preventDefault();
+			} else isDragging = false;
+			}
+			// console.log (movedByX)
+			// if (!isMovedByX) console.log('swipe blocked')
+			// if (!isMovedByY) console.log('scroll blocked')
+
+			// if (movedBy !== 0) slide.style.touchAction = "none"
 		}
 	}
 
 	function touchEnd() {
 			isDragging = false
 			cancelAnimationFrame(animationID)
-	
-			const movedBy = currentTranslate - prevTranslate
 
 			if (isMobile()) {
-				if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1
+				if (movedByX < -100 && currentIndex < slides.length - 1) currentIndex += 1
 			}
 
 			if (isTablet()) {
-				if (movedBy < -100 && currentIndex < slides.length - 2) currentIndex = Math.floor((currentIndex + 2) / 2); 
+				if (movedByX < -100 && currentIndex < slides.length - 2) currentIndex = Math.floor((currentIndex + 2) / 2); 
 				else currentIndex = Math.floor(currentIndex / 2)
 		}
-			if (movedBy > 100 && currentIndex > 0) currentIndex -= 1
+			if (movedByX > 100 && currentIndex > 0) currentIndex -= 1
 
 			setPositionByIndex(currentIndex);
 
 			setSelector(currentIndex);
 			
 			slider.style.cursor = "grab";
+			// slide.style.touchAction = "auto"
 	}
 	
 	function getPositionX(event) {
 		return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+	}
+
+	function getPositionY(event) {
+		return event.type.includes('mouse') ? event.pageY : event.touches[0].clientY
 	}
 	
 	function animation() {
@@ -107,12 +146,12 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	}
 	
 	function setSliderPosition() {
-		slider.style.transform = `translateX(${currentTranslate}px)`
+		slider.style.transform = `translateX(${currentTranslateX}px)`
 	}
 	
 	function setPositionByIndex(currentIndex) {
-		currentTranslate = currentIndex * (-document.documentElement.clientWidth + deviationValue)
-		prevTranslate = currentTranslate
+		currentTranslateX = currentIndex * (-document.documentElement.clientWidth + deviationValue)
+		prevTranslateX = currentTranslateX
 		setSliderPosition()
 	}
 
