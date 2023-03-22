@@ -72,7 +72,6 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 					startPosY = getPositionY(event)
 					isDragging = true
 					prevent = false
-					animationID = requestAnimationFrame(animation)
 					slider.style.cursor = "grabbing";
 				}
 			}
@@ -80,6 +79,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	
 	function touchMove(event) {
 		if (isDragging) {
+			
 			let currentPositionX = getPositionX(event)
 			currentTranslateX = prevTranslateX + currentPositionX - startPosX
 			let currentPositionY = getPositionY(event)
@@ -94,14 +94,16 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			// if (!isMovedByX) isDragging = false; console.log('disable swipe')
 			// if (!isMovedByY) document.body.classList.add('disable-scroll');
 
-			if ((movedByX || movedByY)) {
-				if (Math.abs(movedByX) > Math.abs(movedByY)) {
-					prevent = true;
+				if (!prevent) {
+					if (Math.abs(movedByX) > Math.abs(movedByY)) {
+						prevent = true;
+						animationID = requestAnimationFrame(animation)
+					}
 				}
-			if (prevent) {
-				event.preventDefault();
-			} else isDragging = false;
-			}
+				
+				if (prevent) {
+					event.preventDefault();
+				} else isDragging = false;
 			// console.log (movedByX)
 			// if (!isMovedByX) console.log('swipe blocked')
 			// if (!isMovedByY) console.log('scroll blocked')
