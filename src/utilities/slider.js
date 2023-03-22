@@ -27,31 +27,31 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 
 	
 	function sliderInit() {
-	marginsOfContainer = window.getComputedStyle(container, null).getPropertyValue("margin-left");
-	paddingOfSlide = window.getComputedStyle(slide, null).getPropertyValue("padding-right");
-	deviationValue = parseFloat(marginsOfContainer) * 2 - parseFloat(paddingOfSlide);
+		marginsOfContainer = window.getComputedStyle(container, null).getPropertyValue("margin-left");
+		paddingOfSlide = window.getComputedStyle(slide, null).getPropertyValue("padding-right");
+		deviationValue = parseFloat(marginsOfContainer) * 2 - parseFloat(paddingOfSlide);
 
-	slides.forEach((slide, index) => {
-	
-		if (isNotDesktop()) {
-		// Touch events
-		slide.addEventListener('touchstart', touchStart(index), {passive: true})
-		slide.addEventListener('touchend', touchEnd)
-		slide.addEventListener('touchmove', touchMove, {passive: false})
-	
-		// Mouse events
-		slide.addEventListener('mousedown', touchStart(index))
-		slide.addEventListener('mouseup', touchEnd)
-		slide.addEventListener('mousemove', touchMove)
-		sliderWrapper.addEventListener('mouseleave', () => {
-			if(isDragging == true) touchEnd()
+		slides.forEach((slide, index) => {
+		
+			if (isNotDesktop()) {
+			// Touch events
+			slide.addEventListener('touchstart', touchStart(index))
+			slide.addEventListener('touchend', touchEnd)
+			slide.addEventListener('touchmove', touchMove)
+		
+			// Mouse events
+			slide.addEventListener('mousedown', touchStart(index))
+			slide.addEventListener('mouseup', touchEnd)
+			slide.addEventListener('mousemove', touchMove)
+			// sliderWrapper.addEventListener('mouseleave', () => {
+			// 	if(isDragging == true) touchEnd()
+			// });
+			
+			slider.style.cursor = "grab";
+			// slide.style.touchAction = "none"
+			
+			}
 		});
-		
-		slider.style.cursor = "grab";
-		// slide.style.touchAction = "none"
-		
-		}
-	});
 	}
 
 	selectors.forEach((selector, index) => {
@@ -100,7 +100,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 						animationID = requestAnimationFrame(animation)
 					}
 				}
-				
+
 				if (prevent) {
 					event.preventDefault();
 				} else isDragging = false;
