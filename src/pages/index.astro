@@ -11,12 +11,9 @@ import Testimonials from '../components/./testimonials/Testimonials.astro';
 import AppBanner from '../components/app/AppBanner.astro';
 import Help from '../components/help/Help.astro';
 import Blog from '../components/blog/Blog.astro';
-
-const title = "Homepage";
-const scriptsrc = "https://identity.netlify.com/v1/netlify-identity-widget.js";
 ---
 
-<BaseLayout title={title} scriptsrc={scriptsrc}>
+<BaseLayout title="Homepage" scriptsrc="https://identity.netlify.com/v1/netlify-identity-widget.js">
 	<HomepageIntro/>
 	<App/>
 	<TransactionsGreen/>

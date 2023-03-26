@@ -1,0 +1,30 @@
+---
+let {
+	appSectionTag,
+	appSectionTitle,
+	appSectionDescription,
+	appSectionFeature_1,
+	appSectionFeature_2,
+	appSectionFeature_3,
+	appSectionImageURL
+} = Astro.props
+
+---
+
+<section class="app-section">
+	<div class="app-section__inner container">
+		<div class="app-section__text">
+			<span class="app-section__tag section__tag">{appSectionTag}</span>
+			<h2 class="app-section__title h3">{appSectionTitle}</h2>
+			<p class="app-section__description">{appSectionDescription}</p>
+			<ul role="list" aria-label={`${appSectionTag} features list`} class="app-section section__features section__features--small">
+				<li class="app-section section__feature section__feature--small">{appSectionFeature_1}</li>
+				<li class="app-section section__feature section__feature--small">{appSectionFeature_2}</li>
+				<li class="app-section section__feature section__feature--small">{appSectionFeature_3}</li>
+			</ul>
+		</div>
+		<div class="app-section__image">
+			<img src={appSectionImageURL} alt={`${appSectionTag} App`} class="app-section__picture">
+		</div>
+	</div>
+</section>
