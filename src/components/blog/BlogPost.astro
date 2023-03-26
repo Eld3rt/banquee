@@ -1,0 +1,28 @@
+---
+import {generateTagData} from '../../utilities/helpers.js'
+
+const { post } = Astro.props;
+const postTags = post.frontmatter.tags;
+const tagData = generateTagData(postTags);
+---
+
+<li class="blog-post">
+	<div class="blog-post__image">
+		<a href={post.url} class="blog-post__image-link">
+			<img src={post.frontmatter.image} class="blog-post__image-picture">
+		</a>
+	</div>
+	<div class="blog-post__text">
+		<a href={post.url} class="blog-post__text-link">
+			<h4 class="blog-post__title">{post.frontmatter.title}</h4>
+			<p class="blog-post__description">{post.frontmatter.description}</p>
+		</a>
+		<ul role="list" aria-label="tags list" class="blog-post__tags">
+			{tagData.map(tag => (
+				<li class="blog-post__tag">
+					<a href={`/blog/${tag.slug}`} class="blog-post__tag-link tag">{tag.name}</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</li>

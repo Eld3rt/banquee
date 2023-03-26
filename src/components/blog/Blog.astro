@@ -1,5 +1,5 @@
 ---
-import BlogPost from '../BlogPost.astro';
+import BlogPost from './BlogPost.astro';
 
 const allPosts = await Astro.glob('../../pages/blog/*.md');
 const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());

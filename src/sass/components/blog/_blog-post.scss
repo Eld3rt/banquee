@@ -1,7 +1,7 @@
 @use "sass:math";
-@use "../abstracts" as *;
+@use "../../abstracts" as *;
 
-.post {
+.blog-post {
 	@include minw-mq(35em) {
 		display: flex;
 		column-gap: 2rem;
@@ -14,7 +14,7 @@
 	}
 }
 
-.post__image {
+.blog-post__image {
 	margin-bottom: 2rem;
 
 	@include minw-mq(35em) {
@@ -28,11 +28,11 @@
 	}
 }
 
-.post__image-picture {
+.blog-post__image-picture {
 	border-radius: 16px;
 }
 
-.post__text {
+.blog-post__text {
 	display: flex;
 	flex-direction: column;
 	@include minw-mq(35em) {
@@ -44,17 +44,17 @@
 	}
 }
 
-.post__description {
+.blog-post__description {
 	margin-block: .5rem 1.5rem;
 }
 
-.post__tags {
+.blog-post__tags {
 	display: flex;
 	column-gap: .5rem;
 	margin-top: auto;
 }
 
-.post__image {
+.blog-post__image {
 	display: flex;
 	justify-content: center;
 }

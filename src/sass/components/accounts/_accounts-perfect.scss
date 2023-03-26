@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../../abstracts" as *;
 
-.cards__inner {
+.accounts-perfect__inner {
 	display: grid;
 	justify-items: center;
 	row-gap: 2rem;
@@ -11,13 +11,13 @@
 	}
 }
 
-.cards__text {
+.accounts-perfect__text {
 	display: grid;
 	justify-items: center;
 	max-width: 33rem;
 }
 
-.cards__buttons {
+.accounts-perfect__buttons {
 	display: flex;
 	align-items: center;
 	column-gap: 1rem;

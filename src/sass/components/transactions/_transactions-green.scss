@@ -1,13 +1,13 @@
 @use "sass:math";
 @use "../../abstracts" as *;
 
-.money-transfering {
+.transactions-green {
 	background-color: var(--clr-primary-100);
 	padding-block: 2rem;
 	overflow: hidden;
 }
 
-.money-transfering__inner {
+.transactions-green__inner {
 	display: flex;
 
 	column-gap: 4rem;
@@ -17,7 +17,7 @@
 	}
 }
 
-.money-transfering__text {
+.transactions-green__text {
 	max-width: 35rem;
 
 	@include minw-mq(55em) {
@@ -26,6 +26,6 @@
 	}
 }
 
-.money-transfering__image {
+.transactions-green__image {
 	transform: translateY(60px);
 }
