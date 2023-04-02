@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../abstracts" as *;
 
-.section__features {
+.section-features {
 	display: grid;
 	align-items: center;
 	gap: 1rem;
@@ -17,7 +17,7 @@
 	}
 }
 
-.section__feature {
+.section-feature {
 	min-height: 26px;
 	padding-left: 2.625rem;
 	background: url("/assets/images/list-check.svg") no-repeat center left;

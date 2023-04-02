@@ -1,6 +1,8 @@
 @forward 'header';
 @forward 'footer';
 @forward './blog/blog-post';
+@forward './blog/blog-post-small';
+@forward './blog/blog';
 @forward './intro/homepage-intro';
 @forward './app/app';
 @forward './transactions/transactions-green';
@@ -8,7 +10,7 @@
 @forward './notifications/notifications';
 @forward './tools/integrations';
 @forward './accounts/accounts-perfect';
+@forward './accounts/account-link';
 @forward './testimonials/testimonials';
 @forward './app/app-banner';
 @forward './help/help';
-@forward './blog/blog';

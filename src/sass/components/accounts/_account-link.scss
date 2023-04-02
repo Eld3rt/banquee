@@ -1,0 +1,13 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.account-link-description {
+	font-size: .875rem;
+	margin-block: .25rem math.div(16em, 14);
+}
+
+.account-link-picture {
+	max-width: 242px;
+	max-height: 145px;
+	border-radius: 7.25px;
+}

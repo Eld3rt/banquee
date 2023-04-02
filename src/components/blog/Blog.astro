@@ -14,7 +14,7 @@ const freshPosts = sortedPosts.slice(0, 3);
 		</div>
 		<ul role="list" aria-label="posts list" class="blog__posts even-columns">
 			{freshPosts.map(post => (
-				<BlogPost post={post}></BlogPost>
+				<BlogPost post={post}/>
 			))}
 		</ul>
 	</div>

@@ -1,28 +1,19 @@
 ---
 
+import Logo from './logos/Logo.astro';
+import AccountLink from './accounts/AccountLink.astro';
+import BlogPostSmall from './blog/BlogPostSmall.astro';
+
 const allPosts = await Astro.glob('../pages/blog/*.md');
 const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 const freshPosts = sortedPosts.slice(0, 4);
-const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 ---
 
 <header class="header">
 	<div class="header__inner container container--wide">
-		<div class="header__logo header__logo--mobile">
-			<a aria-label="home" href="/" class="header__logo-link">
-				<svg width="139" height="32" viewBox="0 0 139 32" class="header__logo-icon">
-					<use href="#logo"></use>
-				</svg>
-			</a>
-		</div>
+		<Logo/>
 		<nav class="header__nav" aria-label="Primary">
-			<div class="header__logo header__logo--desktop">
-				<a aria-label="home" href="/" class="header__logo-link">
-					<svg width="139" height="32" viewBox="0 0 139 32" class="header__logo-icon">
-						<use href="#logo"></use>
-					</svg>
-				</a>
-			</div>
+			<Logo/>
 			<div class="header__nav-pages">
 				<ul role="list" aria-label="link list" class="header__list">
 					<li class="header__list-item">
@@ -33,25 +24,26 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 						<div class="header__compare">
 							<ul role="list" aria-label="compare list" class="header__compare-inner container container--wide">
 								<li class="header__compare-card header__card">
-									<a href="#">
-										<h4 class="header__card-title h5 popular-pseudo">Basic</h4>
-										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
-										<img src="assets/images/header-card-basic.png" alt="Basic Card" class="header__card-picture">
-									</a>
+									<AccountLink
+									accountLinkTitle="Basic"
+									accountLinkDescription="Lorem ipsum dolor"
+									accountLinkImageURL="assets/images/card-basic.png"
+									accountLinkTagClass="popular-pseudo"
+									/>
 								</li>
 								<li class="header__compare-card header__card">
-									<a href="#">
-										<h4 class="header__card-title h5">Premium</h4>
-										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
-										<img src="assets/images/header-card-premium.png" alt="Premium Card" class="header__card-picture">
-									</a>
+									<AccountLink
+									accountLinkTitle="Premium"
+									accountLinkDescription="Lorem ipsum dolor"
+									accountLinkImageURL="assets/images/card-premium.png"
+									/>
 								</li>
 								<li class="header__compare-card header__card">
-									<a href="#">
-										<h4 class="header__card-title h5">Gold</h4>
-										<p class="header__card-description text-muted">Lorem ipsum dolor</p>
-										<img src="assets/images/header-card-gold.png" alt="Gold Card" class="header__card-picture">
-									</a>
+									<AccountLink
+									accountLinkTitle="Gold"
+									accountLinkDescription="Lorem ipsum dolor"
+									accountLinkImageURL="assets/images/card-gold.png"
+									/>
 								</li>
 							</ul>
 						</div>
@@ -66,7 +58,7 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 								<div class="header__blog-sidebar header__sidebar">
 									<ul role="list" aria-label="category list" class="header__sidebar-category-list">
 										<li class="header__sidebar-category-list-item">
-											<h5 class="header__sidebar-category-title h6">Categories</h5>
+											<h5 class="header__sidebar-category-title h7">Categories</h5>
 										</li>
 										<li class="header__sidebar-category-list-item">
 											<a href="/blog/products" class="header__sidebar-category-link text-muted">Products</a>
@@ -81,20 +73,10 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 									<a href="/blog" class="header__sidebar-link link-primary link-primary--arrow">All Articles</a>
 								</div>
 								<div class="header__blog-articles header__articles">
-									<h4 class="header__articles-title h5">Latest Articles</h4>
+									<h4 class="header__articles-title h6">Latest Articles</h4>
 									<ul role="list" aria-label="articles list" class="header__articles-list">
 										{freshPosts.map(post => (
-											<li class="header__articles-list-item header__article">
-												<a href={post.url} class="header__article-link">
-													<div class="header__article-image">
-															<img src={post.frontmatter.image} class="header__article-picture">
-													</div>
-													<div class="header__article-text">
-														<h5 class="header__article-title h6">{post.frontmatter.title}</h5>
-														<p class="header__article-description text-muted">{truncateString(post.frontmatter.description, 39)}</p>
-													</div>
-												</a>
-											</li>
+											<BlogPostSmall post={post}/>
 										))}
 									</ul>
 								</div>

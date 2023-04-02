@@ -1,0 +1,17 @@
+---
+const { post } = Astro.props;
+const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
+---
+
+
+<li class="blog-post-small">
+	<a href={post.url} class="blog-post-small-link">
+		<div class="blog-post-small-image">
+				<img src={post.frontmatter.image} class="blog-post-small-picture">
+		</div>
+		<div class="blog-post-small-text">
+			<h5 class="blog-post-small-title h7">{post.frontmatter.title}</h5>
+			<p class="blog-post-small-description text-muted">{truncateString(post.frontmatter.description, 39)}</p>
+		</div>
+	</a>
+</li>

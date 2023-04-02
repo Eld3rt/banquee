@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../abstracts" as *;
 
-.section__description {
+.section-description {
 	font-size: 1rem;
 	margin-bottom: 2rem;
 
@@ -22,7 +22,7 @@
 	}
 }
 
-.section__tag {
+.section-tag {
 	font-size: 1rem;
 	line-height: 1.2;
 	letter-spacing: -.03em;

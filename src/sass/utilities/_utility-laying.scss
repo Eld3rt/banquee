@@ -47,6 +47,10 @@
 	display: block;
 }
 
+.dif {
+	display: inline-flex;
+}
+
 .minw55-db {
 	@include minw-mq(55em) {
 		display: block;
