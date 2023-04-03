@@ -3,6 +3,7 @@
 import Logo from './logos/Logo.astro';
 import AccountLink from './accounts/AccountLink.astro';
 import BlogPostSmall from './blog/BlogPostSmall.astro';
+import accounts from '../data/accounts.js';
 
 const allPosts = await Astro.glob('../pages/blog/*.md');
 const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
@@ -23,28 +24,11 @@ const freshPosts = sortedPosts.slice(0, 4);
 						<a href="/compare" class="header__nav-link header__nav-link--page link-dropdown pr-2 maxw55-p-0_75">Compare</a>
 						<div class="header__compare">
 							<ul role="list" aria-label="compare list" class="header__compare-inner container container--wide">
-								<li class="header__compare-card header__card">
-									<AccountLink
-									accountLinkTitle="Basic"
-									accountLinkDescription="Lorem ipsum dolor"
-									accountLinkImageURL="assets/images/card-basic.png"
-									accountLinkTagClass="popular-pseudo"
-									/>
-								</li>
-								<li class="header__compare-card header__card">
-									<AccountLink
-									accountLinkTitle="Premium"
-									accountLinkDescription="Lorem ipsum dolor"
-									accountLinkImageURL="assets/images/card-premium.png"
-									/>
-								</li>
-								<li class="header__compare-card header__card">
-									<AccountLink
-									accountLinkTitle="Gold"
-									accountLinkDescription="Lorem ipsum dolor"
-									accountLinkImageURL="assets/images/card-gold.png"
-									/>
-								</li>
+									{accounts.map(account => (
+										<li class="header__compare-card header__card">
+											<AccountLink account = {account}/>
+										</li>
+									))}
 							</ul>
 						</div>
 					</li>
