@@ -1,3 +1,8 @@
+---
+import RegistrationLink from "../../elements/links/RegistrationLink.astro";
+import CompareCardsLink from "../../elements/links/CompareCardsLink.astro";
+---
+
 <section class="homepage-intro mt-0">
 	<div class="homepage-intro__inner container">
 		<div class="homepage-intro__text">
@@ -10,8 +15,8 @@
 				<li class="homepage-intro__feature section-feature">100% mobile banking</li>
 			</ul>
 			<div class="homepage-intro__buttons">
-				<a href="#" class="homepage-intro__button button button-primary">Open Account</a>
-				<a href="/compare" class="homepage-intro__button link-primary link-primary--arrow">Compare Cards</a>
+				<RegistrationLink/>
+				<CompareCardsLink/>
 			</div>
 		</div>
 		<div class="homepage-intro__image dn minw55-db">
