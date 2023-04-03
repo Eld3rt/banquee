@@ -4,7 +4,7 @@
 .link-primary {
 	font-family: 'DM Sans';
 	color: var(--clr-primary-400);
-	padding: .5rem .75rem;
+	padding: .75rem;
 	border-radius: 6px;
 	transition: background 0.2s linear;
 
@@ -15,6 +15,7 @@
 	&--arrow {
 		padding: 0 2rem 0 0;
 		background: url(/assets/images/arrow.svg) no-repeat right .25rem center;
+		white-space: nowrap;
 
 		&:hover {
 			background: url(/assets/images/arrow.svg) transparent no-repeat right 0 center;

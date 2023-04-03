@@ -75,6 +75,26 @@
 	}
 }
 
+.header__nav-auth .login-link {
+	font-weight: 700;
+
+	@include maxw-mq(55em) {
+		font-size: 1.75rem;
+	}
+}
+
+.header__nav-auth .registration-link {
+	font-size: .875rem;
+
+	@include minw-mq(60em) {
+		font-size: .9375rem;
+	}
+
+	@include maxw-mq(55em) {
+		font-size: 1.4375rem;
+	}
+}
+
 
 .header__list {
 	display: flex;
@@ -123,26 +143,6 @@
 
 		@include maxw-mq(55em) {
 			font-size: 1.5rem;
-		}
-	}
-
-	&--sign-in {
-		font-weight: 700;
-
-		@include maxw-mq(55em) {
-			font-size: 1.75rem;
-		}
-	}
-
-	&--join {
-		font-size: .875rem;
-
-		@include minw-mq(60em) {
-			font-size: .9375rem;
-		}
-
-		@include maxw-mq(55em) {
-			font-size: 1.4375rem;
 		}
 	}
 }
@@ -229,10 +229,6 @@
 	@include minw-mq(55em) {
 		font-size: 1rem;
 	}
-}
-
-.header__sidebar-link {
-	white-space: nowrap;
 }
 
 .header__articles-title {
