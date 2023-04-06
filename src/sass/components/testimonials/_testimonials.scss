@@ -117,14 +117,18 @@
 	}
 }
 
-.testimonials__dot {
+.testimonials__dots .slider-dot {
 	display: none;
-	width: 1rem;
-	height: 1rem;
-	border: 1px solid var(--clr-primary-400);
-	border-radius: 100px;
 
-	&--active {
-		background-color: var(--clr-primary-400);
+	&:nth-child(-n+3) {
+		@include maxw-mq(65em) {
+			display: block;
+		}
+	}
+	
+	&:nth-child(n+3) {
+		@include maxw-mq(40em) {
+			display: block;
+		}
 	}
 }

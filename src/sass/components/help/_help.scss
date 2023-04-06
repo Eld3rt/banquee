@@ -34,20 +34,20 @@
 	}
 }
 
-.help__contacts-data {
+.help__contacts .contact-block {
 	padding-left: 4.625rem;
 	min-height: 50px;
-
-	&--phone {
-		background: url(/assets/images/phone-icon.svg) no-repeat center left;
-	}
-
-	&--email {
-		background: url(/assets/images/email-icon.svg) no-repeat center left;
-	}
 }
 
-.help__contact {
+.help__contacts .support-hotline {
+	background: url(/assets/images/phone-icon.svg) no-repeat center left;
+}
+
+.help__contacts .support-email {
+	background: url(/assets/images/email-icon.svg) no-repeat center left;
+}
+
+.help__contacts .contact-value {
 	margin-bottom: 0;
 
 	@include minw-mq(75em) {
@@ -55,7 +55,7 @@
 	}
 }
 
-.help__contact-description {
+.help__contacts .contact-description {
 	font-size: .875rem;
 }
 
@@ -74,7 +74,6 @@
 
 .help__question-block {
 	padding-bottom: 1rem;
-	cursor: pointer;
 
 	@include minw-mq(75em) {
 		padding-bottom: 2rem;
@@ -85,6 +84,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	cursor: pointer;
 }
 
 .help__question-title {

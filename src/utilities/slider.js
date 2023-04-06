@@ -1,6 +1,5 @@
-export default function slider (sliderContainer, sliderClassName, slideElement, selectorClassName, sectionContainer, activeSelectorClass) {
+export default function slider (sliderClassName, slideElement, selectorClassName, sectionContainer, activeSelectorClass) {
 
-	const sliderWrapper = document.querySelector(sliderContainer);
 	const slider = document.querySelector(sliderClassName);
 	const slides = Array.from(document.querySelectorAll(slideElement));
 	const slide = document.querySelector(slideElement);
@@ -28,6 +27,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 		marginsOfContainer = window.getComputedStyle(container, null).getPropertyValue("margin-left");
 		paddingOfSlide = window.getComputedStyle(slide, null).getPropertyValue("padding-right");
 		deviationValue = parseFloat(marginsOfContainer) * 2 - parseFloat(paddingOfSlide);
+		selectors[0].classList.add(activeSelectorClass);
 
 		slides.forEach((slide, index) => {
 		
@@ -96,6 +96,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 	}
 
 	function touchEnd() {
+		if (isNotDesktop()) {
 			isDragging = false
 			cancelAnimationFrame(animationID)
 
@@ -106,7 +107,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			if (isTablet()) {
 				if (movedByX < -25 && currentIndex < slides.length - 2) currentIndex = Math.floor((currentIndex + 2) / 2); 
 				else currentIndex = Math.floor(currentIndex / 2)
-		}
+			}
 			if (movedByX > 25 && currentIndex > 0) currentIndex -= 1
 
 			setPositionByIndex(currentIndex);
@@ -114,6 +115,7 @@ export default function slider (sliderContainer, sliderClassName, slideElement, 
 			setSelector(currentIndex);
 			
 			slider.style.cursor = "grab";
+		}	
 	}
 	
 	function getPositionX(event) {

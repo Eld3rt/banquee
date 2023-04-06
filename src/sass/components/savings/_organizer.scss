@@ -17,20 +17,7 @@
 	}
 }
 
-.organizer__title {
-	grid-row-start: 2;
-}
-
-.organizer__description {
-	margin-bottom: 1rem;
-	grid-row-start: 3;
-
-	@include minw-mq(65em) {
-		margin-bottom: 0;
-	}
-}
-
-.organizer__link {
+.organizer__text .features-link {
 	@include minw-mq(65em) {
 		display: flex;
 		align-items: end;
@@ -42,6 +29,19 @@
 		&:hover {
 			background-position: bottom right 0;
 		}
+	}
+}
+
+.organizer__title {
+	grid-row-start: 2;
+}
+
+.organizer__description {
+	margin-bottom: 1rem;
+	grid-row-start: 3;
+
+	@include minw-mq(65em) {
+		margin-bottom: 0;
 	}
 }
 

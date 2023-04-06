@@ -1,13 +1,13 @@
-export default function toggleAnswer(questionBlockClassName, faqButtonClassName, answerClassName, plusButtonClassName, xButtonClassName, activeClass) {
+export default function toggleAnswer(questionClassName, faqButtonClassName, answerClassName, plusButtonClassName, xButtonClassName, activeClass) {
 	
-	const questionBlocks = document.querySelectorAll(questionBlockClassName);
+	const questions = document.querySelectorAll(questionClassName);
 	const faqButton = document.querySelectorAll(faqButtonClassName);
 	const answers = document.querySelectorAll(answerClassName);
 	const plusButtons = document.querySelectorAll(plusButtonClassName);
 	const xButtons = document.querySelectorAll(xButtonClassName);
 
-	questionBlocks.forEach((questionBlock, i) => {
-		questionBlock.addEventListener('click', () => {
+	questions.forEach((question, i) => {
+		question.addEventListener('click', () => {
 			if (answers[i].classList.contains(activeClass)) {
 				faqButton[i].setAttribute('aria-expanded', false);
 				answers[i].classList.remove(activeClass);

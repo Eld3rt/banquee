@@ -1,0 +1,18 @@
+---
+import {generatePData} from '../../utilities/helpers.js'
+
+const { testimonial } = Astro.props;
+const pData = generatePData(testimonial, 4)
+---
+
+<article class="testimonial border-card">
+	<img src={`./assets/images/testimonial-rating-${testimonial.rating}.svg`} alt="Testimonial Rating" class="testimonial__rating">
+	<h4 class="testimonial__title h5 mt-0_5">{testimonial.title}</h4>
+	{pData.map(p => (
+		<p class="testimonial__content">{p}</p>
+	))}
+	<div class="testimonial__author">
+		<h5 class="testimonial__name h7 mt-1_5">{testimonial.author}</h5>
+		<span class="testimonial__profession text-muted">{testimonial.sumP}</span>
+	</div>
+</article>

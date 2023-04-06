@@ -1,100 +1,26 @@
+---
+import SupportHotline from '../contacts/SupportHotline.astro';
+import SupportEmail from '../contacts/SupportEmail.astro';
+import FAQBlock from './FAQBlock.astro';
+import faq from '../../data/faq.js';
+---
+
 <section class="help">
 	<div class="help__inner container even-columns">
 		<div class="help__text">
 			<h2 class="help__title h3">Need help?</h2>
 			<div class="help__contacts">
-				<div class="help__contacts-data help__contacts-data--phone">
-					<h4 class="help__contact h7">+49 176 123 456</h4>
-					<span class="help__contact-description text-muted">Support Hotline</span>
-				</div>
-				<div class="help__contacts-data help__contacts-data--email">
-					<h4 class="help__contact h7">help@banquee.com</h4>
-					<span class="help__contact-description text-muted">Support Email</span>
-				</div>
+				<SupportHotline/>
+				<SupportEmail/>
 			</div>
 			<a href="/support" class="help__link link-primary link-primary--arrow">Support</a>
 		</div>
 		<ul role="list" aria-label="faq list" class="help__faq-list">
-			<li class="help__faq-list-item">
-				<article class="help__faq-question-block help__question-block">
-					<div class="help__question">
-						<h4 class="help__question-title h6">How do I open an Banko account?</h4>
-						<button class="help__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
-							<svg class="help__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
-								<use href="#plus"></use>
-							</svg>
-							<svg class="help__question-button-x" width="14" height="13" viewBox="0 0 14 13">
-								<use href="#x"></use>
-							</svg>
-						</button>
-					</div>
-					<p class="help__question-answer text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. Eget gravida cum sociis natoque penatibus et magnis dis parturient.</p>
-				</article>
-			</li>
-			<li class="help__faq-list-item">
-				<article class="help__faq-question-block help__question-block">
-					<div class="help__question">
-						<h4 class="help__question-title h6">How do I order a new card?</h4>
-						<button class="help__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
-							<svg class="help__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
-								<use href="#plus"></use>
-							</svg>
-							<svg class="help__question-button-x" width="14" height="13" viewBox="0 0 14 13">
-								<use href="#x"></use>
-							</svg>
-						</button>
-					</div>
-					<p class="help__question-answer text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. Eget gravida cum sociis natoque penatibus et magnis dis parturient.</p>
-				</article>
-			</li>
-			<li class="help__faq-list-item">
-				<article class="help__faq-question-block help__question-block">
-					<div class="help__question">
-						<h4 class="help__question-title h6">How to change my account limits?</h4>
-						<button class="help__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
-							<svg class="help__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
-								<use href="#plus"></use>
-							</svg>
-							<svg class="help__question-button-x" width="14" height="13" viewBox="0 0 14 13">
-								<use href="#x"></use>
-							</svg>
-						</button>
-					</div>
-					<p class="help__question-answer text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. Eget gravida cum sociis natoque penatibus et magnis dis parturient.</p>
-				</article>
-			</li>
-			<li class="help__faq-list-item">
-				<article class="help__faq-question-block help__question-block">
-					<div class="help__question">
-						<h4 class="help__question-title h6">How does Banko premium works?</h4>
-						<button class="help__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
-							<svg class="help__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
-								<use href="#plus"></use>
-							</svg>
-							<svg class="help__question-button-x" width="14" height="13" viewBox="0 0 14 13">
-								<use href="#x"></use>
-							</svg>
-						</button>
-					</div>
-					<p class="help__question-answer text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. Eget gravida cum sociis natoque penatibus et magnis dis parturient.</p>
-				</article>
-			</li>
-			<li class="help__faq-list-item bn">
-				<article class="help__faq-question-block help__question-block">
-					<div class="help__question">
-						<h4 class="help__question-title h6">Can I have two Banko accounts?</h4>
-						<button class="help__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
-							<svg class="help__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
-								<use href="#plus"></use>
-							</svg>
-							<svg class="help__question-button-x" width="14" height="13" viewBox="0 0 14 13">
-								<use href="#x"></use>
-							</svg>
-						</button>
-					</div>
-					<p class="help__question-answer text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. Eget gravida cum sociis natoque penatibus et magnis dis parturient.</p>
-				</article>
-			</li>
+			{faq.map(qa => (
+				<li class="help__faq-list-item">
+					<FAQBlock qa = {qa}/>
+				</li>
+			))}
 		</ul>
 	</div>
 </section>

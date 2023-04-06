@@ -1,0 +1,18 @@
+---
+const { qa } = Astro.props;
+---
+
+<article class="help__faq-question-block help__question-block">
+	<div class="help__question">
+		<h4 class="help__question-title h6">{qa.question}</h4>
+		<button class="help__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
+			<svg class="help__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
+				<use href="#plus"></use>
+			</svg>
+			<svg class="help__question-button-x" width="14" height="13" viewBox="0 0 14 13">
+				<use href="#x"></use>
+			</svg>
+		</button>
+	</div>
+	<p class="help__question-answer text-muted">{qa.answer}</p>
+</article>

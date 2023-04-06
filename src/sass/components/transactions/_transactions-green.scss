@@ -2,9 +2,12 @@
 @use "../../abstracts" as *;
 
 .transactions-green {
-	background-color: var(--clr-primary-100);
 	padding-block: 2rem;
 	overflow: hidden;
+
+	@include minw-mq(55em) {
+		background-color: var(--clr-primary-100);
+	}
 }
 
 .transactions-green__inner {
