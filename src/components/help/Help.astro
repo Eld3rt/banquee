@@ -1,6 +1,7 @@
 ---
 import SupportHotline from '../contacts/SupportHotline.astro';
 import SupportEmail from '../contacts/SupportEmail.astro';
+import SupportLink from '../../elements/links/SupportLink.astro';
 import FAQBlock from './FAQBlock.astro';
 import faq from '../../data/faq.js';
 ---
@@ -13,7 +14,7 @@ import faq from '../../data/faq.js';
 				<SupportHotline/>
 				<SupportEmail/>
 			</div>
-			<a href="/support" class="help__link link-primary link-primary--arrow">Support</a>
+			<SupportLink/>
 		</div>
 		<ul role="list" aria-label="faq list" class="help__faq-list">
 			{faq.map(qa => (
