@@ -3,7 +3,7 @@ const { account } = Astro.props;
 ---
 
 <a href="/compare">
-	<h4 class={"account-link-title dif tac h6 " + (account.popular && 'popular-pseudo')}>{account.title}</h4>
-	<p class="account-link-description text-muted">{account.description}</p>
+	<h4 class={"account-card-title dif tac h6 " + (account.popular ? 'popular-pseudo' : '')}>{account.title}</h4>
+	<p class="account-link-description text-muted">{account.description.short}</p>
 	<img src={account.imageURL} alt={`${account.title} Card`} class="account-link-picture">
 </a>

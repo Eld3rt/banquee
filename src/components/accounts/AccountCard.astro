@@ -1,0 +1,11 @@
+---
+const { account } = Astro.props;
+---
+
+<h4 class={"account-card-title dif tac h6 " + (account.popular ? 'popular-pseudo' : '')}>{account.title}</h4>
+<span class="account-card-price">
+	<span class="account-card-price-value">{account.price}</span> {(!(account.price == 'Free') ? 'per month' : '')}
+</span>
+<p class="account-card-description text-muted">{account.description.extended}</p>
+<img src={account.imageURL} alt={`${account.title} Card`} class="account-card-picture">
+<a href="#" class="account-link-button button">Get started</a>

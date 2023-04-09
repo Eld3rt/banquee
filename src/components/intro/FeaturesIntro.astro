@@ -1,3 +1,8 @@
+---
+import RegistrationLink from "../../elements/links/RegistrationLink.astro";
+import CompareCardsLink from "../../elements/links/CompareCardsLink.astro";
+---
+
 <section class="features-intro">
 	<div class="features-intro__text">
 		<span class="features-intro__tag section__tag">Features</span>
@@ -5,8 +10,8 @@
 		<p class="features-intro__description">Senectus et netus et malesuada fames ac turpis. 
 			Sagittis vitae et leo duis ut diam.</p>
 		<div class="features-intro__buttons">
-			<a href="#" class="features-intro__button button button-primary">Open Account</a>
-			<a href="/compare" class="features-intro__button link-primary link-primary--arrow">Compare Cards</a>
+			<RegistrationLink/>
+			<CompareCardsLink/>
 		</div>
 	</div>
 	<div class="features-intro__image">

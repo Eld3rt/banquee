@@ -21,39 +21,9 @@ const { scriptsrc } = Astro.props;
 		</main>
 		<Footer></Footer>
 		<script>
-			import $ from 'jquery';
-			import 'jquery-match-height';
-			import Masonry from 'masonry-layout';
-			import imagesLoaded from 'imagesloaded';
-			import toggleHeaderMenu from '../utilities/toggleHeaderMenu.js';
 			import resizeAnimationStopper from '../utilities/resizeAnimationStopper.js';
-			import slider from '../utilities/slider.js';
-			import toggleAnswer from '../utilities/toggleAnswer.js';
-			
-			$(function() {
-				($('.header__article-link') as any).matchHeight();
-				($('.app__feature') as any).matchHeight();
-			});
 
-			toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
 			resizeAnimationStopper('.link-primary', 'resize-animation-stopper');
-			slider('.testimonials__list', '.testimonials__list-item', '.slider-dot', '.testimonials__inner', 'slider-dot--active');
-			toggleAnswer('.help__question','.help__question-button', '.help__question-answer', '.help__question-button-plus', '.help__question-button-x', 'help__question-answer--active');
-			
-			window.onload = function() {
-				var grid = document.querySelector('.testimonials__list');
-				var msnry = new Masonry( grid, {
-					itemSelector: '.testimonials__list-item',
-					columnWidth: '.grid-sizer',
-					percentPosition: true,
-					horizontalOrder: true,
-					gutter: 31
-				});
-
-				imagesLoaded( grid ).on( 'progress', function() {
-					msnry.layout();
-				});
-		};
 		</script>
 	</body>
 </html>

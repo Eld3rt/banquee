@@ -25,3 +25,8 @@ import faq from '../../data/faq.js';
 		</ul>
 	</div>
 </section>
+<script>
+	import toggleAnswer from '../../utilities/toggleAnswer.js';
+
+	toggleAnswer('.help__question','.help__question-button', '.help__question-answer', '.help__question-button-plus', '.help__question-button-x', 'help__question-answer--active');
+</script>
