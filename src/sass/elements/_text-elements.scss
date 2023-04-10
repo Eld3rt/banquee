@@ -21,13 +21,3 @@
 		}
 	}
 }
-
-.section-tag {
-	font-size: 1rem;
-	line-height: 1.2;
-	letter-spacing: -.03em;
-
-	@include minw-mq(55em) {
-		font-size: 1.25rem;
-	}
-}

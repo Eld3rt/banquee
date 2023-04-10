@@ -1,6 +1,17 @@
 @use "sass:math";
 @use "../abstracts" as *;
 
+.section-tag {
+	display: inline-block;
+	font-size: 1rem;
+	line-height: 1.2;
+	letter-spacing: -.03em;
+
+	@include minw-mq(55em) {
+		font-size: 1.25rem;
+	}
+}
+
 .tag {
 	display: inline-block;
 	font-family: 'Inter';
