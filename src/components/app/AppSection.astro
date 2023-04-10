@@ -11,19 +11,19 @@ let {
 
 ---
 
-<section class="app-section">
+<section class={(appSectionTag.toLowerCase().replace(/\s+/g, '-')) + "-app app-section"}>
 	<div class="app-section__inner container">
 		<div class="app-section__text">
-			<span class="app-section__tag section__tag">{appSectionTag}</span>
+			<span class="app-section__tag section-tag">{appSectionTag}</span>
 			<h2 class="app-section__title h3">{appSectionTitle}</h2>
-			<p class="app-section__description">{appSectionDescription}</p>
-			<ul role="list" aria-label={`${appSectionTag} features list`} class="app-section section__features section__features--small">
-				<li class="app-section section__feature section__feature--small">{appSectionFeature_1}</li>
-				<li class="app-section section__feature section__feature--small">{appSectionFeature_2}</li>
-				<li class="app-section section__feature section__feature--small">{appSectionFeature_3}</li>
+			<p class="app-section__description section-description section-description--small">{appSectionDescription}</p>
+			<ul role="list" aria-label={`${appSectionTag} features list`} class="app-section section-features section-features--small">
+				<li class="app-section section-feature">{appSectionFeature_1}</li>
+				<li class="app-section section-feature">{appSectionFeature_2}</li>
+				<li class="app-section section-feature">{appSectionFeature_3}</li>
 			</ul>
 		</div>
-		<div class="app-section__image">
+		<div class="app-section__image dn minw55-db">
 			<img src={appSectionImageURL} alt={`${appSectionTag} App`} class="app-section__picture">
 		</div>
 	</div>
