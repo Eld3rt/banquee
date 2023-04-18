@@ -1,0 +1,107 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.all-in-one-card {
+	background-color: var(--clr-neutral-100);
+	border-radius: 20px;
+	container-type: inline-size;
+
+	@include minw-mq(65em) {
+		grid-column: span 2;
+	}
+
+	&:nth-child(-n+2) {
+		@include minw-mq(65em) {
+			grid-column: span 3;
+		}
+	}
+}
+
+.all-in-one-card__text {
+	padding: 3.5rem 2.9375rem 0 2.9375rem;
+
+	@container (min-width: 23.75em) {
+		text-align: center;
+		padding-inline: 5.625rem;
+	}
+}
+
+.all-in-one-card__title {
+	word-spacing: 100vw
+}
+
+.all-in-one-card__description {
+	margin-top: .5rem;
+	
+	@container (min-width: 21.875em) {
+		margin-bottom: 3.625rem;
+	}
+
+	@container (min-width: 23.75em) {
+		margin-bottom: 3.25rem;
+	}
+}
+
+.all-in-one-card__image {
+	display: grid;
+	justify-content: center;
+	padding-inline: 2.5rem;
+	height: 220px;
+	overflow: hidden;
+
+	@container (min-width: 21.875em) {
+		height: 265px;
+	}
+
+	@container (min-width: 23.75em) {
+		height: 275px;
+	}
+
+	&--cards-card, &--integrations-card {
+		padding-inline: 0;
+	}
+
+	&--cards-card img, &--integrations-card img {
+		object-fit: none;
+	}
+
+	&--integrations-card, &--organizer-card {
+		margin-bottom: 2rem;
+
+		@container (min-width: 21.875em) {
+				margin-bottom: 0;
+		}
+	}
+
+	&--organizer-card {
+		padding-inline: 2.9735rem 0;
+
+		@container (min-width: 23.75em) {
+				padding: 0;
+			}
+	}
+
+	&--cards-card img {
+		height: 275px;
+		width: 266px;
+		border-radius: 20px;
+
+		@include minw-mq(25em) {
+			width: auto;
+		}
+	}
+
+	&--integrations-card img {
+		height: 212px;
+	}
+
+	&--statistics-card img {
+		padding-top: 1.3125rem;
+	}
+
+	&--organizer-card img {
+		height: 219px;
+		object-fit: none;
+		object-position: left;
+	}
+}
