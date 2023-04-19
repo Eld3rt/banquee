@@ -1,6 +1,16 @@
 @use "sass:math";
 @use "../../abstracts" as *;
 
+.blog {
+	border-top: 1px solid var(--clr-neutral-200);
+
+	padding-top: 3rem;
+
+	@include minw-mq(75em) {
+		padding-top: 8rem;
+	}
+}
+
 .blog__posts {
 	gap: 1.5rem 2.0625rem;
 }

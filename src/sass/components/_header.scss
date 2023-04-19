@@ -84,14 +84,6 @@
 }
 
 .header__nav-auth .registration-link {
-	font-size: .875rem;
-	letter-spacing: 0;
-	padding: .75rem 1rem;
-
-	@include minw-mq(60em) {
-		font-size: .9375rem;
-	}
-
 	@include maxw-mq(55em) {
 		font-size: 1.4375rem;
 		padding: 1rem 1.5rem;

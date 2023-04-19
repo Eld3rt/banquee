@@ -1,0 +1,21 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.accounts-choose__text {
+	margin-bottom: 3rem;
+
+	@include minw-mq(75em) {
+		margin-bottom: 6rem;
+	}
+}
+
+.accounts-choose__list {
+	gap: 3rem 4.125rem;
+	display: grid;
+	justify-content: center;
+}
+
+.accounts-choose__list-item {
+	display: grid;
+	max-width: 357px;
+}

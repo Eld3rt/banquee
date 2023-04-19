@@ -5,12 +5,12 @@ import accounts from '../../data/accounts.js';
 
 <section class="accounts-choose">
 	<div class="accounts-choose__inner container">
-		<div class="accounts-choose__text">
+		<div class="accounts-choose__text tac">
 			<span class="accounts-choose__tag section-tag">Accounts</span>
-			<h2 class="accounts-choose__title">Choose your card.</h2>
-			<p class="accounts-choose__description">Senectus et netus et malesuada fames ac turpis. Sagittis vitae et leo duis ut diam.</p>
+			<h2 class="accounts-choose__title h3">Choose your card.</h2>
+			<p class="accounts-choose__description section-description">Senectus et netus et malesuada fames ac turpis. <br/> Sagittis vitae et leo duis ut diam.</p>
 		</div>
-		<ul role="list" aria-label="accounts list" class="accounts-choose__list">
+		<ul role="list" aria-label="accounts list" class="accounts-choose__list even-columns">
 			{accounts.map(account => (
 				<li class="accounts-choose__list-item">
 					<AccountCard account = {account}/>
