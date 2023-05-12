@@ -1,23 +1,23 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import FeaturesIntro from '../components/intro/FeaturesIntro.astro';
-import TransactionsApp from '../components/transactions/TransactionsApp.astro';
-import CardsApp from '../components/cards/CardsApp.astro';
-import StatisticsApp from '../components/statistics/StatisticsApp.astro';
-import OrganizerApp from '../components/savings/OrganizerApp.astro';
-import AllInOne from '../components/all-in-one/AllInOne.astro';
-import AccountsChoose from '../components/accounts/AccountsChoose.astro';
-import AppBanner from '../components/app/AppBanner.astro';
-import Help from '../components/help/Help.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import FeaturesIntro from '@components/features/FeaturesIntro.astro';
+import AppTransactions from '@components/app/AppTransactions.astro';
+import AppCards from '@components/app/AppCards.astro';
+import AppStatistics from '@components/app/AppStatistics.astro';
+import AppOrganizer from '@components/app/AppOrganizer.astro';
+import FeaturesAllInOne from '@components/features/FeaturesAllInOne.astro';
+import AccountsChoose from '@components/accounts/AccountsChoose.astro';
+import AppBanner from '@components/app/AppBanner.astro';
+import Help from '@components/help/Help.astro';
 ---
 
 <BaseLayout title="Features">
 	<FeaturesIntro/>
-	<TransactionsApp/>
-	<CardsApp/>
-	<StatisticsApp/>
-	<OrganizerApp/>
-	<AllInOne/>
+	<AppTransactions/>
+	<AppCards/>
+	<AppStatistics/>
+	<AppOrganizer/>
+	<FeaturesAllInOne/>
 	<AccountsChoose/>
 	<AppBanner/>
 	<Help/>

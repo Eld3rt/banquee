@@ -1,0 +1,21 @@
+---
+let {
+	allInOneCardTitle,
+	allInOneCardDescription,
+	allInOneCardImageURL,
+	allInOneCardImageAlt,
+	allInOneCardUniqClass,
+} = Astro.props
+
+
+---
+
+<div class={`features-card ${allInOneCardUniqClass}`}>
+	<div class="features-card__text">
+		<h4 class="features-card__title">{allInOneCardTitle}</h4>
+		<p class="features-card__description section-description section-description--small text-muted">{allInOneCardDescription}</p>
+	</div>
+	<div class={`features-card__image features-card__image--${allInOneCardUniqClass}`}>
+		<img src={allInOneCardImageURL} alt={allInOneCardImageAlt} class="features-card__picture">
+	</div>
+</div>

@@ -1,6 +1,6 @@
 ---
-import testimonials from "../../data/testimonials";
-import TestimonialCard from "./TestimonialCard.astro";
+import testimonials from "@data/testimonials";
+import TestimonialsCard from "@components/testimonials/generic/TestimonialsCard.astro";
 ---
 
 <section class="testimonials">
@@ -14,20 +14,20 @@ import TestimonialCard from "./TestimonialCard.astro";
 				<span class="testimonials__rating-text">Rated <span class="testimonials__rating-value">4.8/5</span> from over 1000 users</span>
 			</div>
 		</div>
-		<div class="testimonials__wrapper">
-			<ul role="list" aria-label="testimonials list" class="testimonials__list">
-				<div class="grid-sizer"></div>
+		<div class="testimonials__wrapper swiper">
+			<ul role="list" aria-label="testimonials list" class="testimonials__list swiper-wrapper">
+				<div class="testimonials__grid-sizer"></div>
 				{testimonials.map(testimonial => (
-					<li class="testimonials__list-item">
-						<TestimonialCard testimonial = {testimonial}/>
+					<li id="slide" class="testimonials__list-item swiper-slide">
+						<TestimonialsCard testimonial = {testimonial}/>
 					</li>
 				))}
 			</ul>
-		</div>
-		<div class="testimonials__dots">
-			{testimonials.map(testimonial => (
-					testimonial && <button class="slider-dot"></button>
-				))}
+			<div class="testimonials__dots swiper-pagination">
+				{testimonials.map(testimonial => (
+						testimonial.active && <button class="slider-dot"></button>
+					))}
+			</div>
 		</div>
 	</div>
 </section>
@@ -35,22 +35,61 @@ import TestimonialCard from "./TestimonialCard.astro";
 <script>
 	import Masonry from 'masonry-layout';
 	import imagesLoaded from 'imagesloaded';
-	import slider from '../../utilities/slider.js';
+	import Swiper, {Pagination} from 'swiper';
+	import 'swiper/css';
 
-	slider('.testimonials__list', '.testimonials__list-item', '.slider-dot', '.testimonials__inner', 'slider-dot--active');
+	const breakpoint = window.matchMedia('(min-width: 65em)');
+	let swiper;
 
-	window.onload = function() {
-		var grid = document.querySelector('.testimonials__list');
-		var msnry = new Masonry( grid, {
-			itemSelector: '.testimonials__list-item',
-			columnWidth: '.grid-sizer',
-			percentPosition: true,
-			horizontalOrder: true,
-			gutter: 31
+	const breakpointChecker = function() {
+		if (breakpoint.matches === true) {
+			if (swiper !== undefined) swiper.destroy(), enableMasonry();
+			return enableMasonry();
+		} else
+		if (breakpoint.matches === false) {
+			return enableSwiper();
+		}
+	}
+
+	const enableSwiper = function() {
+		swiper = new Swiper('.swiper', {
+			modules: [Pagination],
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				bulletClass: 'slider-dot',
+				bulletActiveClass: 'slider-dot--active'
+			},
+			spaceBetween: 32,
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+					slidesPerGroup: 2,
+				},
+			}
 		});
+	}
 
-		imagesLoaded( grid ).on( 'progress', function() {
-			msnry.layout();
-		});
-	};
+	const enableMasonry = function() {
+
+		window.onload = function() {
+			var grid = document.querySelector('.testimonials__list');
+
+			var msnry = new Masonry( grid, {
+				itemSelector: '.testimonials__list-item',
+				columnWidth: '.testimonials__grid-sizer',
+				percentPosition: true,
+				horizontalOrder: true,
+				gutter: 31
+			});
+		
+			imagesLoaded( grid ).on( 'progress', function() {
+				msnry.layout();
+			});
+		}
+	}
+
+	breakpoint.addEventListener('change', breakpointChecker);
+		
+	breakpointChecker();
 </script>

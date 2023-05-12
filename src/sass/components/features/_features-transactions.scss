@@ -1,0 +1,34 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.features-transactions {
+	padding-block: 2rem;
+	overflow: hidden;
+
+	@include minw-mq(55em) {
+		background-color: var(--clr-primary-100);
+	}
+}
+
+.features-transactions__inner {
+	display: flex;
+
+	column-gap: 4rem;
+
+	@include minw-mq(75em) {
+		column-gap: 8.75rem;
+	}
+}
+
+.features-transactions__text {
+	max-width: 35rem;
+
+	@include minw-mq(55em) {
+		padding-top: 6rem;
+		max-width: ratio(560%, 1200);
+	}
+}
+
+.features-transactions__image {
+	transform: translateY(60px);
+}

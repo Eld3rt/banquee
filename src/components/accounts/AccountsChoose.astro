@@ -1,6 +1,6 @@
 ---
-import AccountCard from './AccountCard.astro';
-import accounts from '../../data/accounts.js';
+import AccountsCard from '@components/accounts/generic/AccountsCard.astro';
+import accounts from '@data/accounts.js';
 ---
 
 <section class="accounts-choose">
@@ -13,7 +13,7 @@ import accounts from '../../data/accounts.js';
 		<ul role="list" aria-label="accounts list" class="accounts-choose__list even-columns">
 			{accounts.map(account => (
 				<li class="accounts-choose__list-item">
-					<AccountCard account = {account}/>
+					<AccountsCard account = {account}/>
 				</li>
 			))}
 		</ul>

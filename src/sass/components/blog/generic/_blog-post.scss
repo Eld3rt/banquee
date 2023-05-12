@@ -1,0 +1,60 @@
+@use "sass:math";
+@use "../../../abstracts" as *;
+
+.blog-post {
+	@include minw-mq(35em) {
+		display: flex;
+		column-gap: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	@include minw-mq(75em) {
+		display: block;
+		margin-bottom: 0;
+	}
+}
+
+.blog-post__image {
+	margin-bottom: 2rem;
+
+	@include minw-mq(35em) {
+		width: 40%;
+		margin-bottom: 0;
+	}
+
+	@include minw-mq(75em) {
+		width: 100%;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.blog-post__image-picture {
+	border-radius: 16px;
+}
+
+.blog-post__text {
+	display: flex;
+	flex-direction: column;
+	@include minw-mq(35em) {
+		width: 60%;
+	}
+
+	@include minw-mq(75em) {
+		width: 100%;
+	}
+}
+
+.blog-post__description {
+	margin-block: 0.5rem 1.5rem;
+}
+
+.blog-post__tags {
+	display: flex;
+	column-gap: 0.5rem;
+	margin-top: auto;
+}
+
+.blog-post__image {
+	display: flex;
+	justify-content: center;
+}

@@ -1,25 +1,25 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HomepageIntro from '../components/intro/HomepageIntro.astro';
-import App from '../components/app/App.astro';
-import TransactionsGreen from '../components/transactions/TransactionsGreen.astro';
-import Organizer from '../components/savings/Organizer.astro';
-import Notifications from '../components/notifications/Notifications.astro';
-import Integrations from '../components/tools/Integrations.astro';
-import AccountsPerfect from '../components/accounts/AccountsPerfect.astro';
-import Testimonials from '../components/./testimonials/Testimonials.astro';
-import AppBanner from '../components/app/AppBanner.astro';
-import Help from '../components/help/Help.astro';
-import Blog from '../components/blog/Blog.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import HomepageIntro from '@components/HomepageIntro.astro';
+import App from '@components/app/App.astro';
+import FeaturesTransactions from '@components/features/FeaturesTransactions.astro';
+import FeaturesOrganizer from '@components/features/FeaturesOrganizer.astro';
+import FeaturesNotifications from '@components/features/FeaturesNotifications.astro';
+import FeaturesIntegrations from '@components/features/FeaturesIntegrations.astro';
+import AccountsPerfect from '@components/accounts/AccountsPerfect.astro';
+import Testimonials from '@components/testimonials/Testimonials.astro';
+import AppBanner from '@components/app/AppBanner.astro';
+import Help from '@components/help/Help.astro';
+import Blog from '@components/blog/Blog.astro';
 ---
 
 <BaseLayout title="Homepage" scriptsrc="https://identity.netlify.com/v1/netlify-identity-widget.js">
 	<HomepageIntro/>
 	<App/>
-	<TransactionsGreen/>
-	<Organizer/>
-	<Notifications/>
-	<Integrations/>
+	<FeaturesTransactions/>
+	<FeaturesOrganizer/>
+	<FeaturesNotifications/>
+	<FeaturesIntegrations/>
 	<AccountsPerfect/>
 	<Testimonials/>
 	<AppBanner/>

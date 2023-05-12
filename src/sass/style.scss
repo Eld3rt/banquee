@@ -1,5 +1,4 @@
-@use 'base';
-@use 'elements';
-@use 'components';
-@use 'pages';
-@use 'utilities';
+@use "global";
+@use "generic";
+@use "components";
+@use "utilities";

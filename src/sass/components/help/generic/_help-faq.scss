@@ -1,0 +1,38 @@
+@use "sass:math";
+@use "../../../abstracts" as *;
+
+.help-faq__question-block {
+	padding-bottom: 1rem;
+
+	@include minw-mq(75em) {
+		padding-bottom: 2rem;
+	}
+}
+
+.help-faq__question {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+
+.help-faq__question-title {
+	padding-right: 1.5rem;
+}
+
+.help-faq__question-answer {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.75s cubic-bezier(0, 1, 0, 1), margin 0.75s;
+
+	&--active {
+		max-height: 500px;
+		margin-top: 1rem;
+		transition: max-height 0.85s ease-in;
+	}
+}
+
+.help-faq__question-button-plus,
+.help-faq__question-button-x {
+	display: none;
+}

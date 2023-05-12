@@ -1,0 +1,28 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.features-notifications__inner {
+	display: flex;
+	align-items: center;
+	column-gap: 4rem;
+
+	@include minw-mq(75em) {
+		column-gap: 10.0625rem;
+	}
+}
+
+.features-notifications__text {
+	max-width: 33.75rem;
+
+	@include minw-mq(55em) {
+		max-width: ratio(540%, 1200);
+	}
+}
+
+.features-notifications__features {
+	margin-bottom: 2rem;
+
+	@include minw-mq(75em) {
+		margin-bottom: 3rem;
+	}
+}
