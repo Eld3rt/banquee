@@ -43,7 +43,6 @@
 	@include maxw-mq(65em) {
 		display: flex;
 		height: auto !important;
-		transition: transform 700ms ease;
 	}
 }
 
@@ -74,30 +73,3 @@
 		display: none;
 	}
 }
-
-.testimonials__dots {
-	display: none;
-
-	@include maxw-mq(65em) {
-		display: flex;
-		justify-content: center;
-		column-gap: 0.5rem;
-		margin-top: 1rem;
-	}
-}
-
-// .testimonials__dots .slider-dot {
-// 	display: none;
-
-// 	&:nth-child(-n+3) {
-// 		@include maxw-mq(65em) {
-// 			display: block;
-// 		}
-// 	}
-
-// 	&:nth-child(n+3) {
-// 		@include maxw-mq(40em) {
-// 			display: block;
-// 		}
-// 	}
-// }

@@ -2,34 +2,43 @@
 @use "../../../abstracts" as *;
 
 .features-card {
+	display: flex;
+	flex-direction: column;
 	background-color: var(--clr-neutral-100);
 	border-radius: 20px;
 	container-type: inline-size;
-	padding-right: var(--sp-slider-gap);
-	min-width: calc(100% + var(--sp-slider-gap));
 
-	// @include minw-mq(65em) {
-	// 	grid-column: span 2;
-	// }
+	@include minw-mq(65em) {
+		grid-column: span 2;
+	}
 
-	// &:nth-child(-n+2) {
-	// 	@include minw-mq(65em) {
-	// 		grid-column: span 3;
-	// 	}
-	// }
+	&:nth-child(-n + 2) {
+		@include minw-mq(65em) {
+			grid-column: span 3;
+		}
+	}
 }
 
 .features-card__text {
+	display: grid;
+	text-align: center;
+	justify-items: center;
 	padding: 3.5rem 2.9375rem 0 2.9375rem;
 
-	@container (min-width: 23.75em) {
-		text-align: center;
-		padding-inline: 5.625rem;
+	@include minw-mq(65em) {
+		text-align: left;
+		justify-items: start;
+
+		@container (min-width: 23.75em) {
+			text-align: center;
+			justify-items: center;
+			padding-inline: 5.625rem;
+		}
 	}
 }
 
 .features-card__title {
-	word-spacing: 100vw;
+	max-width: 10rem;
 }
 
 .features-card__description {
@@ -50,6 +59,8 @@
 	padding-inline: 2.5rem;
 	height: 220px;
 	overflow: hidden;
+	margin-top: auto;
+	border-radius: 20px;
 
 	@container (min-width: 21.875em) {
 		height: 265px;
@@ -89,7 +100,6 @@
 	&--cards-card img {
 		height: 275px;
 		width: 266px;
-		border-radius: 20px;
 
 		@include minw-mq(25em) {
 			width: auto;

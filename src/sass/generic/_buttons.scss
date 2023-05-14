@@ -41,6 +41,17 @@
 	border: 0;
 }
 
+.slider-dots {
+	display: none;
+
+	@include maxw-mq(65em) {
+		display: flex;
+		justify-content: center;
+		column-gap: 0.5rem;
+		margin-top: 1rem;
+	}
+}
+
 .slider-dot {
 	width: 1rem;
 	height: 1rem;

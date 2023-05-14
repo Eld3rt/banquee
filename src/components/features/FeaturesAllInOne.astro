@@ -12,25 +12,57 @@ import FeaturesTransactionsCard from "@components/features/FeaturesTransactionsC
 			<h2 class="features-all-in-one__title h3 tac">All in one bank. Really.</h2>
 			<p class="features-all-in-one__description tac section-description">Senectus et netus et malesuada fames ac turpis. <br/> Sagittis vitae et leo duis ut diam.</p>
 		</div>
-		<div class="features-all-in-one__cards">
-			<FeaturesStatisticsCard/>
-			<FeaturesCardsCard/>
-			<FeaturesIntegrationsCard/>
-			<FeaturesOrganizerCard/>
-			<FeaturesTransactionsCard/>
+		<div class="features-all-in-one__cards swiper">
+			<div class="features-all-in-one__cards-wrapper swiper-wrapper">
+				<FeaturesStatisticsCard/>
+				<FeaturesCardsCard/>
+				<FeaturesIntegrationsCard/>
+				<FeaturesOrganizerCard/>
+				<FeaturesTransactionsCard/>
+			</div>
 		</div>
-		<div class="features-all-in-one__dots">
-			<button class="slider-dot"></button>
-			<button class="slider-dot"></button>
-			<button class="slider-dot"></button>
-			<button class="slider-dot"></button>
-			<button class="slider-dot"></button>
-		</div>
+		<div class="slider-dots swiper-pagination"></div>
 	</div>
 </section>
 
 <script>
-import slider from '@utilities/slider.js';
+	import Swiper, {Pagination} from 'swiper';
+	import 'swiper/css';
+	import $ from 'jquery';
+	import 'jquery-match-height';
 
-slider('.all-in-one__cards', '.all-in-one-card', '.slider-dot', '.all-in-one__inner', 'slider-dot--active');
+
+
+	const breakpoint = window.matchMedia('(min-width: 65em)');
+	let swiper;
+
+	const breakpointChecker = function() {
+		if (breakpoint.matches === true) {
+			if (swiper !== undefined) {
+				($('.features-card') as any).matchHeight({ remove: true }),
+				swiper.destroy();
+			}
+		} else
+		if (breakpoint.matches === false) {
+			($('.features-card') as any).matchHeight(),
+			enableSwiper();
+		}
+	}
+
+	const enableSwiper = function() {
+		swiper = new Swiper('.swiper', {
+			modules: [Pagination],
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				bulletClass: 'slider-dot',
+				bulletActiveClass: 'slider-dot--active'
+			},
+			spaceBetween: 32,
+		});
+	}
+
+	breakpoint.addEventListener('change', breakpointChecker);
+
+	breakpointChecker();
 </script>

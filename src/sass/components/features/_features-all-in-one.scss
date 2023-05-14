@@ -15,13 +15,12 @@
 
 .features-all-in-one__cards {
 	display: flex;
-	// justify-content: center;
-	// position: relative;
-	// gap: 2rem;
-	transform: translateX(0);
-	// grid-template-columns: 1fr;
+}
 
-	// @include minw-mq(65em) {
-	// 	grid-template-columns: repeat(6, 1fr);
-	// }
+.features-all-in-one__cards-wrapper {
+	@include minw-mq(65em) {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 2rem;
+	}
 }

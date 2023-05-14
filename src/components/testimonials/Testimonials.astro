@@ -23,18 +23,13 @@ import TestimonialsCard from "@components/testimonials/generic/TestimonialsCard.
 					</li>
 				))}
 			</ul>
-			<div class="testimonials__dots swiper-pagination">
-				{testimonials.map(testimonial => (
-						testimonial.active && <button class="slider-dot"></button>
-					))}
-			</div>
+			<div class="slider-dots swiper-pagination"></div>
 		</div>
 	</div>
 </section>
 
 <script>
 	import Masonry from 'masonry-layout';
-	import imagesLoaded from 'imagesloaded';
 	import Swiper, {Pagination} from 'swiper';
 	import 'swiper/css';
 
@@ -44,9 +39,11 @@ import TestimonialsCard from "@components/testimonials/generic/TestimonialsCard.
 	const breakpointChecker = function() {
 		if (breakpoint.matches === true) {
 			if (swiper !== undefined) swiper.destroy(), enableMasonry();
-			return enableMasonry();
+			return window.onload = function() { 
+				enableMasonry();
+			}	
 		} else
-		if (breakpoint.matches === false) {
+		if (breakpoint.matches === false) { 
 			return enableSwiper();
 		}
 	}
@@ -72,7 +69,6 @@ import TestimonialsCard from "@components/testimonials/generic/TestimonialsCard.
 
 	const enableMasonry = function() {
 
-		window.onload = function() {
 			var grid = document.querySelector('.testimonials__list');
 
 			var msnry = new Masonry( grid, {
@@ -82,11 +78,6 @@ import TestimonialsCard from "@components/testimonials/generic/TestimonialsCard.
 				horizontalOrder: true,
 				gutter: 31
 			});
-		
-			imagesLoaded( grid ).on( 'progress', function() {
-				msnry.layout();
-			});
-		}
 	}
 
 	breakpoint.addEventListener('change', breakpointChecker);
