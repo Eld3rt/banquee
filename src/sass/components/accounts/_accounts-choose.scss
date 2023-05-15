@@ -10,12 +10,18 @@
 }
 
 .accounts-choose__list {
-	gap: 3rem 4.125rem;
-	display: grid;
-	justify-content: center;
+	@include minw-mq(65em) {
+		display: flex;
+		gap: 3rem 4.125rem;
+	}
 }
 
 .accounts-choose__list-item {
-	display: grid;
-	max-width: 357px;
+	display: flex;
+	justify-content: center;
+
+	@include minw-mq(65em) {
+		flex-shrink: 1;
+		width: auto;
+	}
 }
