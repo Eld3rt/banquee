@@ -13,6 +13,10 @@
 	}
 }
 
+.features-all-in-one__cards {
+	display: flex;
+}
+
 .features-all-in-one__cards-wrapper {
 	@include minw-mq(65em) {
 		display: grid;
