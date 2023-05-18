@@ -10,57 +10,12 @@ import accounts from '@data/accounts.js';
 			<h2 class="accounts-choose__title h3">Choose your card.</h2>
 			<p class="accounts-choose__description section-description">Senectus et netus et malesuada fames ac turpis. <br/> Sagittis vitae et leo duis ut diam.</p>
 		</div>
-		<div class="accounts-choose__wrapper swiper">
-			<ul role="list" aria-label="accounts list" class="accounts-choose__list swiper-wrapper">
-				{accounts.map(account => (
-					<li class="accounts-choose__list-item swiper-slide">
-						<AccountsCard account = {account}/>
-					</li>
-				))}
-			</ul>
-			<div class="slider-dots swiper-pagination"></div>
-		</div>
+		<ul role="list" aria-label="accounts list" class="accounts-choose__list even-columns">
+			{accounts.map(account => (
+				<li class="accounts-choose__list-item">
+					<AccountsCard account = {account}/>
+				</li>
+			))}
+		</ul>
 	</div>
 </section>
-
-<script>
-	import Swiper, {Pagination} from 'swiper';
-	import 'swiper/css';
-	import $ from 'jquery';
-	import 'jquery-match-height';
-
-
-
-	const breakpoint = window.matchMedia('(min-width: 65em)');
-	let swiper;
-
-	const breakpointChecker = function() {
-		if (breakpoint.matches === true) {
-			if (swiper !== undefined) {
-				// ($('.features-card') as any).matchHeight({ remove: true }),
-				swiper.destroy();
-			}
-		} else
-		if (breakpoint.matches === false) {
-			// ($('.features-card') as any).matchHeight(),
-			enableSwiper();
-		}
-	}
-
-	const enableSwiper = function() {
-		swiper = new Swiper('.accounts-choose__wrapper', {
-			modules: [Pagination],
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-				bulletClass: 'slider-dot',
-				bulletActiveClass: 'slider-dot--active'
-			},
-			spaceBetween: 32,
-		});
-	}
-
-	breakpoint.addEventListener('change', breakpointChecker);
-
-	breakpointChecker();
-</script>
