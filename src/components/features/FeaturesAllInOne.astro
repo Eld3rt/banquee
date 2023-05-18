@@ -20,8 +20,8 @@ import FeaturesTransactionsCard from "@components/features/FeaturesTransactionsC
 				<FeaturesOrganizerCard/>
 				<FeaturesTransactionsCard/>
 			</div>
+			<div class="slider-dots swiper-pagination"></div>
 		</div>
-		<div class="slider-dots swiper-pagination"></div>
 	</div>
 </section>
 
@@ -50,7 +50,7 @@ import FeaturesTransactionsCard from "@components/features/FeaturesTransactionsC
 	}
 
 	const enableSwiper = function() {
-		swiper = new Swiper('.swiper', {
+		swiper = new Swiper('.features-all-in-one__cards', {
 			modules: [Pagination],
 			pagination: {
 				el: '.swiper-pagination',
