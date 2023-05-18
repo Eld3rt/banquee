@@ -46,12 +46,18 @@
 	}
 }
 
-.testimonials__list-item {
-	width: calc(33.333% - 21px);
+.testimonials__list .swiper-slide {
 	height: auto;
 
 	@include maxw-mq(65em) {
 		display: flex;
+	}
+}
+
+.testimonials__list-item {
+	width: calc(33.333% - 21px);
+
+	@include maxw-mq(65em) {
 		position: static !important;
 		width: auto;
 		user-select: none;

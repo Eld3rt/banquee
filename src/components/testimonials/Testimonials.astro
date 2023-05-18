@@ -31,7 +31,7 @@ import TestimonialsCard from "@components/testimonials/generic/TestimonialsCard.
 <script>
 	import Masonry from 'masonry-layout';
 	import Swiper, {Pagination} from 'swiper';
-	// import 'swiper/css';
+	import 'swiper/css';
 
 	const breakpoint = window.matchMedia('(min-width: 65em)');
 	let swiper;
@@ -39,7 +39,7 @@ import TestimonialsCard from "@components/testimonials/generic/TestimonialsCard.
 	const breakpointChecker = function() {
 		if (breakpoint.matches === true) {
 			if (swiper !== undefined) swiper.destroy(), enableMasonry();
-			return window.onload = function() { 
+			return window.onload = function() {
 				enableMasonry();
 			}	
 		} else
