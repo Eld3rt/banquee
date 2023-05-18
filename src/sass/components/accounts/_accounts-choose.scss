@@ -16,12 +16,15 @@
 	}
 }
 
-.accounts-choose__list-item {
+.accounts-choose__list .swiper-slider {
 	display: flex;
-	justify-content: center;
 
 	@include minw-mq(65em) {
 		flex-shrink: 1;
 		width: auto;
 	}
+}
+
+.accounts-choose__list-item {
+	justify-content: center;
 }
