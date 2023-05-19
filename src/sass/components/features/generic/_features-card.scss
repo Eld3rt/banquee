@@ -59,7 +59,7 @@
 	height: 220px;
 	overflow: hidden;
 	margin-top: auto;
-	border-radius: 20px;
+	border-radius: 0 0 20px 20px;
 
 	@container (min-width: 21.875em) {
 		height: 265px;
