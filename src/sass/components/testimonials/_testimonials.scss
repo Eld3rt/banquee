@@ -48,14 +48,15 @@
 
 .testimonials__list .swiper-slide {
 	height: auto;
+	width: calc(33.333% - 21px);
 
 	@include maxw-mq(65em) {
 		display: flex;
+		width: 100%;
 	}
 }
 
 .testimonials__list-item {
-	width: calc(33.333% - 21px);
 
 	@include maxw-mq(65em) {
 		position: static !important;
