@@ -74,10 +74,10 @@
 		padding-inline: 0;
 	}
 
-	// &--cards-card img,
-	// &--integrations-card img {
-	// 	object-fit: none;
-	// }
+	&--cards-card img,
+	&--integrations-card img {
+		height: auto;
+	}
 
 	&--integrations-card,
 	&--organizer-card {
@@ -105,9 +105,9 @@
 		}
 	}
 
-	&--integrations-card img {
-		height: 212px;
-	}
+	// &--integrations-card img {
+	// 	height: 212px;
+	// }
 
 	&--statistics-card img {
 		padding-top: 1.3125rem;
