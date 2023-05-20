@@ -17,7 +17,7 @@ export default [
 			short: "Lorem ipsum dolor",
 			extended: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		},
-		imageURL: "/assets/images/test.png",
+		imageURL: "/assets/images/card-premium.png",
 		popular: false,
 		visible: true,
 	},
