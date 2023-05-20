@@ -1,30 +1,30 @@
 {
-  "name": "projectname",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "devDependencies": {
-    "@astrojs/mdx": "^0.11.1",
-    "@types/jquery": "^3.5.16",
-    "astro": "^1.0.5",
-    "sass": "^1.54.4"
-  },
-  "dependencies": {
-    "@astrojs/react": "^1.2.2",
-    "date-fns": "^2.29.3",
-    "imagesloaded": "^5.0.0",
-    "jquery": "^3.6.3",
-    "jquery-match-height": "^0.7.2",
-    "magic-grid": "^3.2.4",
-    "masonry-layout": "^4.2.2",
-    "netlify-cms-app": "^2.15.72",
-    "netlify-cms-editor-component-figure": "^0.0.1",
-    "swiper": "^9.2.4"
-  }
+	"name": "projectname",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"devDependencies": {
+		"@astrojs/mdx": "^0.11.1",
+		"@types/jquery": "^3.5.16",
+		"astro": "^1.0.5",
+		"sass": "^1.54.4"
+	},
+	"dependencies": {
+		"@astrojs/react": "^1.2.2",
+		"date-fns": "^2.29.3",
+		"imagesloaded": "^5.0.0",
+		"jquery": "^3.6.3",
+		"jquery-match-height": "^0.7.2",
+		"magic-grid": "^3.2.4",
+		"masonry-layout": "^4.2.2",
+		"netlify-cms-app": "^2.15.72",
+		"netlify-cms-editor-component-figure": "^0.0.1",
+		"swiper": "^8.4.7"
+	}
 }
