@@ -3,6 +3,7 @@ let {
 	allInOneCardTitle,
 	allInOneCardDescription,
 	allInOneCardImageURL,
+	allInOneCardImageRetinaURL,
 	allInOneCardImageAlt,
 	allInOneCardUniqClass,
 } = Astro.props
@@ -16,6 +17,6 @@ let {
 		<p class="features-card__description section-description section-description--small text-muted">{allInOneCardDescription}</p>
 	</div>
 	<div class={`features-card__image features-card__image--${allInOneCardUniqClass}`}>
-		<img src={allInOneCardImageURL} alt={allInOneCardImageAlt} class="features-card__picture">
+		<img src={allInOneCardImageURL} srcset={`${allInOneCardImageRetinaURL} 2x`} alt={allInOneCardImageAlt} class="features-card__picture">
 	</div>
 </div>
