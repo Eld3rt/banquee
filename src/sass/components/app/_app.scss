@@ -49,7 +49,7 @@
 	text-align: center;
 
 	@include minw-mq(30em) {
-		margin-bottom: .5rem;
+		margin-bottom: 0.5rem;
 		text-align: left;
 	}
 }
@@ -61,3 +61,11 @@
 		text-align: left;
 	}
 }
+
+.app__screen {
+	max-width: ratio(380%, 1200);
+}
+
+// .app__picture {
+// 	max-width: 380px;
+// }
