@@ -13,9 +13,8 @@
 
 .features-notifications__text {
 	max-width: 33.75rem;
-	padding-block: 1.875rem;
 
-	@include minw-mq(75em) {
+	@include minw-mq(55em) {
 		max-width: ratio(540%, 1200);
 	}
 }
@@ -27,11 +26,3 @@
 		margin-bottom: 3rem;
 	}
 }
-
-.features-notifications__image {
-	max-width: ratio(500%, 1200);
-}
-
-// .features-notifications__picture {
-// 	max-width: 500px;
-// }

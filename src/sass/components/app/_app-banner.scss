@@ -1,22 +1,16 @@
 @use "sass:math";
 @use "../../abstracts" as *;
 
-.app-banner {
-	overflow: hidden;
-}
-
 .app-banner__inner {
 	display: flex;
-	align-items: end;
-	// min-height: min(50%, 910px);
+	align-items: center;
+	max-height: 610px;
 	background-color: var(--clr-primary-400);
 	border-radius: 20px;
 	column-gap: 3rem;
 	overflow: hidden;
 
-	& h2,
-	p,
-	li {
+	& h2, p, li {
 		color: var(--clr-neutral-0);
 	}
 
@@ -27,9 +21,9 @@
 
 .app-banner__text {
 	max-width: 32.75rem;
-	padding: 2.5rem 1rem 2.5rem 2rem;
+	padding: 1.5rem 1rem 1.5rem 1rem;
 
-	@include minw-mq(75em) {
+	@include minw-mq(55em) {
 		max-width: ratio(600%, 1200);
 	}
 
@@ -50,15 +44,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 0.5rem 1.0625rem;
+	gap: .5rem 1.0625rem;
 }
 
 .app-banner__image {
-	max-width: ratio(380%, 1200);
-	margin-top: auto;
-	padding-right: 1.5rem;
-
-	@include minw-mq(60em) {
-		padding-right: 0;
-	}
+	transform: translateY(208px);
 }
