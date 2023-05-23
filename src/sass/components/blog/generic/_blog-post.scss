@@ -15,6 +15,8 @@
 }
 
 .blog-post__image {
+	display: flex;
+	justify-content: center;
 	margin-bottom: 2rem;
 
 	@include minw-mq(35em) {
@@ -30,6 +32,10 @@
 
 .blog-post__image-picture {
 	border-radius: 16px;
+
+	@include minw-mq(75em) {
+		height: 378px;
+	}
 }
 
 .blog-post__text {
@@ -52,9 +58,4 @@
 	display: flex;
 	column-gap: 0.5rem;
 	margin-top: auto;
-}
-
-.blog-post__image {
-	display: flex;
-	justify-content: center;
 }
