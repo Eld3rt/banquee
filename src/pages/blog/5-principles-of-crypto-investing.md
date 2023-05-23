@@ -5,6 +5,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 author: Eld3rt
 date: 2021-08-01
 image: /assets/images/prv-img-5-principles.png
+retinaImage: /assets/images/prv-img-5-principles-2x.png
 tags:
   - App
 ---

@@ -5,6 +5,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 author: Eld3rt
 date: 2021-11-15
 image: /assets/images/prv-img-10-things-nobody.png
+retinaImage: /assets/images/prv-img-10-things-nobody-2x.png
 tags:
   - Technology
 ---

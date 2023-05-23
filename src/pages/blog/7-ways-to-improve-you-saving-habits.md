@@ -1,10 +1,11 @@
 ---
 # layout: ../../layouts/BlogPostLayout.astro
 title: 7 Ways To Improve You Saving Habits
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi. 
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi.
 author: Eld3rt
 date: 2021-10-01
 image: /assets/images/prv-img-7-ways-to-improve.png
+retinaImage: /assets/images/prv-img-7-ways-to-improve-2x.png
 tags:
   - Product
   - Technology

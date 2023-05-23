@@ -5,6 +5,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 author: Eld3rt
 date: 2021-09-01
 image: /assets/images/prv-img-why-we-love.png
+retinaImage: /assets/images/prv-img-why-we-love-2x.png
 tags:
   - Product
   - Technology

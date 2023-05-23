@@ -5,6 +5,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 author: Eld3rt
 date: 2021-12-01
 image: /assets/images/prv-img-how-to-start.png
+retinaImage: /assets/images/prv-img-how-to-start-2x.png
 tags:
   - App
   - Technology
