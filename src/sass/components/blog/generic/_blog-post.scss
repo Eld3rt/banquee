@@ -32,10 +32,6 @@
 
 .blog-post__image-picture {
 	border-radius: 16px;
-
-	@include minw-mq(75em) {
-		height: 378px;
-	}
 }
 
 .blog-post__text {

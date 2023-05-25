@@ -26,17 +26,17 @@
 
 	@include minw-mq(55em) {
 		padding-top: 6rem;
-		// max-width: ratio(620%, 1200);
-	}
-
-	@include minw-mq(75em) {
 		max-width: ratio(560%, 1200);
 	}
+
+	// @include minw-mq(75em) {
+	// 	max-width: ratio(560%, 1200);
+	// }
 }
 
 .features-transactions__image {
-	max-width: ratio(400%, 1200);
-	margin-top: auto;
+	// max-width: ratio(400%, 1200);
+	// margin-top: auto;
 	transform: translateY(60px);
 }
 
