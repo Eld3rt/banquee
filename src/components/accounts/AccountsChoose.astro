@@ -26,8 +26,6 @@ import accounts from '@data/accounts.js';
 <script>
 	import Swiper, {Pagination} from 'swiper';
 	import 'swiper/css';
-	import $ from 'jquery';
-	import 'jquery-match-height';
 
 
 
@@ -37,12 +35,10 @@ import accounts from '@data/accounts.js';
 	const breakpointChecker = function() {
 		if (breakpoint.matches === true) {
 			if (swiper !== undefined) {
-				// ($('.features-card') as any).matchHeight({ remove: true }),
 				swiper.destroy();
 			}
 		} else
 		if (breakpoint.matches === false) {
-			// ($('.features-card') as any).matchHeight(),
 			enableSwiper();
 		}
 	}

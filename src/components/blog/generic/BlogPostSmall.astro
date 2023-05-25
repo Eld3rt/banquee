@@ -7,7 +7,7 @@ const truncateString = (s, w) => s.length > w ? s.slice(0, w) + "..." : s;
 <li class="blog-post-small">
 	<a href={post.url} class="blog-post-small-link">
 		<div class="blog-post-small-image">
-				<img src={post.frontmatter.image} srcset={`${post.frontmatter.retinaImage} 2x`} class="blog-post-small-picture">
+				<img src={post.frontmatter.image} srcset={`${post.frontmatter.retinaImage} 2x`} loading="lazy" class="blog-post-small-picture">
 		</div>
 		<div class="blog-post-small-text">
 			<h5 class="blog-post-small-title h7">{post.frontmatter.title}</h5>
