@@ -14,14 +14,13 @@
 	transition: $transition;
 
 	@include pseudo($loc: before) {
-		box-shadow: 0 0 1.25em 0 rgba(black, .4);
+		box-shadow: 0 0 1.25em 0 rgba(black, 0.4);
 		transition: $transition;
 		opacity: 0;
 	}
 
 	&:hover,
 	&:focus-visible {
-
 		&::before {
 			opacity: 1;
 		}
@@ -35,115 +34,3 @@
 		}
 	}
 }
-
-// @mixin UtilityGenerator($utility) {
-	// 	@each $class, $property in $utility {
-// 		@each $prop, $value in $property {
-// 			.#{$class} {
-// 				#{$prop}: #{$value}
-// 			}
-// 		}
-// 	}
-// }
-
-// @mixin mqUtilityGenerator($utility) {
-// 	@each $class, $property in $utility {
-// 		@each $screen-size, $size in $breakpoints {
-// 			@each $prop, $value in $property {
-// 				.#{$screen-size}_#{$class} {
-// 					@include mq($screen-size) {
-// 						#{$prop}: #{$value}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-// @mixin adaptUtilityGenerator($utility) {
-// 	@each $class, $property in $utility {
-// 		@each $prop, $value in $property {
-// 			.#{$class} {
-// 				#{$prop}: #{$value}
-// 			}
-// 		}
-// 		@each $screen-size, $size in $breakpoints {
-// 			@each $prop, $value in $property {
-// 				.#{$screen-size}_#{$class} {
-// 					@include mq($screen-size) {
-// 						#{$prop}: #{$value}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-// @mixin varUtilityGenerator ($utility) {
-// 	@each $class, $keys in $utility {
-// 		@each $key, $property in $keys {
-// 			@each $prop, $values in $property {
-// 				@each $value in $values {
-// 					.#{$class}-#{$value} {
-// 						#{$prop}: var(--#{$key}-#{$value});
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-
-// @mixin mqVarGenerator ($var) {
-// 	@each $screen-size, $keys in $var {
-// 		@include mq($screen-size) {
-// 			@each $key, $property in $keys {
-// 				@each $prop, $value in $property {
-// 					--#{$key}-#{$prop}: #{$value};
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-// @mixin adaptVarGenerator ($scale) {
-// 	@each $scale-type, $screen-sizes in $scale {
-// 		@if $scale-type == mobile-first {
-// 			@each $screen-size, $keys in $screen-sizes {
-// 				@if $screen-size == default {
-// 					@each $key, $properties in $keys {
-// 						@each $property, $value in $properties {
-// 							--#{$key}-#{$property}: #{$value};
-// 						}
-// 					}
-// 				} @else {
-// 					@include minw-mq($screen-size) {
-// 						@each $key, $properties in $keys {
-// 							@each $property, $value in $properties {
-// 								--#{$key}-#{$property}: #{$value};
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		} @else {
-// 			@each $screen-size, $keys in $screen-sizes {
-// 				@if $screen-size == default {
-// 					@each $key, $properties in $keys {
-// 						@each $property, $value in $properties {
-// 							--#{$key}-#{$property}: #{$value};
-// 						}
-// 					}
-// 				} @else {
-// 					@include maxw-mq($screen-size) {
-// 						@each $key, $properties in $keys {
-// 							@each $property, $value in $properties {
-// 								--#{$key}-#{$property}: #{$value};
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }

@@ -1,7 +1,5 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 :root {
-@include varGenerator($color-palette);
-@include varGenerator($types);
-@include varGenerator($spaces);
+	@include varGenerator($color-palette);
 }

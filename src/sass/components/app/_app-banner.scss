@@ -9,7 +9,6 @@
 	display: flex;
 	align-items: center;
 	max-height: 610px;
-	// min-height: min(50%, 910px);
 	background-color: var(--clr-primary-400);
 	border-radius: 20px;
 	column-gap: 3rem;
@@ -56,11 +55,4 @@
 
 .app-banner__image {
 	transform: translateY(208px);
-	// max-width: ratio(380%, 1200);
-	// margin-top: auto;
-	// padding-right: 1.5rem;
-
-	// @include minw-mq(60em) {
-	// 	padding-right: 0;
-	// }
 }

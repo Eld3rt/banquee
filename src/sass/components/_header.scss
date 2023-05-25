@@ -20,12 +20,11 @@
 	}
 }
 
-
 .header__nav {
 	display: flex;
 	width: 100%;
 	align-items: center;
-	
+
 	@include maxw-mq(55em) {
 		display: none;
 		flex-direction: column;
@@ -84,31 +83,30 @@
 }
 
 .header__nav-auth .registration-link {
-	font-size: .875rem;
+	font-size: 0.875rem;
 	letter-spacing: 0;
-	padding: .75rem 1rem;
+	padding: 0.75rem 1rem;
 
 	@include minw-mq(60em) {
-		font-size: .9375rem;
+		font-size: 0.9375rem;
 	}
-	
+
 	@include maxw-mq(55em) {
 		font-size: 1.4375rem;
 		padding: 1rem 1.5rem;
 	}
 }
 
-
 .header__list {
 	display: flex;
 	align-items: center;
 	column-gap: 0;
 	margin-inline: auto;
-	
+
 	@include minw-mq(60em) {
-		column-gap: .75rem;
+		column-gap: 0.75rem;
 	}
-	
+
 	@include maxw-mq(55em) {
 		flex-direction: column;
 	}
@@ -117,12 +115,14 @@
 .header__list-item {
 	display: flex;
 
-	&--compare:hover > .header__compare, .header__compare:hover {
+	&--compare:hover > .header__compare,
+	.header__compare:hover {
 		visibility: visible;
 		opacity: 1;
 	}
 
-	&--blog:hover > .header__blog, .header__blog:hover {
+	&--blog:hover > .header__blog,
+	.header__blog:hover {
 		visibility: visible;
 		opacity: 1;
 	}
@@ -131,8 +131,8 @@
 .header__nav-link {
 	&--page {
 		line-height: 1.7;
-		font-size: .9375rem;
-		padding: .5rem .75rem;
+		font-size: 0.9375rem;
+		padding: 0.5rem 0.75rem;
 		border-radius: 6px;
 		transition: background-color 0.2s linear;
 
@@ -159,11 +159,13 @@
 	}
 }
 
-.header__hamburger, .header__x {
+.header__hamburger,
+.header__x {
 	display: none;
 }
 
-.header__compare, .header__blog {
+.header__compare,
+.header__blog {
 	position: absolute;
 	width: 100%;
 	left: 0;
@@ -175,7 +177,7 @@
 	transition: opacity 0.2s linear, visibility 0.2s linear;
 
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		height: 1.5rem;
@@ -184,7 +186,8 @@
 	}
 }
 
-.header__compare-inner, .header__blog-inner {
+.header__compare-inner,
+.header__blog-inner {
 	display: flex;
 	justify-content: center;
 }
@@ -226,7 +229,7 @@
 }
 
 .header__sidebar-category-link {
-	font-size: .9375rem;
+	font-size: 0.9375rem;
 	line-height: 1.6;
 
 	@include minw-mq(55em) {
@@ -250,8 +253,4 @@
 	@include maxw-mq(60em) {
 		column-gap: 0;
 	}
-}
-
-.header__articles-list .blog-post-small {
-	grid-column: span 1;
 }
