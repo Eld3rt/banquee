@@ -77,7 +77,6 @@
 	&--cards-card img,
 	&--integrations-card img {
 		object-fit: none;
-		height: auto;
 	}
 
 	&--integrations-card,
@@ -106,9 +105,9 @@
 		}
 	}
 
-	// &--integrations-card img {
-	// 	height: 212px;
-	// }
+	&--integrations-card img {
+		height: 212px;
+	}
 
 	&--statistics-card img {
 		padding-top: 1.3125rem;
