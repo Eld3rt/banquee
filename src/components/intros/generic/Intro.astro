@@ -1,0 +1,27 @@
+---
+import RegistrationLink from "@components/registration/RegistrationLink.astro";
+import CompareLink from "@components/compare/CompareLink.astro";
+
+let {
+	introTag,
+	introTitle,
+	introDescription,
+	introImageURL,
+	introImageRetinaURL,
+} = Astro.props
+---
+
+<section class="intro">
+	<div class="intro__text">
+		<span class="intro__tag section-tag">{introTag}</span>
+		<h1 class="intro__title">{introTitle}</h1>
+		<p class="intro__description section-description">{introDescription}</p>
+		<div class="intro__buttons">
+			<RegistrationLink/>
+			<CompareLink/>
+		</div>
+	</div>
+	<div class="intro__image">
+		<img src={introImageURL} srcset={`${introImageRetinaURL} 2x`} loading="lazy" alt="Intro Image" class="intro__picture">
+	</div>
+</section>

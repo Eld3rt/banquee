@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+@include icon(check-icon-primary);
+@include icon(check-icon-secondary);
+@include icon(check-icon-banner);
+@include icon(rating-icon);
+@include icon(phone-icon);
+@include icon(email-icon);
+@include icon(instant-transactions-icon);
+@include icon(saving-accounts-icon);
+@include icon(mobile-banking-icon);
+@include icon(advanced-statistics-icon);
+@include icon(virtual-card-icon);
+@include icon(contactless-payments-icon);
+@include icon(physical-card-icon);

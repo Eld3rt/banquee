@@ -1,7 +1,7 @@
 @use "sass:math";
-@use "../../abstracts" as *;
+@use "../../../abstracts" as *;
 
-.features-intro {
+.intro {
 	background-color: var(--clr-primary-100);
 	padding-top: 4rem;
 	margin-top: 1.5rem;
@@ -11,12 +11,18 @@
 	}
 }
 
-.features-intro__text {
+.intro__text {
+	display: grid;
+	justify-items: center;
 	text-align: center;
 	padding-inline: 1.5rem;
 }
 
-.features-intro__buttons {
+.intro__description {
+	max-width: 465px;
+}
+
+.intro__buttons {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -27,7 +33,7 @@
 	}
 }
 
-.features-intro__buttons a {
+.intro__buttons a {
 	font-size: 0.9375rem;
 
 	@include minw-mq(30em) {
@@ -39,7 +45,7 @@
 	}
 }
 
-.features-intro__image {
+.intro__image {
 	display: flex;
 	justify-content: center;
 	margin-top: 2rem;
@@ -53,7 +59,7 @@
 	}
 }
 
-.features-intro__picture {
+.intro__picture {
 	height: 330px;
 	object-fit: none;
 }

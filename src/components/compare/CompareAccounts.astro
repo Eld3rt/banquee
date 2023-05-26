@@ -1,0 +1,29 @@
+---
+import AccountsCard from "@components/accounts/generic/AccountsCard.astro";
+import accounts from "@data/accounts.js"
+---
+
+<section class="compare-accounts">
+	<div class="compare-accounts__inner container container--wide">
+		<ul role="list" aria-label="accounts list" class="accounts-choose__list">
+			{accounts.map(account => (
+				<li class="accounts-choose__list-item swiper-slide">
+					<AccountsCard account = {account}/>
+				</li>
+			))}
+		</ul>
+		<div class="compare-accounts__features">
+			<div class="compare-accounts__features-group">
+				<h5 class="compare-accounts__features-group-title"></h5>
+				<ul class="compare-accounts__features-group-list">
+					<li class="compare-accounts__features-group-list-item">
+						<div class="compare-accounts__feature physical-card">
+							<h6 class="compare-accounts__feature-title">data.value</h6>
+							<p class="compare-accounts__feature-description">data.value</p>
+						</div>
+						<span class="compare-accounts__feature-value">data.value</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+</section>

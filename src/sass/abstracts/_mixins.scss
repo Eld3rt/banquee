@@ -34,3 +34,9 @@
 		}
 	}
 }
+
+@mixin icon($className) {
+	.#{$className} {
+		background: url("/assets/images/#{$className}.svg") no-repeat;
+	}
+}

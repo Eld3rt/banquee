@@ -34,17 +34,15 @@
 	display: flex;
 	flex-direction: column;
 	place-items: center;
+	background-position: top left;
 
 	@include minw-mq(30em) {
 		place-items: start;
 	}
 }
 
-.app__feature-icon {
-	margin-bottom: 1rem;
-}
-
 .app__feature-title {
+	padding-top: 66px;
 	margin-bottom: 1.1rem;
 	text-align: center;
 

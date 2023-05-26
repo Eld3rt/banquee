@@ -3,10 +3,8 @@
 @forward "./blog/generic/blog-post";
 @forward "./blog/generic/blog-post-small";
 @forward "./blog/blog";
-@forward "./contacts/contacts-support-email";
-@forward "./contacts/contacts-support-phone";
-@forward "homepage-intro";
-@forward "./features/features-intro";
+@forward "./intros/generic/intro";
+@forward "./intros/homepage-intro";
 @forward "./app/app";
 @forward "./app/app-banner";
 @forward "./app/generic/app-section";
