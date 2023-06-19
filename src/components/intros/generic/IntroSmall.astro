@@ -1,20 +1,15 @@
 ---
-let {
-	introTag,
-	introTitle,
-	introImageURL,
-	introImageRetinaURL,
-} = Astro.props
+let { introTag, introTitle, introImageURL, introImageRetinaURL } = Astro.props;
 ---
 
 <section class="intro-small">
 	<div class="intro-small__inner container container--wide">
 		<div class="intro-small__text">
-			<span class="intro-small__tag">{introTag}</span>
-			<h1 class="intro-small__title">{introTitle}</h1>
+			<span class="intro-small__tag section-tag section-tag--big-space">{introTag}</span>
+			<h1 class="intro-small__title h2">{introTitle}</h1>
 		</div>
 		<div class="intro-small__image">
-			<img src={introImageURL} srcset={`${introImageRetinaURL} 2x`} loading="lazy" alt="Intro Image" class="intro-small__picture">
+			<img src={introImageURL} srcset={`${introImageRetinaURL} 2x`} loading="lazy" alt="Intro Image" class="intro-small__picture" />
 		</div>
 	</div>
 </section>

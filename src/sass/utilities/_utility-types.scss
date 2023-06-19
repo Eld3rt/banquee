@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .tac {
 	text-align: center;
@@ -9,7 +9,19 @@
 }
 
 .ls-0 {
- letter-spacing: 0;
+	letter-spacing: 0;
+}
+
+.h2 {
+	font-size: 3rem;
+
+	@include minw-mq(55em) {
+		font-size: 4rem;
+	}
+
+	@include minw-mq(75em) {
+		font-size: 5rem;
+	}
 }
 
 .h3 {
