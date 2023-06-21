@@ -2,12 +2,15 @@
 const { account } = Astro.props;
 ---
 
-<div class="accounts-card-wrapper">
-	<h4 class={"accounts-card-title h6 " + (account.popular ? 'popular-pseudo' : '')}>{account.title}</h4>
-	<span class="accounts-card-price tac text-muted mb-0_5">
-		<span class="accounts-card-price-value">{account.price}</span> {(!(account.price == 'Free') ? 'per month' : '')}
-	</span>
-	<p class="accounts-card-description tac text-muted mb-1_5">{account.description.extended}</p>
-	<img src={account.imageURL} srcset={`${account.imageRetinaURL} 2x`} loading="lazy" alt={`${account.title} Card`} class="accounts-card-picture mb-1_5">
-	<a href="#" class="accounts-link-button button button--narrow button-primary">Get started</a>
+<div class="accounts-card">
+	<div class="accounts-card__wrapper">
+		<h4 class={"accounts-card-title h6 " + (account.popular ? "popular-pseudo" : "")}>{account.title}</h4>
+		<span class="accounts-card-price tac text-muted mb-0_5">
+			<span class="accounts-card-price-value">{account.price}</span>
+			{!(account.price == "Free") ? "per month" : ""}
+		</span>
+		<p class="accounts-card-description tac text-muted mb-1_5">{account.description.extended}</p>
+		<img src={account.imageURL} srcset={`${account.imageRetinaURL} 2x`} loading="lazy" alt={`${account.title} Card`} class="accounts-card-picture mb-1_5" />
+		<a href="#" class="accounts-link-button button button--narrow button-primary">Get started</a>
+	</div>
 </div>

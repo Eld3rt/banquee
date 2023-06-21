@@ -1,6 +1,10 @@
 @use "sass:math";
 @use "../../abstracts" as *;
 
+.accounts-perfect {
+	padding-top: 10rem;
+}
+
 .accounts-perfect__inner {
 	display: grid;
 	justify-items: center;

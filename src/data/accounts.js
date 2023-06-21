@@ -66,7 +66,7 @@ export default [
 						value: true,
 					},
 					{
-						title: "Premium Parnter Offers",
+						title: "Premium Partner Offers",
 						description: "Diam in arcu cursus euismod",
 						value: true,
 					},
@@ -146,7 +146,7 @@ export default [
 						value: true,
 					},
 					{
-						title: "Premium Parnter Offers",
+						title: "Premium Partner Offers",
 						description: "Diam in arcu cursus euismod",
 						value: true,
 					},
@@ -226,7 +226,7 @@ export default [
 						value: true,
 					},
 					{
-						title: "Premium Parnter Offers",
+						title: "Premium Partner Offers",
 						description: "Diam in arcu cursus euismod",
 						value: true,
 					},

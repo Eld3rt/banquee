@@ -1,11 +1,11 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .mt-0 {
 	margin-top: 0;
 }
 
 .mt-0_5 {
-	margin-top: .5rem;
+	margin-top: 0.5rem;
 }
 
 .mt-1 {
@@ -21,7 +21,11 @@
 }
 
 .mb-0_5 {
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
+}
+
+.mb-1 {
+	margin-bottom: 1rem;
 }
 
 .mb-1_5 {
@@ -50,7 +54,7 @@
 
 .maxw55-p-0_75 {
 	@include maxw-mq(55em) {
-		padding: .75rem;
+		padding: 0.75rem;
 	}
 }
 

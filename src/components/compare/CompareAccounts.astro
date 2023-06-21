@@ -1,39 +1,65 @@
 ---
 import AccountsCard from "@components/accounts/generic/AccountsCard.astro";
-import accounts from "@data/accounts.js"
+import accounts from "@data/accounts.js";
+import { generateSlug } from "@utilities/helpers";
 ---
 
 <section class="compare-accounts">
 	<div class="compare-accounts__inner container container--wide">
-		<ul role="list" aria-label="accounts list" class="accounts-choose__list">
-			{accounts.map(account => (
-				<li class="accounts-choose__list-item">
-					<AccountsCard account = {account}/>
-					<div class="compare-accounts__features">
-						{account.features.map(featureGroup => (
+		<ul role="list" aria-label="compare list" class="compare-accounts__list">
+			<li class="compare-accounts__list-item">
+				<div class="compare-accounts__features">
+					{
+						accounts[0].features.map((featureGroup) => (
 							<div class="compare-accounts__features-group">
-								<h5 class="compare-accounts__features-group-title">{featureGroup.title}</h5>
+								<h5 class="compare-accounts__features-group-title h6">{featureGroup.title}</h5>
 								<ul class="compare-accounts__features-group-list">
-									{featureGroup.features.map(feature => (
-										<li class="compare-accounts__features-group-list-item">
-											<div class="compare-accounts__feature data-class">
-												<h6 class="compare-accounts__feature-title">{feature.title}</h6>
-												<p class="compare-accounts__feature-description">{feature.description}</p>
+									{featureGroup.features.map((feature) => (
+										<li class="compare-accounts__features-group-list-item border-thin">
+											<div class={"compare-accounts__feature " + `${generateSlug(feature.title)}-icon`}>
+												<h6 class="compare-accounts__feature-title h7">{feature.title}</h6>
+												<p class="compare-accounts__feature-description text-muted">{feature.description}</p>
 											</div>
-											{feature.value === true ?
-											<span class="compare-accounts__feature-value check-icon-primary"></span> :
-											feature.value === false ?
-											<span class="compare-accounts__feature-value">-</span> :
-											<span class="compare-accounts__feature-value">{feature.value}</span>
-											}
 										</li>
 									))}
 								</ul>
 							</div>
-						))}
-					</div>
-				</li>
-			))}
+						))
+					}
+				</div>
+			</li>
+			{
+				accounts.map((account) => (
+					<li class="compare-accounts__list-item">
+						<AccountsCard account={account} />
+						<div class="compare-accounts__features">
+							{account.features.map((featureGroup) => (
+								<div class="compare-accounts__features-group">
+									<h5 class="compare-accounts__features-group-title h6">{featureGroup.title}</h5>
+									<ul class="compare-accounts__features-group-list">
+										{featureGroup.features.map((feature) => (
+											<li class="compare-accounts__features-group-list-item border-thin">
+												<div class={"compare-accounts__feature " + `${generateSlug(feature.title)}-icon`}>
+													<h6 class="compare-accounts__feature-title h7">{feature.title}</h6>
+													<p class="compare-accounts__feature-description text-muted">{feature.description}</p>
+												</div>
+												{feature.value === true ? <span class="compare-accounts__feature-value check-icon-primary" /> : feature.value === false ? <span class="compare-accounts__feature-value">-</span> : <span class="compare-accounts__feature-value">{feature.value}</span>}
+											</li>
+										))}
+									</ul>
+								</div>
+							))}
+						</div>
+					</li>
+				))
+			}
 		</ul>
 	</div>
 </section>
+
+<script>
+	import $ from "jquery";
+	import "jquery-match-height";
+
+	($(".compare-accounts__features-group-list-item") as any).matchHeight({ byRow: false });
+</script>

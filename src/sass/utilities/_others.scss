@@ -2,6 +2,10 @@
 	cursor: grabbing;
 }
 
+.border-thin {
+	border-top: 1px solid var(--clr-neutral-200);
+}
+
 .bn {
 	border: none;
 }

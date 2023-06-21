@@ -1,22 +1,22 @@
 ---
-import Logo from '@components/Logo.astro';
-import AccountsLink from '@components/accounts/generic/AccountsLink.astro';
-import BlogPostSmall from '@components/blog/generic/BlogPostSmall.astro';
-import accounts from '@data/accounts.js';
-import LoginLink from '@components/login/LoginLink.astro';
-import RegistrationLink from '@components/registration/RegistrationLink.astro';
-import BlogLink from '@components/blog/BlogLink.astro';
+import Logo from "@components/Logo.astro";
+import AccountsLink from "@components/accounts/generic/AccountsLink.astro";
+import BlogPostSmall from "@components/blog/generic/BlogPostSmall.astro";
+import accounts from "@data/accounts.js";
+import LoginLink from "@components/login/LoginLink.astro";
+import RegistrationLink from "@components/registration/RegistrationLink.astro";
+import BlogLink from "@components/blog/BlogLink.astro";
 
-const allPosts = await Astro.glob('../pages/blog/*.md');
+const allPosts = await Astro.glob("../pages/blog/*.md");
 const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 const freshPosts = sortedPosts.slice(0, 4);
 ---
 
 <header class="header">
 	<div class="header__inner container container--wide">
-		<Logo/>
+		<Logo />
 		<nav class="header__nav" aria-label="Primary">
-			<Logo/>
+			<Logo />
 			<div class="header__nav-pages">
 				<ul role="list" aria-label="link list" class="header__list">
 					<li class="header__list-item">
@@ -26,11 +26,16 @@ const freshPosts = sortedPosts.slice(0, 4);
 						<a href="/compare" class="header__nav-link header__nav-link--page link-dropdown pr-2 maxw55-p-0_75">Compare</a>
 						<div class="header__compare">
 							<ul role="list" aria-label="compare list" class="header__compare-inner container container--wide">
-									{accounts.map(account => ( account.visible &&
-										<li class="header__compare-card header__card">
-											<AccountsLink account = {account}/>
-										</li>
-									))}
+								{
+									accounts.map(
+										(account) =>
+											account.visible && (
+												<li class="header__compare-card header__card">
+													<AccountsLink account={account} />
+												</li>
+											)
+									)
+								}
 							</ul>
 						</div>
 					</li>
@@ -56,14 +61,12 @@ const freshPosts = sortedPosts.slice(0, 4);
 											<a href="/blog/app" class="header__sidebar-category-link text-muted">App</a>
 										</li>
 									</ul>
-									<BlogLink/>
+									<BlogLink />
 								</div>
 								<div class="header__blog-articles header__articles">
 									<h4 class="header__articles-title h6">Latest Articles</h4>
 									<ul role="list" aria-label="articles list" class="header__articles-list">
-										{freshPosts.map(post => (
-											<BlogPostSmall post={post}/>
-										))}
+										{freshPosts.map((post) => <BlogPostSmall post={post} />)}
 									</ul>
 								</div>
 							</div>
@@ -72,8 +75,8 @@ const freshPosts = sortedPosts.slice(0, 4);
 				</ul>
 			</div>
 			<div class="header__nav-auth">
-					<LoginLink/>
-					<RegistrationLink/>
+				<LoginLink />
+				<RegistrationLink />
 			</div>
 		</nav>
 		<button class="header__mobile-menu button-icon" aria-controls="primary-navigation" aria-expanded="false">
@@ -89,11 +92,11 @@ const freshPosts = sortedPosts.slice(0, 4);
 </header>
 
 <script>
-	import $ from 'jquery';
-	import 'jquery-match-height';
-	import toggleHeaderMenu from '@utilities/toggleHeaderMenu.js';
+	import $ from "jquery";
+	import "jquery-match-height";
+	import toggleHeaderMenu from "@utilities/toggleHeaderMenu.js";
 
-	toggleHeaderMenu('.header__mobile-menu', '.header__nav', '.header__hamburger', '.header__x');
+	toggleHeaderMenu(".header__mobile-menu", ".header__nav", ".header__hamburger", ".header__x");
 
-	($('.header__article-link') as any).matchHeight();
+	($(".blog-post-small-link") as any).matchHeight();
 </script>

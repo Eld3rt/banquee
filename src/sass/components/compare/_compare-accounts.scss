@@ -1,0 +1,118 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.compare-accounts__list {
+	display: grid;
+	justify-content: center;
+	row-gap: 2.5rem;
+
+	@include minw-mq(55em) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.compare-accounts__list-item {
+	&:first-child {
+		display: none;
+	}
+
+	@include minw-mq(55em) {
+		display: grid;
+		grid-template-rows: 1fr auto;
+
+		&:first-child .compare-accounts__feature,
+		&:first-child .compare-accounts__features-group-title {
+			display: block;
+		}
+		&:first-child .compare-accounts__features-group-list {
+			padding-top: 0;
+		}
+		&:first-child {
+			display: grid;
+		}
+	}
+}
+
+.compare-accounts__list-item .accounts-card__wrapper {
+	@include minw-mq(55em) {
+		max-width: 354px;
+		padding-left: clamp(2rem, 3.33vw, 4rem);
+	}
+}
+
+.compare-accounts__features {
+	grid-row-start: 2;
+}
+
+.compare-accounts__features-group {
+	margin-top: 2.5rem;
+
+	@include minw-mq(55em) {
+		margin-top: 6rem;
+	}
+}
+
+.compare-accounts__features-group-title {
+	margin-bottom: 1rem;
+
+	@include minw-mq(55em) {
+		display: none;
+	}
+}
+
+.compare-accounts__features-group-list {
+	@include minw-mq(55em) {
+		padding-top: 2.5rem;
+	}
+}
+
+.compare-accounts__features-group-list-item {
+	display: flex;
+	align-items: center;
+	padding-block: 0.7rem;
+
+	@include minw-mq(25em) {
+		padding-block: 1rem;
+	}
+
+	@include minw-mq(75em) {
+		padding-block: 2rem;
+	}
+}
+
+.compare-accounts__feature {
+	width: 75%;
+	padding-left: 3rem;
+	background-size: 35px;
+	background-position: left;
+
+	@include minw-mq(25em) {
+		background-size: 45px;
+		padding-left: 4rem;
+	}
+
+	@include minw-mq(55em) {
+		display: none;
+		width: 100%;
+		min-height: 51px;
+		background-size: 51px;
+		padding-left: 4.125rem;
+	}
+}
+
+.compare-accounts__feature-description,
+.compare-accounts__feature-value {
+	font-size: 0.875rem;
+}
+
+.compare-accounts__feature-value {
+	width: 25%;
+	height: 27px;
+	text-align: center;
+	background-position: center;
+	margin-left: clamp(2rem, 3.33vw, 4rem);
+
+	@include minw-mq(55em) {
+		width: 100%;
+	}
+}

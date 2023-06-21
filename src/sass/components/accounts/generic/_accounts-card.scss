@@ -1,7 +1,12 @@
 @use "sass:math";
 @use "../../../abstracts" as *;
 
-.accounts-card-wrapper {
+.accounts-card {
+	display: grid;
+	justify-content: center;
+}
+
+.accounts-card__wrapper {
 	display: grid;
 	max-width: 357px;
 }
