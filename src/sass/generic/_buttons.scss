@@ -1,11 +1,13 @@
 @use "sass:math";
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .button {
 	display: inline-flex;
 	justify-content: center;
-	font-family: 'DM Sans';
-	padding: .8rem .5rem;
+	align-items: center;
+	font-family: "DM Sans";
+	padding: 0.8rem 0.5rem;
+	border: none;
 	border-radius: 6px;
 	cursor: pointer;
 
@@ -14,12 +16,12 @@
 	}
 
 	&--narrow {
-		font-size: .875rem;
+		font-size: 0.875rem;
 		letter-spacing: 0;
-		padding: .75rem 1rem;
+		padding: 0.75rem 1rem;
 
 		@include minw-mq(60em) {
-			font-size: .9375rem;
+			font-size: 0.9375rem;
 		}
 	}
 }
@@ -33,6 +35,12 @@
 	background-color: var(--clr-neutral-0);
 	color: var(--clr-neutral-900);
 	border: 2px solid var(--clr-neutral-200);
+}
+
+.button-black {
+	background-color: var(--clr-neutral-900);
+	color: var(--clr-neutral-0);
+	max-height: 50px;
 }
 
 .button-icon {

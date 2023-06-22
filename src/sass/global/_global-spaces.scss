@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 section {
 	margin-top: 5rem;
@@ -6,13 +6,13 @@ section {
 	@include minw-mq(65em) {
 		margin-top: 10rem;
 	}
+}
 
-	&:last-child {
-		margin-bottom: 5rem;
+footer {
+	margin-top: 5rem;
 
-		@include minw-mq(65em) {
-			margin-bottom: 10rem;
-		}
+	@include minw-mq(65em) {
+		margin-top: 10rem;
 	}
 }
 
@@ -20,6 +20,9 @@ p + p {
 	margin-top: 1.125rem;
 }
 
-h1 + p, h2 + p, h3 + p, h4 + p {
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p {
 	margin-top: 1rem;
 }

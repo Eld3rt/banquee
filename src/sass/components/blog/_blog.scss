@@ -3,6 +3,11 @@
 
 .blog {
 	padding-top: 3rem;
+	// margin-bottom: 5rem;
+
+	// @include minw-mq(65em) {
+	// 	margin-bottom: 10rem;
+	// }
 
 	@include minw-mq(75em) {
 		padding-top: 8rem;

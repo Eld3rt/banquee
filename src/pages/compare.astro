@@ -10,3 +10,13 @@ import HelpBanner from "@components/help/HelpBanner.astro";
 	<CompareAccounts />
 	<HelpBanner />
 </BaseLayout>
+
+<style is:global>
+	footer {
+		margin-top: 3rem;
+
+		@media only screen and (min-width: 65em) {
+			margin-top: 6rem;
+		}
+	}
+</style>

@@ -1,0 +1,77 @@
+@use "sass:math";
+@use "../../abstracts" as *;
+
+.help-banner {
+	margin-top: 2rem;
+
+	@include minw-mq(65em) {
+		margin-top: 4rem;
+	}
+}
+
+.help-banner__inner {
+	background-color: var(--clr-primary-400);
+	border-radius: 8px;
+	padding: 2rem;
+	color: var(--clr-neutral-0);
+
+	@include minw-mq(55em) {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		align-items: center;
+		column-gap: 2rem;
+	}
+}
+
+.help-banner__text {
+	text-align: center;
+	margin-bottom: 1.5rem;
+
+	@include minw-mq(65em) {
+		text-align: left;
+		margin: 0;
+	}
+}
+
+.help-banner__description {
+	opacity: 0.7;
+	line-height: 1.8;
+	margin: 0;
+}
+
+.help-banner__contacts {
+	display: grid;
+	gap: 1.5rem 3rem;
+	justify-content: center;
+
+	@include minw-mq(55em) {
+		display: flex;
+		align-items: center;
+	}
+
+	@include minw-mq(70em) {
+		column-gap: clamp(2rem, 8vw, 6rem);
+	}
+}
+
+.help-banner__contacts .contact-card {
+	padding-left: 3.5rem;
+}
+
+.help-banner__contacts .text-muted {
+	color: var(--clr-neutral-0);
+	opacity: 0.7;
+}
+
+.help-banner__contacts .contacts-support-email {
+	background: url("/assets/images/email-icon-banner.svg") no-repeat;
+}
+
+.help-banner__contacts .contacts-support-phone {
+	background: url("/assets/images/phone-icon-banner.svg") no-repeat;
+}
+
+.help-banner__contacts .contact-value {
+	margin: 0;
+}
