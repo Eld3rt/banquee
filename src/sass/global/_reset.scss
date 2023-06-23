@@ -30,11 +30,11 @@ a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
 
-/* Remove auto-formatting for telephone numbers and email */
-a[href^="x-apple-data-detectors:"] {
-	color: inherit;
-	text-decoration: inherit;
-}
+/* Remove auto-formatting for telephone numbers */
+// a[href^="tel"] {
+// 	color: inherit;
+// 	text-decoration: none;
+// }
 
 /* Make images easier to work with */
 img,
