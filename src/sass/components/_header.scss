@@ -120,12 +120,14 @@
 		.header__compare:hover {
 			visibility: visible;
 			opacity: 1;
+			pointer-events: initial;
 		}
 
 		&--blog:hover > .header__blog,
 		.header__blog:hover {
 			visibility: visible;
 			opacity: 1;
+			pointer-events: initial;
 		}
 	}
 }
@@ -177,6 +179,8 @@
 	background-color: var(--clr-neutral-100);
 	padding-block: 3.5rem 2rem;
 	transition: opacity 0.2s linear, visibility 0.2s linear;
+	pointer-events: none;
+	user-select: none;
 
 	&::before {
 		content: "";
