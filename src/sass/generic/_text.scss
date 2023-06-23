@@ -24,6 +24,7 @@
 
 .contact-value {
 	margin-bottom: 0;
+	color: var(--clr-neutral-0);
 
 	@include minw-mq(75em) {
 		margin-bottom: 0.25rem;
