@@ -24,12 +24,14 @@
 
 .contact-value {
 	margin-bottom: 0;
-	color: var(--clr-neutral-0);
-	-webkit-text-fill-color: initial;
 
 	@include minw-mq(75em) {
 		margin-bottom: 0.25rem;
 	}
+}
+
+.contact-value a {
+	color: var(--clr-neutral-0);
 }
 
 .contact-description {

@@ -13,6 +13,7 @@
 	background-color: var(--clr-primary-400);
 	border-radius: 8px;
 	padding: 2rem;
+	color: var(--clr-neutral-0);
 
 	@include minw-mq(55em) {
 		display: flex;
@@ -21,12 +22,6 @@
 		align-items: center;
 		column-gap: 2rem;
 	}
-}
-
-.help-banner__text,
-.help-banner__contacts {
-	color: var(--clr-neutral-0);
-	text-decoration: none;
 }
 
 .help-banner__text {
