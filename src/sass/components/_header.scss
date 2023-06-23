@@ -115,16 +115,18 @@
 .header__list-item {
 	display: flex;
 
-	&--compare:hover > .header__compare,
-	.header__compare:hover {
-		visibility: visible;
-		opacity: 1;
-	}
+	@include minw-mq(55em) {
+		&--compare:hover > .header__compare,
+		.header__compare:hover {
+			visibility: visible;
+			opacity: 1;
+		}
 
-	&--blog:hover > .header__blog,
-	.header__blog:hover {
-		visibility: visible;
-		opacity: 1;
+		&--blog:hover > .header__blog,
+		.header__blog:hover {
+			visibility: visible;
+			opacity: 1;
+		}
 	}
 }
 
@@ -194,6 +196,10 @@
 
 .header__compare-inner {
 	column-gap: 2rem;
+}
+
+.header__compare-inner .accounts-card-title {
+	margin: 0;
 }
 
 .header__blog-inner {
