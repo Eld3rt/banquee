@@ -1,0 +1,29 @@
+---
+import { generateTagData } from "@utilities/helpers"
+const allPosts = await Astro.glob("../pages/blog/*.md")
+const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
+
+const allTagsUnique = new Set()
+sortedPosts.map((post) => {
+	post.frontmatter.tags.map((tag) => {
+		allTagsUnique.add(tag)
+	})
+})
+
+const tagData = generateTagData(allTagsUnique)
+---
+
+<ul role="list" aria-label="category list" class="tags-sidebar__list">
+	<li class="tags-sidebar__list-item">
+		<h5 class="tags-sidebar__title h7">Categories</h5>
+	</li>
+	{
+		tagData.map((tag) => (
+			<li class="tags-sidebar__list-item">
+				<a href={`/blog/${tag.slug}`} class="tags-sidebar__link text-muted">
+					{tag.name}
+				</a>
+			</li>
+		))
+	}
+</ul>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import HelpIntro from "@components/help/HelpIntro.astro";
+import HelpBanner from "@components/help/HelpBanner.astro";
+---
+
+<BaseLayout title="Support">
+	<HelpIntro />
+	<HelpBanner />
+</BaseLayout>
+
+<style is:global>
+	.help-banner {
+		margin-top: 3rem;
+
+		@media only screen and (min-width: 65em) {
+			margin-top: 6rem;
+		}
+	}
+</style>

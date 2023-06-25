@@ -1,0 +1,27 @@
+@use "sass:math";
+@use "../abstracts" as *;
+
+.tags-sidebar__list {
+	margin-bottom: 2rem;
+}
+
+.tags-sidebar__title {
+	margin-bottom: 2rem;
+}
+
+.tags-sidebar__list-item {
+	margin-bottom: 1rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.tags-sidebar__link {
+	font-size: 0.9375rem;
+	line-height: 1.6;
+
+	@include minw-mq(55em) {
+		font-size: 1rem;
+	}
+}

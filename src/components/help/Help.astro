@@ -1,9 +1,8 @@
 ---
-import ContactsSupportPhone from '@components/contacts/ContactsSupportPhone.astro';
-import ContactsSupportEmail from '@components/contacts/ContactsSupportEmail.astro';
-import HelpLink from '@components/help/HelpLink.astro';
-import HelpFAQ from '@components/help/generic/HelpFAQ.astro';
-import faq from '@data/faq.js';
+import ContactsSupportPhone from "@components/contacts/ContactsSupportPhone.astro"
+import ContactsSupportEmail from "@components/contacts/ContactsSupportEmail.astro"
+import HelpLink from "@components/help/HelpLink.astro"
+import HelpFAQ from "@components/help/generic/HelpFAQ.astro"
 ---
 
 <section class="help">
@@ -11,22 +10,16 @@ import faq from '@data/faq.js';
 		<div class="help__text">
 			<h2 class="help__title h3">Need help?</h2>
 			<div class="help__contacts">
-				<ContactsSupportPhone/>
-				<ContactsSupportEmail/>
+				<ContactsSupportPhone />
+				<ContactsSupportEmail />
 			</div>
-			<HelpLink/>
+			<HelpLink />
 		</div>
-		<ul role="list" aria-label="faq list" class="help__faq-list">
-			{faq.map(qa => (
-				<li class="help__faq-list-item">
-					<HelpFAQ qa = {qa}/>
-				</li>
-			))}
-		</ul>
+		<HelpFAQ />
 	</div>
 </section>
 <script>
-	import toggleAnswer from '@utilities/toggleAnswer.js';
+	import toggleAnswer from "@utilities/toggleAnswer.js"
 
-	toggleAnswer('.help-faq__question','.help-faq__question-button', '.help-faq__question-answer', '.help-faq__question-button-plus', '.help-faq__question-button-x', 'help-faq__question-answer--active');
+	toggleAnswer(".help-faq__question", ".help-faq__question-button", ".help-faq__question-answer", ".help-faq__question-button-plus", ".help-faq__question-button-x", "help-faq__question-answer--active")
 </script>
