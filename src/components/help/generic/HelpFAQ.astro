@@ -1,33 +1,34 @@
 ---
 import faq from "@data/faq.js"
+
+let { option } = Astro.props
 ---
 
-{
-	(
-		<ul class="help-faq__list">
-			{faq.map((qaGroup) =>
-				qaGroup.qa.map(
+<ul class="help-faq__list">
+	{
+		faq.map((qaGroup) => (
+			<li class="help-faq__list-item">
+				{!(option === "popular") && <h4 class="help-faq__list-item-title h5">{qaGroup.category}</h4>}
+				{qaGroup.qa.map(
 					(qa) =>
-						qa.popular && (
-							<li class="help-faq__list-item">
-								<article class="help-faq__question-block">
-									<div class="help-faq__question">
-										<h4 class="help-faq__question-title h6">{qa.question}</h4>
-										<button class="help-faq__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
-											<svg class="help-faq__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
-												<use href="#plus" />
-											</svg>
-											<svg class="help-faq__question-button-x" width="14" height="13" viewBox="0 0 14 13">
-												<use href="#x" />
-											</svg>
-										</button>
-									</div>
-									<p class="help-faq__question-answer text-muted">{qa.answer}</p>
-								</article>
-							</li>
+						(qa[option] || !option) && (
+							<article class="help-faq__question-block">
+								<div class="help-faq__question">
+									<h4 class="help-faq__question-title h6">{qa.question}</h4>
+									<button class="help-faq__question-button button-icon" aria-controls="question-answer" aria-expanded="false">
+										<svg class="help-faq__question-button-plus db" width="14" height="15" viewBox="0 0 14 15">
+											<use href="#plus" />
+										</svg>
+										<svg class="help-faq__question-button-x" width="14" height="13" viewBox="0 0 14 13">
+											<use href="#x" />
+										</svg>
+									</button>
+								</div>
+								<p class="help-faq__question-answer text-muted">{qa.answer}</p>
+							</article>
 						)
-				)
-			)}
-		</ul>
-	)
-}
+				)}
+			</li>
+		))
+	}
+</ul>

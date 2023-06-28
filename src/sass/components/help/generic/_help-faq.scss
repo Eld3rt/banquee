@@ -11,11 +11,17 @@
 }
 
 .help-faq__list-item {
-	border-bottom: 1px solid var(--clr-neutral-200);
+	display: grid;
+	row-gap: 1rem;
+
+	@include minw-mq(75em) {
+		row-gap: 2rem;
+	}
 }
 
 .help-faq__question-block {
 	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--clr-neutral-200);
 
 	@include minw-mq(75em) {
 		padding-bottom: 2rem;
