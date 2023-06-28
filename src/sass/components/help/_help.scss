@@ -24,3 +24,17 @@
 		margin-bottom: 3rem;
 	}
 }
+
+.help__inner .help-faq__list-item {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--clr-neutral-200);
+
+	&:last-child {
+		border: none;
+		padding: 0;
+	}
+
+	@include minw-mq(75em) {
+		padding-bottom: 2rem;
+	}
+}

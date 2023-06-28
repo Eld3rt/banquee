@@ -1,16 +1,26 @@
 ---
-import Logo from "@components/Logo.astro"
-import AccountsLink from "@components/accounts/generic/AccountsLink.astro"
-import BlogPostSmall from "@components/blog/generic/BlogPostSmall.astro"
-import accounts from "@data/accounts.js"
-import LoginLink from "@components/login/LoginLink.astro"
-import RegistrationLink from "@components/registration/RegistrationLink.astro"
-import BlogLink from "@components/blog/BlogLink.astro"
-import TagsSidebar from "@components/TagsSidebar.astro"
+import Logo from "@components/Logo.astro";
+import AccountsLink from "@components/accounts/generic/AccountsLink.astro";
+import BlogPostSmall from "@components/blog/generic/BlogPostSmall.astro";
+import accounts from "@data/accounts.js";
+import LoginLink from "@components/login/LoginLink.astro";
+import RegistrationLink from "@components/registration/RegistrationLink.astro";
+import BlogLink from "@components/blog/BlogLink.astro";
+import TagsSidebar from "@components/TagsSidebar.astro";
+import { generateTagData } from "@utilities/helpers";
 
-const allPosts = await Astro.glob("../pages/blog/*.md")
-const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf())
-const freshPosts = sortedPosts.slice(0, 4)
+const allPosts = await Astro.glob("../pages/blog/*.md");
+const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const freshPosts = sortedPosts.slice(0, 4);
+
+const allTagsUnique = new Set();
+sortedPosts.map((post) => {
+	post.frontmatter.tags.map((tag) => {
+		allTagsUnique.add(tag);
+	});
+});
+
+let tagData = generateTagData(allTagsUnique);
 ---
 
 <header class="header">
@@ -48,7 +58,7 @@ const freshPosts = sortedPosts.slice(0, 4)
 						<div class="header__blog">
 							<div class="header__blog-inner container container--wide">
 								<div class="header__blog-sidebar header__sidebar">
-									<TagsSidebar />
+									<TagsSidebar tagData={tagData} />
 									<BlogLink />
 								</div>
 								<div class="header__blog-articles header__articles">
@@ -80,10 +90,10 @@ const freshPosts = sortedPosts.slice(0, 4)
 </header>
 
 <script>
-	import $ from "jquery"
-	import "jquery-match-height"
-	import toggleHeaderMenu from "@utilities/toggleHeaderMenu.js"
+	import $ from "jquery";
+	import "jquery-match-height";
+	import toggleHeaderMenu from "@utilities/toggleHeaderMenu.js";
 
-	toggleHeaderMenu(".header__mobile-menu", ".header__nav", ".header__hamburger", ".header__x")
-	;($(".blog-post-small-link") as any).matchHeight()
+	toggleHeaderMenu(".header__mobile-menu", ".header__nav", ".header__hamburger", ".header__x");
+	($(".blog-post-small-link") as any).matchHeight();
 </script>

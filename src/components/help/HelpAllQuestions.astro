@@ -1,11 +1,20 @@
 ---
-import TagsSidebar from "@components/TagsSidebar.astro"
-import HelpFAQ from "./generic/HelpFAQ.astro"
+import faq from "@data/faq.js";
+import TagsSidebar from "@components/TagsSidebar.astro";
+import HelpFAQ from "./generic/HelpFAQ.astro";
+import { generateTagData } from "@utilities/helpers";
+
+const allTagsUnique = new Set();
+faq.map((qaGroup) => {
+	allTagsUnique.add(qaGroup.category);
+});
+
+let tagData = generateTagData(allTagsUnique);
 ---
 
 <section class="help-all-questions">
 	<div class="help-all-questions__inner container">
-		<TagsSidebar />
+		<TagsSidebar tagData={tagData} />
 		<HelpFAQ />
 	</div>
 </section>
